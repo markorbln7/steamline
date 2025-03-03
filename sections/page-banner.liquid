@@ -1,0 +1,231 @@
+{% liquid
+  assign img_src = section.settings.desktop_image
+  assign mobile_img_src = section.settings.mobile_image
+  assign display_ribbon = false
+  assign hide_ribbon = section.settings.hide_ribbon
+  assign hide_overlay = section.settings.hide_overlay
+  assign landing_page_style = section.settings.landing_page_style
+
+
+  if template == 'collection'
+    unless section.settings.desktop_image != null
+      if collection.featured_image != null
+        assign img_src = collection.featured_image
+      endif
+    endunless
+
+    assign mobile_img_src = collection.metafields.plp.mobile_page_banner.value
+
+    unless hide_ribbon
+      assign display_ribbon = true
+    endunless
+
+  endif
+
+  if template == 'collection'
+    if collection.title == 'Carry-On'
+      assign col_title = collection.title
+    else
+      assign col_title = collection.title | split: '-' | first
+    endif
+    assign col_desc = collection.description
+  else
+    assign col_title = section.settings.title
+    assign col_desc = section.settings.description
+  endif
+
+  if section.settings.content_position == 'centered'
+    assign overlay_pos = 'md:text-center flex transform flex-col bg-white_op_fifty frosty px-8 py-11 absolute left-0 md:left-1/2 top-1/2 w-max -translate-y-1/2 md:-translate-x-1/2 max-w-[700px] lg:px-8 md:py-8'
+  elsif section.settings.content_position == 'right'
+    assign overlay_pos = 'relative flex w-full transform flex-col gap-y-4 bg-white_op_fifty frosty px-4 py-11 md:absolute md:right-0 md:top-1/2 md:w-4/5 lg:w-2/4 md:-translate-y-1/2 md:px-8 md:py-8'
+  else
+    assign overlay_pos = 'relative flex w-full transform flex-col gap-y-4 bg-white_op_fifty frosty px-4 py-11 md:absolute md:left-0 md:top-1/2 md:w-4/5 lg:w-2/4 md:-translate-y-1/2 md:px-8 md:py-8'
+  endif
+%}
+
+<div data-section-id="{{ section.id }}" data-section-type="page-banner">
+  <div class="relative h-full w-full">
+    {% if mobile_img_src != null %}
+      <div class="aspect-ratio-box flex lg:hidden" style="--aspect-ratio: {{ mobile_img_src.aspect_ratio }};">
+      {%- render 'image', image: mobile_img_src, class: ' w-full h-full object-cover aspect-auto', alt: section.settings.mobile_image_alt, width: 800 -%}
+      </div>
+      <div class="aspect-ratio-box hidden lg:flex" style="--aspect-ratio: {{ img_src.aspect_ratio }};">
+      {%- render 'image', image: img_src, class: ' min-h-[255px] md:absolute w-full h-full object-cover lg:aspect-square', alt: section.settings.desktop_image_alt, width: 1800 -%}
+      </div>
+    {% else %}
+      <div class="aspect-ratio-box" style="--aspect-ratio: {{ img_src.aspect_ratio }};">
+        {%- render 'image', image: img_src, class: ' min-h-[255px] md:absolute w-full h-full object-cover lg:aspect-square', alt: section.settings.desktop_image_alt, width: 1800 -%}
+      </div>
+    {% endif %}
+    
+    {% unless hide_overlay %}
+      <div class="{{ overlay_pos }}">
+        <h1 {% if section.settings.is_centered %} class="{% if landing_page_style %}text-lg lg:text-xl{% else %}text-lg lg:text-xl xl:text-cinema{% endif %}" {% endif %} {% if landing_page_style %}class="text-lg"{% endif %}>{{ col_title }}</h1>
+
+        {% if template == 'collection' %}
+          <div class="flex w-full justify-start">
+            <div x-data="{ expanded: false }">
+              <p class="text-small text-dark_ink">
+                <span class="hidden lg:block">{{ col_desc | strip_html }}</span>
+                <span x-show="!expanded" class="lg:hidden">{{ col_desc | strip_html | truncate: 150 }}</span>
+                <span x-show="expanded" class="lg:hidden">{{ col_desc | strip_html }}</span>
+              </p>
+              <a href="javascript:void(0);" @click="expanded = !expanded" x-text="expanded ? 'Read less' : 'Read more'" class="block lg:hidden font-bold text-small underline pt-2"></a>
+            </div>
+          </div>
+        {% else %}
+        <div class="flex w-full justify-start">
+    
+            <p class="{% if landing_page_style %}text-base text-dark_ink{% else %}text-small text-dark_ink{% endif %}">
+              {{ col_desc | strip_html }}
+            </p>
+            <a href="javascript:void(0);" @click="expanded = !expanded" x-text="expanded ? 'Read less' : 'Read more'" class="block lg:hidden font-bold text-small underline pt-2"></a>
+        
+        </div>
+        {% endif %}
+      </div>
+    {% endunless %}
+  </div>
+
+  {% if display_ribbon %}  
+    {% unless hide_ribbon %}
+      <div class="plp-ribbon w-full py-3 bg-darkest">
+        <div class="wrapper">
+          <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0 justify-between text-white text-center md:text-left">
+            {% unless section.settings.hide_ribbon_title %}
+              <h2 class="text-[20px] lg:text-md">{{ section.settings.ribbon_title }}</h2>
+            {% endunless %}
+            <div class="flex flex-col text-small justify-center items-center max-w-[400px] text-pretty m-auto">
+              <span>{{ section.settings.ribbon_text }}</span>
+            </div>
+            <div class="flex flex-col md:flex-row gap-y-4 md:gap-y-0 md:gap-x-6 items-center">
+              <a class="whitespace-nowrap md:btn md:button-outline text-small font-semibold md:font-normal border-b-2 md:border p-0 md:p-2 md:py-3 md:px-4 hover:border-opacity-75 hover:text-opacity-75" href="{{ section.settings.ribbon_url }}">{{ section.settings.ribbon_url_text }}</a>
+              {% if section.settings.ribbon_subtext != blank %}
+                <span class="whitespace-nowrap text-[8px] uppercase">{{ section.settings.ribbon_subtext }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endunless %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_overlay",
+      "label": "Hide text overlay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "landing_page_style",
+      "label": "Landing page style",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Position of Content",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "centered",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "info": "Select the position of the banner content"
+    },
+    {
+      "label": "Desktop Image",
+      "id": "desktop_image",
+      "type": "image_picker"
+    },
+    {
+      "label": "Mobile Image",
+      "id": "mobile_image",
+      "type": "image_picker",
+      "info": "This image will be used on mobile devices. Desktop image will be used if left blank."
+    },
+    {
+      "type": "text",
+      "id": "desktop_image_alt",
+      "label": "Desktop Image Alternative text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Bundles ribbon settings"
+    },
+    {
+      "type": "text",
+      "id": "ribbon_title",
+      "label": "Ribbon text",
+      "default": "Grow your travel set with up to 15% off*"
+    },
+    {
+      "type": "textarea",
+      "id": "ribbon_text",
+      "label": "Ribbon text",
+      "default": "Get 10% off 2 luggage or bag items with code BUY2<br />Get 15% off 3 luggage or bag items with code BUY3"
+    },
+    {
+      "type": "text",
+      "id": "ribbon_subtext",
+      "label": "Ribbon subtext",
+      "default": "*excludes items under $150"
+    },
+    {
+      "type": "text",
+      "id": "ribbon_url",
+      "label": "Ribbon URL",
+      "default": "https://www.google.com"
+    },
+    {
+      "type": "text",
+      "id": "ribbon_url_text",
+      "label": "Ribbon URL text",
+      "default": "Shop bestsellers"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_ribbon_title",
+      "label": "Hide ribbon title",
+      "info": "Check to hide the ribbon title",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_ribbon",
+      "label": "Hide ribbon altogether?",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

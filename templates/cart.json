@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "vendor_message": "Pay in 4 interest-free payments with",
+        "vendor_image_alt": "afterpay",
+        "vendor_image": "shopify:\/\/shop_images\/bigger.png",
+        "upsell_collection": "cart-upsells"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

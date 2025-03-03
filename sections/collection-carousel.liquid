@@ -1,0 +1,128 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-carousel"
+  class="py-11 lg:py-20 bg-pale_grey lg:bg-white"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+  {%- liquid
+    assign loading = false
+    if section.index <= 3
+      assign loading = 'eager'
+      assign priority = 'high'
+    elsif section.index >= 4
+      assign loading = 'lazy'
+      assign decoding = 'async'
+    endif
+  -%}
+
+  <div
+    class="grid grid-cols-12 gap-y-8 lg:gap-y-0"
+    x-show="shown"
+    x-transition.opacity>
+    <div class="col-span-12 lg:col-span-3 px-4 lg:py-11 lg:pl-20 lg:pr-11">
+      <div class="flex justify-between items-center lg:flex-col lg:items-start lg:justify-center lg:gap-y-8">
+        <h3 class="font-heading text-[20px] font-normal text-darkest lg:text-lg">{{ section.settings.section_title }}</h3>
+        <a href="{{ section.settings.cta_link }}" class="font-semibold text-small lg:button-primary">{{ section.settings.cta_text }}</a>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-9 pl-4 lg:pl-0">
+      <div
+        class="splide w-full"
+        aria-label="Collection Carousel"
+        data-splide-progress="true"
+        data-splide='
+          {
+            "type": "slide",
+            "autoplay": false,
+            "pagination": false,
+            "arrows": true,
+            "lazyLoad": "nearby",
+            "speed": 800,
+            "gap": 2,
+            "easing": "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+            "breakpoints": {
+              "640": {
+                "perPage": 2.2, 
+                "focus": 1,
+                "perMove": 1,
+                "snap": false
+              },
+              "3000": {
+                "perPage": 3,
+                "focus": 1,
+                "perMove": 1
+              }
+            }
+          }
+        '> 
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for block in section.blocks %}
+              <div class="splide__slide">
+                {% render 'product-card', product: block.settings.product, loading: loading, priority: priority, decoding: decoding, wishlist: false %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="relative mt-8 hidden lg:flex items-center justify-start gap-6">
+          <div class="slider-progress relative h-[2px] w-[90%] bg-light_ink">
+            <div class="slider-progress-bar h-[2px] w-0 bg-mid_ink"></div>
+          </div>
+
+          <div class="splide__arrows relative flex gap-x-1">
+            <button class="splide__arrow splide__arrow--prev !relative !left-0 !top-0 !w-5 !transform-none !bg-transparent">
+              {% render 'icon', icon: 'right-chevron-dark' %}
+            </button>
+            <button class="splide__arrow splide__arrow--next !relative !right-0 !top-0 !w-5 !transform-none !bg-transparent">
+              {% render 'icon', icon: 'right-chevron-dark' %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Carousel"
+    }
+  ]
+}
+{% endschema %}

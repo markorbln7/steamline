@@ -1,0 +1,74 @@
+<div class="page-width">
+	<section class="foursixty-section">
+
+        <div id="fsContainer" style="display:none"></div>
+    </section>
+      </div>
+
+<script>
+      var fsElement = document.getElementById("fsContainer");
+      function foursixtyInitWithCallback(elem, attrs, callback) {
+        var fsScript = document.createElement("script");
+        elem.innerHTML = "";
+        fsScript.src = "//foursixty.com/media/scripts/fs.slider.v2.5.js";
+        for (var k in attrs) {
+          fsScript.setAttribute(k, attrs[k]);
+        }
+        fsScript.addEventListener("foursixtyPageRendered", callback);
+        elem.appendChild(fsScript);
+      }
+
+      function initFoursixtyGallery() {
+        foursixtyInitWithCallback(
+          fsElement,
+          {"data-theme": "slider_v2_5",
+           "data-feed-id": "steamline-live_1",
+           "data-cell-size": "25%",
+           "data-defer-image-loading": "false",
+           "data-for-url": "true"
+          },
+          function(event) {
+            // the whole page of results is in event.detail here
+            if (event.detail.length < 4) {
+              foursixtyInitWithCallback(
+                fsElement,
+                {"data-theme": "slider_v2_5",
+                 "data-feed-id": "steamline-live_1",
+                 "data-cell-size": "25%",
+                 "data-defer-image-loading": "false",
+                 "data-for-url": "false"
+                },
+                function() {
+                  fsElement.style.display = "block";
+                })
+            } else {
+              fsElement.style.display = "block";
+            }
+          })
+      }
+      if (document.readyState != 'loading') {initFoursixtyGallery()}
+      else {document.addEventListener('DOMContentLoaded', initFoursixtyGallery)};
+    </script>
+      
+      <style>
+		.fs-has-links::after  {
+			content: "SHOP THE LOOK";  
+		}
+	</style>
+
+<div class="flex justify-center gap-x-3 py-5 text-center">
+      {% render 'icon', icon: 'instagram-outline' %}
+      <span class="text-darkest">Get inspired from the chicest Steamline customers</span>
+      <a class="bg-pale_grey font-bold text-darkest underline" href="{{ settings.social_instagram_link }}" target="_blank">Follow us</a>
+    </div>
+
+{% schema %}
+  {
+    "name": "Foursixty",
+    "settings": [],
+    "presets": [{
+        "name": "Foursixty Product Page Gallery",
+        "category": "Foursixty"
+    }]
+  }
+{% endschema %}

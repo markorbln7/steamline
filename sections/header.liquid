@@ -1,0 +1,194 @@
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign no_border = false
+  if template == 'index'
+    assign no_border = true
+  endif
+
+  assign menu = section.settings.menu
+%}
+
+<header
+  data-section-id="{{ section.id }}"
+  data-section-type="header"
+  class="sticky top-0 z-50 {% unless no_border == true %}border-b{% endunless %}">
+  <div x-data="{ showMegamenu: false }" x-cloak class="relative grid w-full grid-cols-[1fr_2fr_1fr] lg:grid-cols-3 items-center lg:gap-x-4 bg-white px-4 lg:px-11 ">
+    <div class="flex h-full items-center">
+      {%- render 'header-section-nav-toggle' -%}
+      {% render 'header-section-main-navigation' %} 
+    </div>
+    <div class="flex items-center justify-center py-3 lg:py-0">
+      {%- render 'header-section-logo' -%}
+    </div>
+    <div class="flex items-center justify-end gap-x-2 md:gap-x-5">
+      {% if section.settings.sale_url %}
+        <a href="{{ section.settings.sale_url }}" class="text-small text-red text-nowrap font-semibold hidden lg:flex">{{ section.settings.sale_text }}</a>
+      {% endif %}
+      <div class="flex">
+        <button class="button-icon" aria-label="{{ 'general.search.title' | t }}" @click="showMegamenu = !showMegamenu; document.body.classList.toggle('scroll-lock', showMegamenu)">
+          {%- render 'icon-search' -%}
+          <span class="hidden">{{ 'general.search.search' | t -}}</span>
+        </button>
+       
+        <div x-show="showMegamenu" class="h-474 absolute left-0 right-0 top-full flex justify-center border-t border-pale_ink bg-pale_grey px-4 lg:px-11 py-5">
+          {%- render 'predictive-search-component' -%}
+        </div>
+      </div>
+      {% if settings.enable_wishlist %}
+        <div class="hidden lg:flex">
+          <a href="{{ settings.wishlist_page_url }}" aria-label="My Wishlist" data-wishlist-link>
+            {%- render 'icon', icon: 'heart' -%}
+          </a>
+        </div>
+      {% endif %}
+      <a href="{{ routes.account_login_url }}">
+        {%- render 'icon', icon: 'account' -%}
+        <span class="sr-only">{{ 'layout.customer.log_in' | t }}</span>
+      </a>
+      <button class="mini-cart__trigger flex items-center border-0 p-0 shadow-none">
+        {% render 'icon-cart' %}
+        <span class="hidden">
+          {{- 'layout.cart.title' | t -}}
+        </span>
+        <div class="flex h-[15px] w-[15px] items-center justify-center rounded-lg bg-pale_ink text-[11px] font-medium -ml-3 lg:ml-0" data-ajax-cart-bind="item_count">{{ cart.item_count }}</div>
+        <span class="hidden"> {{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="fader fader--nav" data-toggle-nav></div>
+  <nav class="drawer drawer--left hidden">
+    <button type="button" class="btn--clear nav-close hide--min-lg" aria-label="{{ 'general.navigation.close_navigation' | t }}">{% render 'icon-cross' %}</button>
+    {%- render 'header-section-secondary-nav', navClass: 'nav-secondary--mobile' -%}
+  </nav>
+</header>
+
+{% render 'layout--mobile-menu', menu: menu %}
+
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-section sticky top-0 z-50",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "sale_text",
+      "label": "Sale Text",
+      "info": "Text to display on the sale link. This will appear next to search icon"
+    },
+    {
+      "type": "url",
+      "id": "sale_url",
+      "label": "Sale URL",
+      "info": "URL to redirect when the sale link is clicked."
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Megamenus"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use the 'Megamenu settings' block type to add content to the complex shop link structure and use the 'Megamenu simple settings' block type to add a megamenu to a regular link e.g. 'About us'."
+    },
+    {
+      "type": "header",
+      "content": "Mobile collections"
+    },
+    {
+      "type": "text",
+      "id": "mobile_collections_title",
+      "label": "Mobile Collections Title",
+      "info": "Title for the mobile collections.",
+      "default": "Bestselling by collection:"
+    },
+    {
+      "type": "collection_list",
+      "id": "mobile_collection_list",
+      "label": "Mobile Collection list"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "megamenu_settings",
+      "name": "Megamenu Collection panel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Identifier",
+          "info": "Match the structure of the link you'd like to add content to, e.g. 'Collections > View all'."
+        },
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Sub Heading",
+          "info": "Sub heading for the collection panel."
+        },
+        {
+          "type": "url",
+          "id": "panel_btn_url",
+          "label": "Panel Button URL",
+          "info": "URL to redirect when the panel button is clicked."
+        },
+        {
+          "type": "text",
+          "id": "panel_btn_text",
+          "label": "Panel Button Text",
+          "info": "Text to display on the panel button."
+        },
+        {
+          "type": "collection_list",
+          "id": "megamenu_collection",
+          "label": "Collections"
+        }
+      ]
+    },
+    {
+      "type": "megamenu_image",
+      "name": "Megamenu Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Identifier",
+          "info": "Match the structure of the link you'd like to add content to, e.g. 'Shop' ."
+        },
+        {
+          "type": "image_picker",
+          "id": "megamenu_img",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "megamenu_img_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "url",
+          "id": "megamenu_img_url",
+          "label": "Image URL",
+          "info": "URL to redirect when the image is clicked."
+        },
+        {
+          "type": "text",
+          "id": "megamenu_img_label",
+          "label": "Image Label",
+          "info": "Label for the image."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

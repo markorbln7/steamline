@@ -1,0 +1,167 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="main-featured"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="p-11 lg:px-11 lg:py-24 flex flex-col gap-y-11 items-center">
+      <h2 class="font-heading text-md text-center md:text-xl">{{ section.settings.featured_subtitle }}</h2>
+      <p class="text-lbase text-center max-w-[960px] m-auto">{{ section.settings.featured_copy | strip_html }}</p>
+    </div>
+    <div class="grid grid-cols-12">
+      {%- for block in section.blocks -%}
+        <div class="{% cycle 'bg-pale_grey', 'bg-white' %} col-span-12 py-11 px-4 md:p-11 lg:px-11 lg:py-24">
+          <div class="flex flex-col items-center text-center gap-y-11 pb-16">
+            <h3 class="font-heading text-lbase md:text-lg">{{ block.settings.featured_title }}</h3>
+            <p class="text-base">{{ block.settings.featured_copy | strip_html }}</p>
+          </div>
+          <div class="grid grid-cols-12 gap-y-16 md:gap-x-11">
+            <div class="col-span-12 md:col-span-10 xl:col-span-8 col-start-1 md:col-start-2 xl:col-start-3">
+              {%- 
+                render 'image', 
+                image: block.settings.featured_image, 
+                class: ' w-full h-full object-cover aspect-[4/5] md:aspect-auto', 
+                alt: block.settings.featured_image_alt, 
+                lazyload: true, 
+                loading: lazy, 
+                decoding: async, 
+                width: 1200 
+              -%}
+              <span class="text-small font-semibold pt-4 block">{{ block.settings.featured_image_footnote }}</span>
+            </div>
+            <div class="col-span-12 md:col-span-5 xl:col-span-4 col-start-1 md:col-start-2 xl:col-start-3 row-start-2">
+              {%- 
+                render 'image', 
+                image: block.settings.second_image, 
+                class: ' w-full h-full object-cover aspect-auto', 
+                alt: block.settings.second_image_alt, 
+                lazyload: true, 
+                loading: lazy, 
+                decoding: async, 
+                width: 800 
+              -%}
+              <span class="text-small font-semibold pt-4 block">{{ block.settings.second_image_footnote }}</span>
+            </div>
+            <div class="col-span-12 md:col-span-5 xl:col-span-4 col-start-1 md:col-start-7 xl:col-start-7 row-start-3 md:row-start-2">
+              {%- 
+                render 'image', 
+                image: block.settings.third_image, 
+                class: ' w-full h-full object-cover aspect-auto', 
+                alt: block.settings.third_image_alt, 
+                lazyload: true, 
+                loading: lazy, 
+                decoding: async, 
+                width: 800 
+              -%}
+              <span class="text-small font-semibold pt-4 block">{{ block.settings.third_image_footnote }}</span>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "featured_subtitle",
+      "label": "Subtitle",
+      "info": "Text to display for a subtitle"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_copy",
+      "label": "Copy",
+      "info": "Copy to display for the featured page"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_block",
+      "name": "Featured block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "featured_title",
+          "label": "Title",
+          "info": "Text to display for a title"
+        },
+        {
+          "type": "textarea",
+          "id": "featured_copy",
+          "label": "Copy",
+          "info": "Copy to display for the featured block"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Image",
+          "info": "Upload an image to display as the featured cover"
+        },
+        {
+          "type": "text",
+          "id": "featured_image_alt",
+          "label": "Image Alt Text",
+          "info": "Alt text for the image."
+        },
+        {
+          "type": "text",
+          "id": "featured_image_footnote",
+          "label": "Image Footnote",
+          "info": "Footnote for the image."
+        },
+        {
+          "type": "image_picker",
+          "id": "second_image",
+          "label": "Second Image",
+          "info": "Upload an image to display as the second image"
+        },
+        {
+          "type": "text",
+          "id": "second_image_alt",
+          "label": "Second Image Alt Text",
+          "info": "Alt text for the second image."
+        },
+        {
+          "type": "text",
+          "id": "second_image_footnote",
+          "label": "Second Image Footnote",
+          "info": "Footnote for the second image."
+        },
+        {
+          "type": "image_picker",
+          "id": "third_image",
+          "label": "Third Image",
+          "info": "Upload an image to display as the third image"
+        },
+        {
+          "type": "text",
+          "id": "third_image_alt",
+          "label": "Third Image Alt Text",
+          "info": "Alt text for the third image."
+        },
+        {
+          "type": "text",
+          "id": "third_image_footnote",
+          "label": "Third Image Footnote",
+          "info": "Footnote for the third image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press page",
+      "category": "Press"
+    }
+  ]
+}
+{% endschema %}

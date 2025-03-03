@@ -1,0 +1,52 @@
+{% if section.settings.upsell_collection != blank %}
+  <div class="cart-upsells max-w-fit overflow-hidden">
+    <h4 class="pb-5 text-[14px]">You might also like:</h4>
+
+    {% assign upsell_collection = collections[section.settings.upsell_collection] %}
+    <div
+      class="splide"
+      aria-label="Cart Upsells"
+      data-splide='
+        {
+          "type": "loop",
+          "perPage": 5,
+          "perMove": 1,
+          "autoplay": true,
+          "pagination": false,
+          "gap": "45px",
+          "arrows": false
+        }
+      '>
+      <div class="splide__track">
+        <div class="splide__list">
+          {% for product in upsell_collection.products limit: 10 %}
+            <div class="upsell-product splide__slide w-32">
+              {% render 'image' with product.featured_image, lazyload: eager, alt: product.title, width: 600 %}
+
+              <div class="py-3 text-[13px]">
+                {{ product.title }}
+              </div>
+
+              <ajax-cart-product-form>
+                {% form 'product', product, class: 'product-card__form', id: form_id %}
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                  <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1">
+
+                  <button
+                    type="submit"
+                    class="btn btn-icon text-[13px] font-semibold hover:opacity-55"
+                    {% unless product.available %}
+                      disabled="disabled"
+                    {% endunless %}
+                    aria-label="{% if current_variant.available %}{{ product.title }} - {{ 'products.product.add_to_cart' | t }}{% else %}{{ product.title }} is {{ 'products.product.sold_out' | t }}{% endif %}">
+                    {{ 'products.product.add_to_cart' | t }} - {{ product.price | money_without_trailing_zeros }}
+                  </button>
+                {% endform %}
+              </ajax-cart-product-form>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

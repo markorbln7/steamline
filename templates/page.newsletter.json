@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-newsletter",
+      "settings": {
+        "title": "Sign up to our email marketing list and get 10% off your next purchase",
+        "subtitle": "I confirm I have read and agree to the steamlineluggage.com privacy policy",
+        "error_image": "shopify:\/\/shop_images\/Q-S8FpaU.jpg",
+        "mobile_error_image": "shopify:\/\/shop_images\/nav2-pan-mob.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,252 @@
+<section class="hero-section relative w-full" aria-labelledby="hero-title" role="banner">
+  {%- liquid
+    if section.settings.hero_image_alt != blank
+      assign alt = section.settings.hero_image_alt
+    else
+      assign alt = section.settings.hero_title
+    endif
+
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4
+      assign loading = true
+    endif
+
+    assign content_pos = ''
+
+    if section.settings.content_position == 'centered'
+      assign content_pos = 'md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-center md:p-11'
+    elsif section.settings.content_position == 'left_side'
+      assign content_pos = 'md:left-0 md:top-1/2 md:-translate-y-1/2 md:py-11 md:px-20'
+    elsif section.settings.content_position == 'bottom_centered'
+      assign content_pos = 'md:left-1/2 md:bottom-0 md:-translate-x-1/2 text-center md:p-11'
+    endif
+
+    if section.settings.content_position_mobile == 'centered'
+      assign mobile_content_pos = 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center p-11 w-full'
+    elsif section.settings.content_position_mobile == 'left_side'
+      assign mobile_content_pos = 'left-0 top-1/2 -translate-y-1/2 py-11 px-4'
+    elsif section.settings.content_position_mobile == 'bottom_centered'
+      assign mobile_content_pos = 'left-1/2 bottom-0 -translate-x-1/2 text-center p-11 w-full'
+    endif
+
+    if section.settings.text_color == 'dark'
+      assign text_color = 'text-darkest'
+      assign btn_mod = 'button-primary'
+    else
+      assign text_color = 'text-white'
+      assign btn_mod = 'button-white'
+    endif
+
+    assign blocks = section.blocks
+
+    assign make_fullscreen_url = false
+    if section.settings.make_fullscreen_url == true
+      assign make_fullscreen_url = true
+    endif
+  -%}
+
+  {% if make_fullscreen_url %}
+    <a href="{{ section.settings.hero_cta_link }}" class="absolute inset-0 w-full h-full z-10"></a>
+  {% endif %}
+  
+  {% unless blocks.size > 0 or section.settings.enable_video == true %}
+    {%- render 'image', image: section.settings.hero_image, class: ' object-fit w-full hidden md:block', alt: alt, lazyload: loading, width: 1800 -%}
+    {%- render 'image', image: section.settings.mobile_hero_image, class: ' object-fit w-full block md:hidden', alt: alt, lazyload: loading, width: 800 -%}
+  {% endunless %}
+
+  {% if blocks.size > 0 and section.settings.enable_video == false %}
+    {% render 'hero-slider', blocks: blocks %}
+  {% endif %}
+
+  {% if section.settings.enable_video == true %}
+    <div class="aspect-ratio-box hidden lg:block" style="--aspect-ratio: {{ section.settings.hero_video_desktop.aspect_ratio }};">
+      {{ section.settings.hero_video_desktop | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'w-full h-full object-cover ' }}
+    </div>
+    <div class="aspect-ratio-box block lg:hidden" style="--aspect-ratio: {{ section.settings.hero_video_mobile.aspect_ratio }};">
+      {{ section.settings.hero_video_mobile | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'w-full h-full object-cover ' }}
+    </div>
+  {% endif %}
+
+  <div class="absolute max-w-[960px] min-h-[195px] {{ mobile_content_pos }} {{ content_pos }} flex transform flex-col gap-y-7" aria-live="polite">
+    {% if section.settings.eyebrow_title != blank %}
+      <div class="flex {% if section.settings.content_position == 'centered' or section.settings.content_position == 'bottom_centered' or section.settings.content_position_mobile == 'centered' or section.settings.content_position_mobile == 'bottom_centered' %}justify-center{% endif %}">
+        <div class="rounded-full bg-cornflower px-2 py-1 text-[11px] font-bold uppercase text-white">{{ section.settings.eyebrow_title }}</div>
+      </div>
+    {% endif %}
+    <div class="flex flex-col gap-y-4"> 
+      <h2 id="hero-title" class="text-lg font-normal lg:text-display xl:text-cinema {{ text_color }}">{{ section.settings.hero_title }}</h2>
+      <p class="text-base lg:text-lbase {{ text_color }} font-semibold {% if section.settings.content_position == 'left_side' %}max-w-[625px]{% endif %}">
+        {{ section.settings.hero_subtitle }}
+      </p>
+    </div>
+
+    {% unless make_fullscreen_url %}
+    <div class="hero-cta">
+        <a href="{{ section.settings.hero_cta_link }}" class="{{ btn_mod }}" aria-label="Call to action">{{ section.settings.hero_cta_text }}</a>
+      </div>
+    {% endunless %}
+  </div>
+
+  {% if make_fullscreen_url %}
+    </a>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Hero Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content settings"
+    },
+    {
+      "type": "select",
+      "id": "text_color",
+      "label": "Text Color",
+      "options": [
+        {
+          "value": "dark",
+          "label": "Dark"
+        },
+        {
+          "value": "white",
+          "label": "White"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Desktop Content Position",
+      "options": [
+        {
+          "value": "centered",
+          "label": "Centered"
+        },
+        {
+          "value": "left_side",
+          "label": "Left Side"
+        },
+        {
+          "value": "bottom_centered",
+          "label": "Bottom Centered"
+        }
+      ],
+      "default": "centered"
+    },
+    {
+      "type": "select",
+      "id": "content_position_mobile",
+      "label": "Mobile Content Position",
+      "options": [
+        {
+          "value": "centered",
+          "label": "Centered"
+        },
+        {
+          "value": "left_side",
+          "label": "Left Side"
+        },
+        {
+          "value": "bottom_centered",
+          "label": "Bottom Centered"
+        }
+      ],
+      "default": "centered"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_title",
+      "label": "Eyebrow Title",
+      "default": "New Arrival"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Discover our latest collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "make_fullscreen_url",
+      "label": "Make CTA Link Fullscreen",
+      "default": false,
+      "info": "If enabled, the CTA link will cover the entire hero section and be clickable. This will hide the button."
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Desktop Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_hero_image",
+      "label": "Mobile Hero Image"
+    },
+    {
+      "type": "header",
+      "content": "Video settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video",
+      "label": "Enable Video"
+    },
+    {
+      "type": "video",
+      "id": "hero_video_desktop",
+      "label": "Desktop Hero Video"
+    },
+    {
+      "type": "video",
+      "id": "hero_video_mobile",
+      "label": "Mobile Hero Video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slider Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slider_image",
+          "label": "Slider Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Image"
+    }
+  ]
+}
+{% endschema %}
+

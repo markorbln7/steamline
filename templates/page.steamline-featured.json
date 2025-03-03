@@ -1,0 +1,178 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/hero-movies_cab74bfb-e880-4a0a-8f57-918c657407f1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/film-hero-mob.jpg",
+        "desktop_image_alt": "Featured in...",
+        "title": "Featured in...",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-featured",
+      "blocks": {
+        "featured_block_LCaqTH": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "Film",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/barbiemp_9eeaae42-4db6-439c-9571-1389692da040.jpg",
+            "second_image_alt": "Barbie, 2023",
+            "second_image_footnote": "Barbie, 2023",
+            "third_image": "shopify:\/\/shop_images\/entpkmp.jpg",
+            "third_image_alt": "The Entrepreneur Pink collection featured in Barbie, 2023.",
+            "third_image_footnote": "The Entrepreneur Pink collection featured in Barbie, 2023."
+          }
+        },
+        "featured_block_Q3wfTR": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "test footnote",
+            "second_image": "shopify:\/\/shop_images\/elvismp_9d5f26c3-7e39-4e3b-8bbd-c3478f21045e.jpg",
+            "second_image_alt": "Elvis, 2022",
+            "second_image_footnote": "Elvis, 2022",
+            "third_image": "shopify:\/\/shop_images\/entrdmp.jpg",
+            "third_image_alt": "The Entrepreneur Red collection featured in Elvis, 2022.",
+            "third_image_footnote": "The Entrepreneur Red collection featured in Elvis, 2022."
+          }
+        },
+        "featured_block_3nN8yy": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/thehumanvoicemp.jpg",
+            "second_image_alt": "The Human Voice, 2020",
+            "second_image_footnote": "The Human Voice, 2020",
+            "third_image": "shopify:\/\/shop_images\/anthroormp.jpg",
+            "third_image_alt": "The Anthropologist Orange collection featured in The Human Voice, 2020.",
+            "third_image_footnote": "The Anthropologist Orange collection featured in The Human Voice, 2020."
+          }
+        },
+        "featured_block_fi9y6U": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/hotpursuitmp.jpg",
+            "second_image_alt": "Hot Pursuit, 2015",
+            "second_image_footnote": "Hot Pursuit, 2015",
+            "third_image": "shopify:\/\/shop_images\/dipcrmmp.jpg",
+            "third_image_alt": "The Diplomat Cream collection featured in Hot Pursuit, 2015.",
+            "third_image_footnote": "The Diplomat Cream collection featured in Hot Pursuit, 2015."
+          }
+        },
+        "featured_block_ax9TaD": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/wtewyemp.jpg",
+            "second_image_alt": "What to Expect When You're Expecting, 2012",
+            "second_image_footnote": "What to Expect When You're Expecting, 2012",
+            "third_image": "shopify:\/\/shop_images\/copkmp.jpg",
+            "third_image_alt": "The Correspondent Pink collection featured in What to Expect When You're Expecting, 2012.",
+            "third_image_footnote": "The Correspondent Pink collection featured in What to Expect When You're Expecting, 2012."
+          }
+        },
+        "featured_block_QjKgMF": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "TV",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/daodmp.jpg",
+            "second_image_alt": "Death & Other Details S01E01, 2024",
+            "second_image_footnote": "Death & Other Details S01E01, 2024",
+            "third_image": "shopify:\/\/shop_images\/edbrmp.jpg",
+            "third_image_alt": "The Editor Brown collection featured in Death & Other Details S01E01, 2024.",
+            "third_image_footnote": "The Editor Brown collection featured in Death & Other Details S01E01, 2024."
+          }
+        },
+        "featured_block_Urq9ew": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/jcmp.jpg",
+            "second_image_alt": "Jennifer Coolidge & FanDuel Super Bowl Commercial, 2022",
+            "second_image_footnote": "Jennifer Coolidge & FanDuel Super Bowl Commercial, 2022",
+            "third_image": "shopify:\/\/shop_images\/edbrmp.jpg",
+            "third_image_alt": "The Editor Brown collection featured in FanDuel Commercial, 2022.",
+            "third_image_footnote": "The Editor Brown collection featured in FanDuel Commercial, 2022."
+          }
+        },
+        "featured_block_4hR9RU": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/phmp.jpg",
+            "second_image_alt": "Paris Hilton & Hilton Hotels Commercial, 2022",
+            "second_image_footnote": "Paris Hilton & Hilton Hotels Commercial, 2022",
+            "third_image": "shopify:\/\/shop_images\/copkmp.jpg",
+            "third_image_alt": "The Correspondent Pink collection featured in Hilton Hotels Commercial, 2022.",
+            "third_image_footnote": "The Correspondent Pink collection featured in Hilton Hotels Commercial, 2022."
+          }
+        },
+        "featured_block_L7zEm9": {
+          "type": "featured_block",
+          "settings": {
+            "featured_title": "",
+            "featured_copy": "",
+            "featured_image_alt": "",
+            "featured_image_footnote": "",
+            "second_image": "shopify:\/\/shop_images\/jrmp.jpg",
+            "second_image_alt": "Julia Roberts Entertainment Weekly Video, 2018.",
+            "second_image_footnote": "Julia Roberts Entertainment Weekly Video, 2018.",
+            "third_image": "shopify:\/\/shop_images\/ednymp.jpg",
+            "third_image_alt": "The Editor Navy collection featured in Entertainment Weekly Video, 2018.",
+            "third_image_footnote": "The Editor Navy collection featured in Entertainment Weekly Video, 2018."
+          }
+        }
+      },
+      "block_order": [
+        "featured_block_LCaqTH",
+        "featured_block_Q3wfTR",
+        "featured_block_3nN8yy",
+        "featured_block_fi9y6U",
+        "featured_block_ax9TaD",
+        "featured_block_QjKgMF",
+        "featured_block_Urq9ew",
+        "featured_block_4hR9RU",
+        "featured_block_L7zEm9"
+      ],
+      "settings": {
+        "featured_subtitle": "Spot us on screen",
+        "featured_copy": "We have had the privilege of being featured in some amazing movies and TV features. Take a peek at the selection below to see where your favourite SteamLine has rubbed shoulders with Hollywood's greatest!"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
+}

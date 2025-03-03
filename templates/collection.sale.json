@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "page_banner_pycxE4": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "{{ collection.metafields.plp.page_banner.value }}",
+        "desktop_image_alt": "",
+        "title": "",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off with code <b>BUY2<\/b> when you buy 2 luggage or bag items. Get 15% off with code <b>BUY3<\/b> when you buy 3 luggage or bag items.",
+        "ribbon_url": "https:\/\/steamlineluggage.com\/collections\/bestsellers",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main_collection_Dp4HTM": {
+      "type": "main-collection",
+      "settings": {
+        "list": "",
+        "collection_paginate": 50,
+        "include_collection_sort": true,
+        "include_collection_filters": true,
+        "enable_infinite_scroll": true
+      }
+    }
+  },
+  "order": [
+    "page_banner_pycxE4",
+    "main_collection_Dp4HTM"
+  ]
+}

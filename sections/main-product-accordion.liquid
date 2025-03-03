@@ -1,0 +1,457 @@
+<div
+  id="ProductSection"
+  itemscope
+  itemtype="http://schema.org/Product"
+  data-section-id="{{ section.id }}"
+  data-section-type="main-product"
+  role="region"
+  aria-labelledby="ProductSectionHeading">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | image_url: 'grande' }}">
+
+  <div x-data="{}" class="grid grid-cols-12">
+    <div class="col-span-12 lg:col-span-8">
+      {%- render 'product-gallery' -%}
+    </div>
+
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="col-span-12 max-w-[540px] lg:col-span-4">
+      {% assign variant = product.selected_or_first_available_variant %}
+      <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+      <meta itemprop="price" content="{{ variant.price | money_without_trailing_zeros }}">
+      <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
+
+      <div class="h-full px-4 pt-8 lg:px-11 mb-1">
+        <div class="flex flex-col gap-y-4 border-b border-pale_ink pb-8">
+          {% liquid
+            assign suffix = product.title | split: '-' | first
+            assign type = product.type | replace: 'Carryon', 'Carry-On'
+          %}
+
+          <div class="pdp-title flex w-full justify-between">
+            <span class="flex flex-col gap-y-2">
+              <h1 class="text-[20px] leading-none text-darkest lg:text-lg">{{ suffix }}</h1>
+              <h2 class="!font-body text-small font-semibold text-darkest">{{ type }}</h2>
+            </span>
+            {%- render 'product-price', product: product, type: 'mobile' -%}
+          </div>
+
+          {% if product.compare_at_price > product.price %}
+            <div class="bg-red rounded-full p-2 text-white text-[11px] uppercase font-semibold inline-flex items-center justify-center leading-none w-fit">
+              {% assign discount_percentage = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price %}
+              {{ discount_percentage | round: 0 }}% OFF
+            </div>
+          {% endif %}
+
+          <div class="feature-roundels flex gap-x-3">
+            {%- for item in product.metafields.pdp.product_features_roundels.value.feature.value -%}
+              <span class="flex items-center justify-center rounded-full bg-light_cornflower px-2 py-[5px] text-[8px] font-bold uppercase leading-none text-dark_ink">
+                {{- item -}}
+              </span>
+            {%- endfor -%}
+          </div>
+
+          {% if product.metafields.custom.preorder_message != blank %}
+          <div class="preorder-block">
+            <span class=" rounded-full bg-mid_ink px-2 py-[5px] text-[10px] font-bold uppercase leading-none text-white">
+              {{ product.metafields.custom.preorder_message }}
+            </span>
+            </div>
+          {% endif %}
+        </div>
+
+        {%- render 'product-stitching' -%}
+
+        <div x-data>
+          <div class="flex flex-col gap-y-4 border-t border-pale_ink pt-8" x-ref="detailsDiv">
+            {%- render 'product-price', product: product, type: 'desktop' -%}
+
+            {% if product.metafields.pdp.product_highlights.value != blank %}
+              <div class="grid grid-cols-2 gap-x-5 gap-y-2">
+                {%- for dim in product.metafields.pdp.product_dimensions.value -%}
+                  <span class="flex list-disc items-start text-small leading-4 text-dark_ink">
+                    <span class="mr-1">&#8226;</span>
+                    <span>{{ dim }}</span>
+                  </span>
+                {%- endfor -%}
+
+                {%- for item in product.metafields.pdp.product_highlights.value.highlight.value -%}
+                  <span class="flex list-disc items-start text-small leading-4 text-dark_ink">
+                    <span class="mr-1">&#8226;</span>
+                    <span>{{ item }}</span>
+                  </span>
+                {%- endfor -%}
+              </div>
+            {% endif %}
+
+            <div class="text-small text-dark_ink">
+              {% liquid
+                assign truncated_desc = product.description | strip_html | truncatewords: 20
+              %}
+              {{ truncated_desc }} 
+              <span 
+                @click="$root.querySelector('[x-ref=productDetailsBtn]').click()" 
+                class="text-small font-bold text-darkest cursor-pointer">
+                Read more
+              </span>
+            </div>
+
+            <ajax-cart-product-form class="sticky top-12 z-10 bg-white lg:top-16 lg:-ml-11 lg:-mr-11 lg:px-11">
+              {% form 'product', product %}
+                {{ form | payment_terms }}
+                <select name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hidden">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+                      <option
+                        {% if variant == product.selected_or_first_available_variant %}
+                          selected="selected"
+                        {% endif %}
+                        data-sku="{{ variant.sku }}"
+                        value="{{ variant.id }}">
+                        {{ variant.title }} - {{ variant.price | money_with_currency }}
+                      </option>
+
+                    {% else %}
+                      <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+
+                <div class="product-single__quantity hidden">
+                  <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+                  <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+                </div>
+
+                {% liquid
+                  assign wishlist = false
+                  if settings.enable_wishlist
+                    assign wishlist = true
+                  endif
+                %}
+
+                {% liquid
+                  if variant.available
+                    assign button_state = 'btn button-cart'
+                  else
+                    assign button_state = 'hidden'
+                  endif
+                %}
+
+                <div class="grid w-full {% if wishlist %}grid-cols-[3fr_1fr] {% else %} grid-cols-1 {% endif %} pt-5">
+                  <button
+                    type="submit"
+                    name="add"
+                    id="AddToCart"
+                    class="{{ button_state }}"
+                    {% unless variant.available %}
+                      disabled
+                    {% endunless %}>
+                    {% if variant.available %}
+                      {{ 'products.product.add_to_cart' | t }} - {{ variant.price | money_without_trailing_zeros }}
+                    {% else %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endif %}
+                  </button>
+
+                  {% unless variant.available %}
+                    <button
+                      type="button"
+                      name="back_in_stock"
+                      class="btn button-cart klaviyo-bis-trigger w-full"
+                      href="#">
+                      Notify Me When Available
+                    </button>
+                  {% endunless %}
+
+                  {% if wishlist %}
+                    <button
+                      type="button"
+                      class="btn flex gap-x-[5px] !border-l-0 text-small font-semibold"
+                      aria-label="Add to wishlist"
+                      button-wishlist
+                      data-product-handle="{{ product.handle }}">
+                      {%- render 'icon', icon: 'heart' -%}
+                      Wishlist
+                    </button>
+                  {% endif %}
+                </div>
+
+                <div data-ajax-cart-errors="form"></div>
+                {% if section.settings.enable_payment_button %}
+                  {{ form | payment_button }}
+                {% endif %}
+              {% endform %}
+            </ajax-cart-product-form>
+
+            <div class="vendor-messaging flex items-center justify-start gap-3 py-2">
+              <span class="text-[13px]">{{ settings.vendor_message }}</span>
+              {%- if settings.vendor_image_alt != blank -%}
+                {%- assign alt = settings.vendor_image_alt -%}
+              {%- else -%}
+                {%- assign alt = settings.vendor_message -%}
+              {%- endif -%}
+              {%- render 'image', image: settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt, width: 200 -%}
+              {%- if settings.vendor_link_text != blank -%}
+                <a href="{{ settings.vendor_link_url }}" class="hidden text-[13px] text-mid_ink underline md:block">{{ settings.vendor_link_text }}</a>
+              {%- endif -%}
+            </div>
+
+            {% liquid
+              assign warranty_content = product.metafields.pdp.product_tray.value.product_warranty.value
+              assign delivery_content = product.metafields.pdp.product_tray.value.delivery_returns.value
+              assign care_content = product.metafields.pdp.product_tray.value.product_care.value
+              assign how_content = product.metafields.pdp.product_tray.value.how_tos.value
+            %}
+
+            <div class="accordion-faq" x-data="{ active: active }">
+              <div
+                x-data="
+                  {
+                      id: 1,
+                      get expanded() {
+                          return this.active === this.id
+                      },
+                      set expanded(value) {
+                          this.active = value ? this.id : null
+                      },
+                  }
+                "
+                role="region"
+                class="">
+                <h4>
+                  <button
+                    x-ref="productDetailsBtn"
+                    x-on:click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-3 font-semibold text-[13px] text-darkest">
+                    <span class="flex items-center gap-2">{%- render 'icon', icon: 'fit' -%} Product Details</span>
+                    <span x-show="expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'minus' -%}
+                    </span>
+                    <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'plus' -%}
+                    </span>
+                  </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink text-[13px]">
+                    {{ product.description }}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                x-data="
+                  {
+                      id: 2,
+                      get expanded() {
+                          return this.active === this.id
+                      },
+                      set expanded(value) {
+                          this.active = value ? this.id : null
+                      },
+                  }
+                "
+                role="region"
+                class="">
+                <h4>
+                  <button
+                    x-on:click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-3 font-semibold text-[13px] text-darkest">
+                    <span class="flex items-center gap-2">{%- render 'icon', icon: 'warranty' -%} Warranty Details</span>
+                    <span x-show="expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'minus' -%}
+                    </span>
+                    <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'plus' -%}
+                    </span>
+                  </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink text-[13px]">
+                    {{ warranty_content.content | remove: 'data-mce-fragment="1"' | remove: '&nbsp;' | remove: '<span>' | remove: '</span>' }}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                x-data="
+                  {
+                      id: 3,
+                      get expanded() {
+                          return this.active === this.id
+                      },
+                      set expanded(value) {
+                          this.active = value ? this.id : null
+                      },
+                  }
+                "
+                role="region"
+                class="">
+                <h4>
+                  <button
+                    x-on:click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-3 font-semibold text-[13px] text-darkest">
+                    <span class="flex items-center gap-2">{%- render 'icon', icon: 'care' -%} Product Care</span>
+                    <span x-show="expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'minus' -%}
+                    </span>
+                    <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'plus' -%}
+                    </span>
+                  </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink text-[13px]">
+                    {%- assign care_content = product.metafields.pdp.product_tray.value.product_care.value -%}
+                    {{ care_content.content | remove: 'data-mce-fragment="1"' | remove: '&nbsp;' | remove: '<span>' | remove: '</span>' }}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                x-data="
+                  {
+                      id: 4,
+                      get expanded() { 
+                          return this.active === this.id
+                      },
+                      set expanded(value) {
+                          this.active = value ? this.id : null
+                      },
+                  }
+                "
+                role="region"
+                class="">
+                <h4>
+                  <button
+                    x-on:click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-3 font-semibold text-[13px] text-darkest">
+                    <span class="flex items-center gap-2">{%- render 'icon', icon: 'how' -%} How Tos</span>
+                    <span x-show="expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'minus' -%}
+                    </span>
+                    <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'plus' -%}
+                    </span>
+                  </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink text-[13px]">
+                    {{ how_content.content | remove: 'data-mce-fragment="1"' | remove: '&nbsp;' | remove: '<span>' | remove: '</span>' }}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                x-data="
+                  {
+                      id: 5,
+                      get expanded() {
+                          return this.active === this.id
+                      },
+                      set expanded(value) {
+                          this.active = value ? this.id : null
+                      },
+                  }
+                "
+                role="region"
+                class="">
+                <h4>
+                  <button
+                    x-on:click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-3 font-semibold text-[13px] text-darkest">
+                    <span class="flex items-center gap-2">{%- render 'icon', icon: 'returns' -%} Delivery & Returns</span>
+                    <span x-show="expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'minus' -%}
+                    </span>
+                    <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                      {%- render 'icon', icon: 'plus' -%}
+                    </span>
+                  </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink text-[13px]">
+                    {%- assign delivery_content = product.metafields.pdp.product_tray.value.delivery_returns.value -%}
+                    {{ delivery_content.content | remove: 'data-mce-fragment="1"' | remove: '&nbsp;' | remove: '<span>' | remove: '</span>' }}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {%- render 'product-offer' -%}
+            {%- render 'product-upsells' -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Offer Details"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_offer",
+      "label": "Enable Offer",
+      "info": "Check this box to enable the offer"
+    },
+    {
+      "type": "text",
+      "id": "offer_title",
+      "label": "Offer Title",
+      "default": "Your offer title here"
+    },
+    {
+      "type": "textarea",
+      "id": "offer_description",
+      "label": "Offer Description",
+      "default": "Your offer description here"
+    },
+    {
+      "type": "text",
+      "id": "offer_button_text",
+      "label": "Offer Button Text",
+      "default": "Your offer button text here"
+    },
+    {
+      "type": "url",
+      "id": "offer_button_url",
+      "label": "Offer Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "offer_image",
+      "label": "Offer Image",
+      "info": "Image to display on the offer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Product",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

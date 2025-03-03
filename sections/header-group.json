@@ -1,0 +1,366 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "slide_tMhTY9": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "Wanderlove Sale- 30% off Sitewide!",
+            "slide_link": "https:\/\/steamlineluggage.com\/pages\/wanderlove-sale",
+            "slide_image_alt": ""
+          }
+        },
+        "slide_r8bWkJ": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "Pay in 4 interest-free payments",
+            "slide_link": "shopify:\/\/pages\/faqs-v2",
+            "slide_image": "shopify:\/\/shop_images\/bigger.png",
+            "slide_image_alt": "afterpay"
+          }
+        },
+        "slide_zWDkPM": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "Free US, UK & Ireland shipping, taxes & duties included*",
+            "slide_link": "shopify:\/\/pages\/shipping-duties",
+            "slide_image_alt": "Slide Image"
+          }
+        },
+        "slide_RbpE9t": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "Spend $500 + Get 20% off, Spend $1000 + Get 30% off!* Discount shown at checkout.",
+            "slide_link": "shopify:\/\/pages\/pre-black-friday-up-to-30-off",
+            "slide_image_alt": "Slide Image"
+          }
+        },
+        "slide_t69N9h": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "Get a $500 Gift Card When You Spend $1000",
+            "slide_link": "shopify:\/\/pages\/early-bird-get-500-gift-card",
+            "slide_image_alt": "Slide Image"
+          }
+        },
+        "slide_tED8Y3": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "Welcome to our store!",
+            "slide_link": "",
+            "slide_image_alt": "Slide Image"
+          }
+        },
+        "slide_xV7LWC": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_text": "",
+            "slide_link": "shopify:\/\/pages\/delivery",
+            "slide_image_alt": "Slide Image"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tMhTY9",
+        "slide_r8bWkJ",
+        "slide_zWDkPM",
+        "slide_RbpE9t",
+        "slide_t69N9h",
+        "slide_tED8Y3",
+        "slide_xV7LWC"
+      ],
+      "settings": {
+        "announcement_bar_enabled": true,
+        "announcement_bar_home_page_only": false,
+        "header_submenu": "ticker-menu"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "megamenu_image_UErHmP": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Luggage",
+            "megamenu_img": "shopify:\/\/shop_images\/whlugg-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/whlugg-mm-mob.jpg",
+            "megamenu_img_url": "\/collections\/luggage",
+            "megamenu_img_label": "All Wheeled Luggage"
+          }
+        },
+        "megamenu_image_RGtrax": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Luggage",
+            "megamenu_img": "shopify:\/\/shop_images\/hhlugg-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/hhlugg-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/handheld",
+            "megamenu_img_label": "All Handheld"
+          }
+        },
+        "megamenu_image_GzNQrQ": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Bags",
+            "megamenu_img": "shopify:\/\/shop_images\/hbags-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/hbags-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/the-navigator",
+            "megamenu_img_label": "Handbags"
+          }
+        },
+        "megamenu_image_iT7qNN": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Bags",
+            "megamenu_img": "shopify:\/\/shop_images\/stbags-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/stbags-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/handheld-1",
+            "megamenu_img_label": "Structured Bags"
+          }
+        },
+        "megamenu_image_EXbM88": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Accessories",
+            "megamenu_img": "shopify:\/\/shop_images\/nav-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/nav-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/travel-accessories",
+            "megamenu_img_label": "View All Accessories"
+          }
+        },
+        "megamenu_image_9gGFx3": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Accessories",
+            "megamenu_img": "shopify:\/\/shop_images\/pc-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/pc-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/packing-cube-sets",
+            "megamenu_img_label": "Packing Cubes"
+          }
+        },
+        "megamenu_image_ENTWMx": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "Accessories",
+            "megamenu_img": "shopify:\/\/shop_images\/cc-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/cc-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/collections\/cosmetic-case-sets",
+            "megamenu_img_label": "Cosmetic Cases"
+          }
+        },
+        "megamenu_image_NENy3d": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "About Us",
+            "megamenu_img": "shopify:\/\/shop_images\/materials-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/materials-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/pages\/product-care",
+            "megamenu_img_label": "Care & Repair"
+          }
+        },
+        "megamenu_image_iAb8WC": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "About Us",
+            "megamenu_img": "shopify:\/\/shop_images\/margot-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/margot-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/pages\/as-seen-on-celebrities",
+            "megamenu_img_label": "Celebrities & Friends"
+          }
+        },
+        "megamenu_image_JNah4t": {
+          "type": "megamenu_image",
+          "settings": {
+            "heading": "About Us",
+            "megamenu_img": "shopify:\/\/shop_images\/Sara-mm-desk.jpg",
+            "megamenu_img_mobile": "shopify:\/\/shop_images\/Sara-mm-mob.jpg",
+            "megamenu_img_url": "shopify:\/\/pages\/about-us",
+            "megamenu_img_label": "Our Team"
+          }
+        },
+        "megamenu_settings_FcMYjz": {
+          "type": "megamenu_settings",
+          "settings": {
+            "heading": "Collections > All Collections",
+            "sub_heading": "Bestselling collections:",
+            "panel_btn_url": "https:\/\/steamlineluggage.com\/collections",
+            "panel_btn_text": "View all collections",
+            "megamenu_collection": [
+              "the-starlet-1",
+              "the-sweetheart",
+              "the-industrialist",
+              "the-illustrator-blue",
+              "the-entrepreneur-navy",
+              "the-illustrator-pink",
+              "the-diplomat-hunter-green",
+              "the-architect-navy",
+              "the-editor-black",
+              "the-diplomat-cream",
+              "the-correspondent-pink",
+              "the-navigator-black",
+              "the-navigator-desert-glitter",
+              "the-navigator-nut",
+              "the-navigator-stone",
+              "the-mini"
+            ]
+          }
+        },
+        "megamenu_settings_niRtiH": {
+          "type": "megamenu_settings",
+          "settings": {
+            "heading": "Collections > Luggage Collections",
+            "sub_heading": "Luggage collections:",
+            "panel_btn_url": "https:\/\/steamlineluggage.com\/collections\/luggage",
+            "panel_btn_text": "View all Luggage Collections",
+            "megamenu_collection": [
+              "the-alchemist",
+              "the-anthropologist-orange",
+              "the-architect-burgundy",
+              "the-architect-cream",
+              "the-architect-navy",
+              "the-botanist-pink",
+              "the-correspondent-canary-yellow",
+              "the-correspondent-pink",
+              "the-diplomat-black",
+              "the-diplomat-cream",
+              "the-diplomat-hunter-green",
+              "the-diplomat-red",
+              "the-editor-black",
+              "the-editor-brown",
+              "the-editor-navy",
+              "the-editor-teal",
+              "the-entrepreneur-red",
+              "the-entrepreneur-pink",
+              "the-entrepreneur-navy",
+              "the-entrepreneur-lip",
+              "the-kids-entrepreneur-kids-carryon",
+              "the-explorer",
+              "the-illustrator-pink",
+              "the-illustrator-blue",
+              "the-industrialist",
+              "the-pioneer",
+              "the-starlet-1",
+              "the-sweetheart"
+            ]
+          }
+        },
+        "megamenu_settings_nDVbM7": {
+          "type": "megamenu_settings",
+          "settings": {
+            "heading": "Collections > Bag Collections",
+            "sub_heading": "Bag collections:",
+            "panel_btn_url": "shopify:\/\/collections\/handheld-1",
+            "panel_btn_text": "View all Bag Collections",
+            "megamenu_collection": [
+              "hatbox",
+              "vanity-case",
+              "overnighter",
+              "briefcase",
+              "the-mini",
+              "micro-totes",
+              "totes",
+              "weekender-duffle-bags",
+              "crossbody-clutches",
+              "crossbody-phone-bags"
+            ]
+          }
+        },
+        "megamenu_settings_pKf4Ra": {
+          "type": "megamenu_settings",
+          "settings": {
+            "heading": "Collections > Accessory Collections",
+            "sub_heading": "Accessory collections:",
+            "panel_btn_url": "shopify:\/\/collections\/travel-accessories",
+            "panel_btn_text": "View all Accessory Collections",
+            "megamenu_collection": [
+              "packing-cube-sets",
+              "cosmetic-case-sets",
+              "crossbody-phone-bags",
+              "passport-holders",
+              "laptop-cases",
+              "luggage-tags",
+              "protective-covers",
+              "travel-journal",
+              "luggage-stickers",
+              "gift-card"
+            ]
+          }
+        },
+        "megamenu_image_9gb8eY": {
+          "type": "megamenu_image",
+          "disabled": true,
+          "settings": {
+            "heading": "Lookbook",
+            "megamenu_img": "shopify:\/\/shop_images\/lb-mm.jpg",
+            "megamenu_img_url": "shopify:\/\/pages\/lookbook-v2",
+            "megamenu_img_label": "Lookbook"
+          }
+        },
+        "megamenu_settings_FXc9cP": {
+          "type": "megamenu_settings",
+          "disabled": true,
+          "settings": {
+            "heading": "Collections > View Lookbook",
+            "sub_heading": "Lookbook",
+            "panel_btn_url": "shopify:\/\/pages\/lookbook-v2",
+            "panel_btn_text": "View Lookbook",
+            "megamenu_collection": [
+              "medium"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "megamenu_image_UErHmP",
+        "megamenu_image_RGtrax",
+        "megamenu_image_GzNQrQ",
+        "megamenu_image_iT7qNN",
+        "megamenu_image_EXbM88",
+        "megamenu_image_9gGFx3",
+        "megamenu_image_ENTWMx",
+        "megamenu_image_NENy3d",
+        "megamenu_image_iAb8WC",
+        "megamenu_image_JNah4t",
+        "megamenu_settings_FcMYjz",
+        "megamenu_settings_niRtiH",
+        "megamenu_settings_nDVbM7",
+        "megamenu_settings_pKf4Ra",
+        "megamenu_image_9gb8eY",
+        "megamenu_settings_FXc9cP"
+      ],
+      "settings": {
+        "sale_text": "Clearance",
+        "sale_url": "https:\/\/steamlineluggage.com\/collections\/clearance-1",
+        "menu": "main-menu-slv2",
+        "mobile_collections_title": "Bestselling by collection:",
+        "mobile_collection_list": [
+          "the-starlet-1",
+          "the-pioneer",
+          "the-industrialist",
+          "the-sweetheart",
+          "the-architect",
+          "the-botanist",
+          "the-diplomat-black",
+          "the-entrepreneur-lip",
+          "the-entrepreneur",
+          "the-diplomat-hunter-green",
+          "the-editor",
+          "the-alchemist"
+        ]
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

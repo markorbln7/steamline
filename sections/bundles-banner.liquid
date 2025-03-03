@@ -1,0 +1,156 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="bundles-banner"
+  class="relative flex "
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+  {%- liquid
+    if section.settings.hero_image_alt != blank
+      assign alt = section.settings.hero_image_alt
+    else
+      assign alt = section.settings.hero_title
+    endif
+
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4
+      assign loading = true
+    endif
+  -%}
+
+  <div 
+    x-show="shown" 
+    x-transition.opacity
+    aria-live="polite"
+    class="min-h-[430px] lg:min-h-[750px] w-full"
+  >
+    {%- render 'image', image: section.settings.hero_image, class: ' object-fit w-full h-full hidden md:block', alt: alt, lazyload: loading, width: 1800 -%}
+    {%- render 'image', image: section.settings.mobile_hero_image, class: ' object-fit h-full w-full block md:hidden', alt: alt, lazyload: loading, width: 800 -%}
+
+    <div class="absolute left-1/2 top-1/2 flex flex-col -translate-y-1/2 -translate-x-1/2 transform w-4/5" aria-live="polite">
+      <div class="grid grid-cols-12 bg-white_op_ninety frosty">
+        <div class="image col-span-12 md:col-span-6 hidden lg:block">
+          {%- render 'image', image: section.settings.overlay_image, class: ' object-fit w-full h-full', alt: alt, lazyload: loading, width: 800 -%}
+        </div>
+        <div class="col-span-12 lg:col-span-6 px-4 py-6 lg:py-11 lg:p-11 text-center flex flex-col gap-y-2 lg:gap-y-4 max-w-[470px] justify-center items-center m-auto">
+          <h3 class="font-heading text-md md:text-lg font-normal text-darkest">{{ section.settings.hero_title }}</h3>
+          <span class="text-base text-darkest">{{ section.settings.hero_subtitle }}</span>
+          
+          {%- if section.settings.hero_cta_link_one != blank and section.settings.hero_cta_text_one != blank -%}
+          <div class="mt-2 flex gap-x-4 flex-wrap lg:flex-nowrap">
+            {%- if section.settings.hero_cta_link_one != blank and section.settings.hero_cta_text_one != blank -%}
+              <a href="{{ section.settings.hero_cta_link_one }}" class="button-primary text-small whitespace-nowrap !px-2 lg:!px-8 bg-white_op_ninety frosty" aria-label="{{ section.settings.hero_cta_text_one }} - Call to action">{{ section.settings.hero_cta_text_one | capitalize }}</a>
+            {%- endif -%}
+            {%- if section.settings.hero_cta_link_two != blank and section.settings.hero_cta_text_two != blank -%}
+              <a href="{{ section.settings.hero_cta_link_two }}" class="hidden lg:flex button-primary text-small whitespace-nowrap !px-2 lg:!px-8" aria-label="{{ section.settings.hero_cta_text_one }} - Call to action">{{ section.settings.hero_cta_text_two | capitalize }}</a>
+            {%- endif -%}
+            {%- if section.settings.hero_cta_link_three != blank and section.settings.hero_cta_text_three != blank -%}
+            <a href="{{ section.settings.hero_cta_link_three }}" class="button-invert text-small whitespace-nowrap !px-2 lg:!px-8 !bg-transparent" aria-label="{{ section.settings.hero_cta_text_one }} - Call to action">{{ section.settings.hero_cta_text_three | capitalize }}</a>
+            {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <span class="flex w-full justify-center text-dark_ink text-small">*excludes items under $150</span>
+        </div>
+      </div>
+      <div class="w-full py-4 flex flex-wrap lg:flex-nowrap px-8 md:px-0 text-center md:text-left gap-x-3 justify-center items-center mt-[1px] bg-white_op_ninety frosty">
+        <span class="hidden lg:block">
+          {%- render 'icon', icon: 'returns' -%}
+        </span>
+        <span class="font-semibold text-darkest">{{ section.settings.footnote_text }}</span>
+        {%- if section.settings.shipping_link != blank -%}
+          <a class="text-small font-semibold text-darkest" href="{{ section.settings.shipping_link }}">{{ section.settings.shipping_link_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundles Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_link_one",
+      "label": "CTA Link One"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text_one",
+      "label": "CTA Text One",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_link_two",
+      "label": "CTA Link Two"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text_two",
+      "label": "CTA Text Two",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_link_three",
+      "label": "CTA Link Three"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text_three",
+      "label": "CTA Text Three",
+      "default": "Shop Now"
+    },
+    {
+      "type": "text",
+      "id": "footnote_text",
+      "label": "Footnote Text",
+      "default": "Plus free standard UK delivery over £200*"
+    },
+    {
+      "type": "text",
+      "id": "shipping_link_text",
+      "label": "Footnote Link Text",
+      "default": "Find out more"
+    },
+    {
+      "type": "url",
+      "id": "shipping_link",
+      "label": "Footnote Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Desktop Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_hero_image",
+      "label": "Mobile Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles Banner"
+    }
+  ]
+}
+{% endschema %}

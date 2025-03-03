@@ -1,0 +1,135 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-products"
+  class="featured-products"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+  aria-labelledby="featured-products-heading">
+
+  {%- liquid
+    assign loading = false
+    if section.index <= 2
+      assign loading = false
+    elsif section.index >= 3
+      assign loading = true
+    endif
+  -%} 
+  <div  
+    class="w-full"
+    x-show="shown"
+    x-transition.opacity
+    aria-live="polite"
+  >
+    <div class="lg:flex lg:gap-x-[2px]">
+      {% for block in section.blocks %}
+        <div class="w-full h-full relative">
+          <a href="{{ block.settings.block_link_link }}" class="group flex flex-col">
+            <div class="lg:absolute lg:w-full lg:h-full lg:top-0 lg:left-0 flex flex-col justify-end items-center z-[1] group-hover:z-[11] order-2">
+              <div class="pt-4 pb-8 lg:p-0 lg:mb-14 group-hover:mb-6 flex justify-center flex-col items-center gap-y-3">
+                <div class="flex flex-row gap-x-2">
+                  {% if block.settings.block_roundel_text != blank %}
+                  <div class="bg-pale_ink lg:bg-white rounded-full p-2 text-darkest text-[11px] uppercase font-semibold inline-flex items-center justify-center leading-none lg:group-hover:hidden">
+                    {{ block.settings.block_roundel_text }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.sale_roundel_text != blank %}
+                    <div class="bg-red rounded-full p-2 text-white text-[11px] uppercase font-semibold inline-flex items-center justify-center leading-none">
+                      {{ block.settings.sale_roundel_text }}
+                    </div>
+                  {% endif %}
+                </div>
+                <h2 class="text-darkest lg:text-white font-heading text-[20px] lg:text-md group-hover:text-darkest">{{ block.settings.block_link_text }}</h2>
+                <div class="lg:hidden group-hover:flex flex-col items-center text-center gap-y-4 max-w-[95%] px-4 lg:px-0">
+                  <p class="text-darkest text-small">{{ block.settings.block_link_description }}</p>
+                  <span class="hidden lg:block font-semibold text-small group-hover:border-b group-hover:border-darkest transition-all duration-300">{{ block.settings.block_btn_text }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hover-panel hidden lg:flex absolute w-full h-full top-0 left-0 flex-col items-center bg-[#EFEFEF] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
+              <div class="hover-image max-w-[305px] xl:max-w-[335px] lg:-mt-5">
+                {% render 'image', image: block.settings.block_hover_image, class: ' w-full h-full object-cover', alt: block.settings.block_link_text, lazyload: loading, width: 600 %}
+              </div>
+            </div>
+
+            {% if block.settings.use_gradient %}
+              <div class="featured-product-gradient hidden lg:block"></div>
+            {% endif %}
+
+            {% render 'image', image: block.settings.block_image, class: ' w-full h-full object-cover order-1', alt: block.settings.block_link_text, lazyload: loading, width: 900 %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "product_block",
+      "name": "Product block",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "use_gradient",
+          "label": "Use gradient",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_hover_image",
+          "label": "Hover Image"
+        },
+        {
+          "type": "text",
+          "id": "block_link_text",
+          "label": "Product Name"
+        },
+        {
+          "type": "textarea",
+          "id": "block_link_description",
+          "label": "Product Description",
+          "info": "This text will be displayed in the hover panel"
+        },
+        {
+          "type": "url",
+          "id": "block_link_link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "block_btn_text",
+          "label": "Product Link Text",
+          "default": "Discover"
+        },
+        {
+          "type": "text",
+          "id": "block_roundel_text",
+          "label": "Roundel Text"
+        },
+        {
+          "type": "text",
+          "id": "sale_roundel_text",
+          "label": "Sale Roundel Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products"
+    }
+  ]
+}
+{% endschema %}

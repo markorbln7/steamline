@@ -1,0 +1,79 @@
+{% liquid 
+  if type == "testimonial" or type == "collection-testimonial"
+    assign class = 'bg-pale_ink px-2 lg:px-8 xl:px-11 text-center flex flex-col justify-center items-center lg:py-20 md:py-0 col-span-1'
+  elsif type == "video" or type == "collection-video"
+    assign class = 'px-2 xl:px-11 text-center flex flex-col justify-center items-center py-2 lg:py-20 md:py-0 relative lg:min-h-[400px] col-span-1'
+  endif
+%}
+
+<div class="w-full h-full {{ class }}">
+  {% if type == "testimonial" or type == "collection-testimonial" %}
+    <div class="flex flex-col items-center">
+      {%- render 'icon' with icon: 'black-quotes' -%}
+      <h3 class="text-[20px] lg:text-[1.75rem] font-heading_light text-darkest leading-8 pt-4 pb-16 md:pb-10">
+        {% if type == "collection-testimonial" %}
+          {{ disruptor.disruptor_block_copy }}
+        {% else %}
+          {{ disruptor_block_copy }}
+        {% endif %}
+      </h3>
+      <div class="max-h-4 lg:max-h-8">
+        {% if type == "collection-testimonial" %}
+          {%- render 'image', image: disruptor.disruptor_block_logo, alt: disruptor.disruptor_block_copy, lazyload: true, width: 230, class: ' max-w-full max-h-[30px] !object-contain' -%}
+        {% else %}
+          {%- render 'image', image: disruptor_block_logo, alt: disruptor_block_copy, lazyload: true, width: 230, class: ' max-w-full max-h-[30px] !object-contain' -%}
+        {% endif %} 
+      </div>
+    </div>
+  {% elsif type == "video" or type == "collection-video" %}
+    <div class="absolute top-0 left-0 h-full w-full z-[1] flex flex-col justify-end items-center p-2 lg:p-11 gap-y-5">
+      {% if type == "collection-video" %}
+        {% if disruptor.customer_name != blank %}
+          <div class="absolute bottom-1 right-1 text-white text-xs font-semibold">
+            {{ disruptor.customer_name }}
+          </div>
+        {% endif %}
+      {% else %}
+        {% if disruptor_block_customer_name != blank %}
+          <div class="absolute bottom-1 right-1 text-white text-xs font-semibold">
+            {{ disruptor_block_customer_name }}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <h3 class="text-md lg:text-lg font-heading text-white max-w-[200px]">
+        {% if type == "collection-video" %}
+          {{ disruptor.title }}
+        {% else %}
+          {{ disruptor_block_video_title }}
+        {% endif %}
+      </h3>
+      {% if type == "collection-video" %}
+        <a href="{{ disruptor.link_url }}" class="btn button-primary">
+          {{ disruptor.link_text }}
+        </a>
+      {% else %}
+        <a href="{{ disruptor_block_video_link }}" class="btn button-primary !text-[14px]">
+          {{ disruptor_block_video_link_text }}
+        </a>
+      {% endif %}
+    </div>
+    <video
+      preload="metadata"
+      data-lazyvids
+      class="absolute left-0 top-0 h-full w-full object-cover"
+      autoplay
+      muted
+      playsinline
+      loop
+      {% if type == "collection-video" %}
+        poster="{{ disruptor.video_poster | image_url }}" alt="{{ disruptor.title }}">
+        <source src="{{ disruptor.video | file_url }}" type="video/mp4">
+      {% else %}
+        poster="{{ disruptor_block_video_poster | image_url }}" alt="{{ disruptor_block_video_title }}">
+        <source src="{{ disruptor_block_video | video_tag }}" type="video/mp4">
+      {% endif %}
+    </video>
+  {% endif %}
+</div>
+

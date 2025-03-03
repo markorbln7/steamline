@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/Rectangle_12.png",
+        "mobile_image": "shopify:\/\/shop_images\/contactus-mob.jpg",
+        "desktop_image_alt": "Help Centre",
+        "title": "Help Centre",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "help-center",
+      "settings": {
+        "helpful_links": "help-centre"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
+}

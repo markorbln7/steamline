@@ -1,0 +1,95 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="help-center"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    <div class="grid grid-cols-12 pb-16 md:py-16">
+      <div class="col-span-12 md:col-span-3">
+        <ul class="flex overflow-x-auto gap-x-2 whitespace-nowrap md:flex-col gap-y-4 scrollbar-hide mb-10">
+          {% for link in section.settings.helpful_links.links %}
+            <li>
+              <a {% if link.active %}class="border-b border-darkest font-semibold"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-span-12 md:col-span-6">
+        <div class="flex flex-col gap-y-8">
+        <h2 class="font-heading text-md text-darkest">{{ page.title | remove: 'V2' }}</h2>
+        {{ page.content }}
+
+        {% form 'contact' %}
+          {%- if form.posted_successfully? -%}
+            <p class="font-semibold py-2" tabindex="-1" autofocus>
+              {{ 'templates.contact.form.post_success' | t }}
+            </p>
+          {%- elsif form.errors -%}
+            <div class="form__message">
+              <p class="font-semibold py-2 text-red" role="alert" tabindex="-1" autofocus>
+                {{ 'templates.contact.form.error_heading' | t }}
+              </p>
+            </div>
+            <ul class="form-status-list caption-large" role="list">
+              <li>
+                <a href="#ContactForm-email" class="link">
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                </a>
+              </li>
+            </ul> 
+          {%- endif -%}
+          
+          <div class="flex flex-col gap-y-4">
+            <div class="first-name">
+              <label class="sr-only" for="name">Name</label>
+              <input type="text" name="contact[name]" placeholder="Name" id="name" class="py-3 px-0 w-full border-b border-light_ink outline-none focus:border-darkest rounded-none appearance-none" required />
+            </div>
+
+            <div class="email">
+              <label class="sr-only" for="email">Email</label>
+              <input type="email" name="contact[email]" placeholder="Email" id="email" class="py-3 px-0 w-full border-b border-light_ink outline-none focus:border-darkest rounded-none appearance-none" required />
+            </div>
+          
+            <div class="phone">
+              <label class="sr-only" for="phone">Phone</label>
+              <input type="tel" name="contact[phone]" placeholder="Phone" id="phone" class="py-3 px-0 w-full border-b border-light_ink outline-none focus:border-darkest rounded-none appearance-none" />
+            </div>
+          
+            <div class="message">
+              <label class="sr-only" for="message">Message</label>
+              <textarea name="contact[body]" placeholder="Message" id="message" rows="8" class="p-2 w-full border border-light_ink outline-none focus:border-darkest" required></textarea>
+            </div>
+          
+            <div class="submit">
+              <input type="submit" value="Send Message" class="btn button-primary !rounded-none" />
+            </div>
+          </div>
+        {% endform %}
+        
+        </div>
+      </div>
+      <div class="col-span-3">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Help Center",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "helpful_links",
+      "label": "Helpful Links menu"
+    }
+  ]
+}
+{% endschema %}

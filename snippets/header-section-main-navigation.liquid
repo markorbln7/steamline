@@ -1,0 +1,193 @@
+{% assign menu = section.settings.menu %}
+{% assign menu = menus[menu] | default: false %}
+{% assign blocks = section.blocks | default: false %}
+{% assign blocks_megamenu_settings = blocks | where: 'type', 'megamenu_settings' %}
+{% assign blocks_megamenu_image = blocks | where: 'type', 'megamenu_image' %}
+
+<ul class="nav hidden h-full flex-row gap-5 xl:gap-7 lg:flex z-10" role="menu" aria-label="Main Navigation" x-data="{ activeMegamenu: null }">
+  {% for link in menu.links %}
+    {% assign link_identifier = link.title %}
+    <li
+      x-cloak
+      x-data="{ show_megamenu: false, show_submenu: 1 }"
+      @mouseenter="if (activeMegamenu === null) { show_megamenu = true; show_submenu = 1; activeMegamenu = '{{ link_identifier }}'; }"
+      @mouseleave="show_megamenu = false; activeMegamenu = null;"
+      class="menu-link flex flex-row items-center text-small h-[64px] py-6 {% if link.links != empty %} has-megamenu {% endif %}"
+      :class="{ 'show-megamenu underline': show_megamenu }"
+      role="none">
+      {% assign isExternal = false %}
+      {% if link.url contains 'https://' %}
+        {% assign isExternal = true %} 
+      {% endif %}
+
+      <a
+        href="{{ link.url }}"
+        class="text-nowrap text-darkest"
+        aria-expanded="false"
+        aria-label="{{ link.title }}"
+        role="menuitem"
+        {% if isExternal %}
+          target="_blank" rel="nofollow noopener"
+        {% endif %}>
+        {% if link.title contains '#red-' %}
+          <span class="text-red">{{ link.title | remove: '#red-' }}</span>
+        {% else %}
+          {{ link.title }}
+        {% endif %}
+      </a>
+
+      {% if link.links != empty %}
+        <div
+          x-show="show_megamenu"
+          x-cloak
+          x-transition.opacity.duration.200ms
+          @mouseleave="show_megamenu = false; activeMegamenu = null;"
+          class="megamenu h-474 absolute left-0 right-0 top-full flex gap-14 border-t border-pale_ink bg-pale_grey px-11 py-5"
+          role="menu">
+          {%- if link.title contains 'Collection' -%}
+            <ul
+              class="mt-5 flex lg:min-w-48 flex-col"
+              role="menu">
+              {% for sublink in link.links %}
+                {% assign sublink_identifier = link_identifier | append: ' > ' | append: sublink.title %}
+                {% assign block_detail = empty %}
+                {% for block in blocks_megamenu_settings limit: 16 %}
+                  {% if block.settings.heading == sublink_identifier %}
+                    {% assign block_detail = block.settings %}
+                  {% endif %}
+                {% endfor %}
+                {% if link_idx == 1 and forloop.last %}
+                  <div class="flex-grow"></div>
+                {% endif %}
+                <li
+                  class="megamenu-sublink group relative block {% if block_detail != empty %}has-content{% endif %}"
+                  @mouseenter="show_submenu = {{ forloop.index }}"
+                  :class="{ hovering: show_submenu == {{ forloop.index }} }"
+                  role="none">
+                  {% assign isExternal = false %}
+                  {% if sublink.url contains 'https://' %}
+                    {% assign isExternal = true %}
+                  {% endif %}
+                  <a
+                    class="megamenu-sublink-anchor block py-2 group-hover:bg-white"
+                    href="{{ sublink.url }}"
+                    role="menuitem"
+                    {% if isExternal %}
+                      target="_blank" rel="nofollow noopener"
+                    {% endif %}>
+                    <div class="transition-transform duration-200 group-hover:translate-x-2 group-hover:transform">
+                      {{- sublink.title -}}
+                    </div>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+            {% for sublink in link.links %}
+              {% assign sublink_identifier = link_identifier | append: ' > ' | append: sublink.title %}
+              {% assign block_detail = empty %}
+              {% for block in blocks_megamenu_settings limit: 16 %}
+                {% if block.settings.heading == sublink_identifier %}
+                  {% assign block_detail = block.settings %}
+                  {% assign collection_list = block_detail.megamenu_collection %}
+                {% endif %}
+              {% endfor %}
+              <template x-if="show_submenu == {{ forloop.index }}">
+                {% liquid 
+                  assign alt_cols = false
+                  if sublink_identifier contains 'Bag' or sublink_identifier contains 'Accessory'
+                    assign alt_cols = true
+                  endif
+                %}
+
+                <div
+                  class="megamenu-sublink-content col-span-7 col-start-1 grid {% if alt_cols %} max-w-screen-lg grid-cols-5{% else %} grid-cols-8{% endif %} gap-x-3 gap-y-5 pb-12"
+                  role="menu">
+                  {% if block_detail.sub_heading != blank %}
+                    <span class="col-span-full mt-5 text-[14px] text-light_ink">{{ block_detail.sub_heading }}</span>
+                  {% endif %}
+
+                  {% for collection in collection_list limit: 16 %}
+                    <div class="collection-item" role="menuitem">
+                      <a href="{{ collection.url }}" class="hover:opacity-75 transition-opacity duration-200">
+                        {% render 'image' with collection.featured_image, class: ' bg-[#eeeeee] w-full max-h-[142px]', lazyload: eager, width: 250 %}
+                        {% liquid
+                          assign col_title = collection.title
+                        %}
+                        <span class="block pt-3 font-heading text-[14px]">{{ col_title }}</span>
+                      </a>
+                    </div>
+                  {% endfor %}
+
+                  {% if block_detail.panel_btn_url != blank %}
+                    <div class="col-span-full pt-11">
+                      <a class="btn font-semi" href="{{ block_detail.panel_btn_url }}" role="menuitem">{{ block_detail.panel_btn_text }}</a>
+                    </div>
+                  {% endif %}
+
+                </div>
+              </template>
+            {% endfor %}
+          {%- else -%}
+            <div class="w-6/12 xl:w-8/12 flex-1" role="menu">
+              <div class="flex gap-5 xl:gap-11">
+                {% for sublink in link.links %}
+                  <div class="megamenu-column xl:flex-shrink-0 {% if link.title contains 'Accessories' %}xl:min-w-96{% else %} xl:max-w-[250px]{% endif %} py-5 pr-9" role="menu">
+                    <span class="block pb-4 pt-5 font-semibold">{{- sublink.title -}}</span>
+                    <ul role="menu">
+                      {% for grandchildlink in sublink.links %} 
+                        {%- if grandchildlink.title contains '#' -%}
+                          <span class="block pb-4 pt-5 font-semibold">{{- grandchildlink.title | remove: '#' -}}</span>
+                        {%- else -%}
+                          {%- if grandchildlink.title contains 'swatch--' -%}
+                            <li class="swatch mb-2 mr-2 inline-flex" role="none">
+                              <a
+                                class="swatch--{{ grandchildlink.title | remove: 'swatch--' | downcase }} h-8 w-8 rounded-full shadow-md"
+                                href="{{ grandchildlink.url }}"
+                                role="menuitem">
+                                <span class="hidden">{{ grandchildlink.title | remove: 'swatch--' }}</span>
+                              </a>
+                            </li>
+                          {%- else -%}
+                            <li class="group block" role="none">
+                              <a class="block py-2 text-small group-hover:bg-white" href="{{ grandchildlink.url }}" role="menuitem">
+                                <div class="transition-transform duration-200 group-hover:translate-x-2 group-hover:transform">{{ grandchildlink.title }}</div>
+                              </a>
+                            </li>
+                          {%- endif -%}
+                        {%- endif -%}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endfor %}
+
+                {%- for block in blocks_megamenu_image -%}
+                  {% if block.settings.heading == link.title %}
+                    <div class="flex text-center flex-grow-0" role="menuitem">
+                      {% if block.settings.megamenu_img_url != null %}
+                        <a href="{{ block.settings.megamenu_img_url }}" role="menuitem">
+                      {% endif %}
+                      <div class="group relative overflow-hidden" role="menuitem">
+                        <div class=" left-0 top-0 h-full w-full transform transition duration-700 ease-in-out ">
+                          {% render 'image' with block.settings.megamenu_img, class: ' shrink-0', lazyload: eager, width: 600 %}
+                        </div>
+                      </div>
+  
+                      {% if block.settings.megamenu_img_label != blank %}
+                        <span class="block py-2 text-[14px] font-semibold">{{- block.settings.megamenu_img_label -}}</span>
+                      {% endif %}
+                      {% if block.settings.megamenu_img_url != null %}
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {%- endfor -%}
+              </div> 
+            </div>
+
+            
+          {%- endif -%}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

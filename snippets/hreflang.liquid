@@ -1,0 +1,38 @@
+{%- assign alturl = "" -%}
+
+{%- if template == 'collection' -%}
+  {%- if current_tags -%}
+    {%- capture alturl %}{{ collection.url }}/{{ current_tags | downcase | remove: '"' | remove: '[' | remove: ']' | replace: ', ', '+' }}{% endcapture -%}
+  {%- else -%}
+    {%- assign alturl = collection.url  -%}
+  {%- endif -%}
+{%- elsif template contains 'product' -%}
+  {%- if collection -%}
+    {%- capture alturl -%}{{ collection.url }}{{ product.url | downcase }}{%- endcapture -%}
+  {%- else -%}
+    {%- assign alturl = product.url  -%}
+  {%- endif -%}
+{%- elsif template == 'cart' -%}
+  {%- assign alturl = '/cart' -%}
+{%- elsif template == 'blog' -%}
+  {%- assign alturl = blog.url -%}
+{%- elsif template == 'article' -%}
+  {%- assign alturl = blog.url -%}
+{%- elsif template == 'search' -%}
+  {%- assign alturl = '/search' -%}
+{%- elsif template == 'list-collections' -%}
+  {%- assign alturl = '/collections' -%}
+{%- elsif template contains 'page' -%}
+  {%- assign alturl = page.url -%}
+{%- elsif template == 'customers/login' -%}
+    {%- assign alturl = '/customers/login' -%}
+{%- elsif template == 'customers/register' -%}
+    {%- assign alturl = '/customers/register' -%}
+{%- endif -%}
+
+<link rel="alternate" href="https://www.steamlineluggage.com{{ alturl }}" hreflang="en-US" />
+<link rel="alternate" href="https://www.steamlineluggage.com{{ alturl }}" hreflang="en-CA" />
+<link rel="alternate" href="https://uk.steamlineluggage.com{{ alturl }}" hreflang="en-GB" />
+<link rel="alternate" href="https://eu.steamlineluggage.com{{ alturl }}" hreflang="en-ie" />
+<link rel="alternate" href="https://worldwide.steamlineluggage.com{{ alturl }}" hreflang="en-EN" />
+{% if shop.permanent_domain == 'steamline-us.myshopify.com' %}<link rel="alternate" href="https://www.steamlineluggage.com{{ alturl }}" hreflang="x-default" />{% endif %}

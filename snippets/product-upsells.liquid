@@ -1,0 +1,94 @@
+{% liquid
+  assign show_upsells = false
+
+  if product.metafields.pdp.product_upsells.value.count > 0
+    assign show_upsells = true
+  endif
+%}
+
+{% if show_upsells %}
+  <div class="pdp-upsells lg:-ml-11 lg:-mr-11 mt-8 bg-pale_grey lg:px-11 pb-8 pt-5">
+    <div
+      class="splide w-full"
+      aria-label="Product upsells"
+      data-splide-progress="true"
+      data-splide='
+        {
+          "type": "loop",
+          "perMove": 1,
+          "autoplay": true,
+          "pagination": false,
+          "arrows": true,
+          "speed": 800,
+          "gap": 15,
+          "easing": "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+          "interval": 5000,
+          "breakpoints": {
+            "640": {
+              "perPage": 2.5,
+              "focus": 1
+            },
+            "1800": {
+              "perPage": 3
+            }
+          }
+        }
+      '>
+      <div class="flex justify-between pb-4">
+        <h4 class="font-heading text-lbase text-darkest">Goes well with</h4>
+        <div class="splide__arrows relative flex gap-x-1">
+          <button class="splide__arrow splide__arrow--prev !relative !left-0 !top-0 !w-5 !transform-none !bg-transparent">
+            {% render 'icon', icon: 'right-chevron-dark' %}
+          </button>
+          <button class="splide__arrow splide__arrow--next !relative !right-0 !top-0 !w-5 !transform-none !bg-transparent">
+            {% render 'icon', icon: 'right-chevron-dark' %}
+          </button>
+        </div>
+      </div>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {%- for product in product.metafields.pdp.product_upsells.value -%}
+            {% if product.available %}
+              <div class="splide__slide flex flex-col gap-y-3">
+                <a href="{{ product.url }}">
+                  {%- render 'image' with product.featured_image, class: 'h-full aspect-auto object-cover object-center', lazyload: true, width: 266, height: 266, image_tag: true -%}
+                </a>
+
+                <div class="upsell-title flex flex-col gap-y-[2px]">
+                  {% liquid
+                    assign suffix = product.title | split: '-' | first
+                    assign type = product.handle | split: '-' | last | capitalize
+                  %}
+
+                  <h4 class="font-heading text-base text-dark_ink">{{ suffix }}</h4>
+                  <span class="text-[14px] text-darkest">{{ type }}</span>
+
+                  <span class="text-[14px] text-dark_ink">
+                    {{ product.price | money_without_trailing_zeros }}
+                    </span>
+                  </div>
+
+                  <ajax-cart-product-form>
+                  {% form 'product', product, class: 'product-card__form', id: form_id %}
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                    <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1">
+
+                    <button
+                      type="submit"
+                      class="btn-icon !text-[13px] font-semibold hover:!opacity-55 transition-opacity duration-200"
+                      {% unless product.available %}
+                        disabled="disabled"
+                      {% endunless %}
+                      aria-label="{% if current_variant.available %}{{ product.title }} - {{ 'products.product.add_to_cart' | t }}{% else %}{{ product.title }} is {{ 'products.product.sold_out' | t }}{% endif %}">
+                      {{ 'products.product.add_to_cart' | t }}
+                    </button>
+                  {% endform %}
+                </ajax-cart-product-form>
+              </div>
+            {% endif %}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,197 @@
+{% liquid
+  assign has_upsells = false
+  assign upsells_class = ''
+  if section.settings.upsell_collection != blank
+    assign has_upsells = true
+  endif
+
+  if has_upsells == true
+    assign upsells_class = 'upsells_vers'
+  endif
+%}
+
+<main-cart>
+  <div class="main-cart {{ upsells_class }} relative py-6" data-ajax-cart-section>
+    <div class="cart__loading-animation">
+      <div class="loader">
+        {%- render 'icon' with 'loader' -%}
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="grid min-w-0 grid-cols-[2fr,1fr] gap-12">
+        <div class="min-w-0">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="mini-cart__title font-semibold">Cart ({{ cart.item_count }})</h3>
+          </div>
+
+          <div class="flex flex-col gap-12">
+            <div class="my-cart__items max-h-96 overflow-hidden overflow-y-scroll" data-ajax-cart-section-scroll>
+              {%- if cart == empty -%}
+                <div class="cart-empty flex h-full min-h-80 w-full flex-col items-center justify-center">
+                  <span class="text-center font-semibold"
+                    >Your bag is currently empty.<br>
+                    Not sure where to start?</span
+                  >
+
+                  <div class="mt-5 flex flex-col gap-4">
+                    <a href="/" class="btn">All Collections</a>
+                    <a href="/" class="btn">All Products</a>
+                  </div>
+                </div>
+              {%- else -%}
+                {% for line_item in cart.items %}
+                  {% assign line_item_index = forloop.index %}
+
+                  <div class="mini-cart__item mb-4 grid grid-cols-[120px,1fr] gap-5">
+                    <div class="item__image border border-pale_ink bg-pale_grey max-h-[120px]">
+                      {%- render 'image', image: line_item.image, class: ' w-[120px] h-[120px]', alt: line_item.title -%}
+                    </div>
+                    <div class="item__actions flex items-start justify-between gap-6 py-7">
+                      <div class="flex flex-col">
+                        <span class="text-small">{{ line_item.title | escape }}</span>
+                        <span class="text-[13px]">
+                          {% if line_item.variant.compare_at_price > line_item.price %}
+                            <del>{{ line_item.variant.compare_at_price | money }}</del>
+                            <span class="font-semibold text-red">{{ line_item.price | money }}</span>
+                          {% else %}
+                            <span class="font-semibold">{{ line_item.price | money }}</span>
+                          {% endif %}
+                        </span>
+                      </div>
+                      <div class="flex flex-col">
+                        <ajax-cart-quantity>
+                          <div class="quantity-input grid h-7 max-w-[90px] grid-cols-3 border border-light_ink">
+                            <a
+                              data-ajax-cart-quantity-minus
+                              class="flex h-full w-full items-center justify-center border-b-0 border-l-0 border-r border-t-0 border-solid border-light_ink transition duration-200 ease-in-out hover:opacity-50"
+                              href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | minus: 1 }}">
+                              {%- render 'icon' with 'minus' -%}
+                            </a>
+
+                            <input
+                              data-ajax-cart-quantity-input="{{ line_item_index }}"
+                              name="updates[]"
+                              value="{{ line_item.quantity }}"
+                              type="number"
+                              class="flex h-full w-full items-center justify-center text-center text-[11px]"
+                              form="my-ajax-cart-form">
+
+                            <a
+                              data-ajax-cart-quantity-plus
+                              class="flex h-full w-full items-center justify-center border-b-0 border-l border-r-0 border-t-0 border-solid border-light_ink transition duration-200 ease-in-out hover:opacity-50"
+                              href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | plus: 1 }}">
+                              {%- render 'icon' with 'plus' -%}
+                            </a>
+                          </div>
+                        </ajax-cart-quantity>
+
+                        <a
+                          href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
+                          class="ajax-cart__remove-button mt-[12px] self-end text-right text-[13px] font-semibold"
+                          data-ajax-cart-request-button>
+                          Remove
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {%- endif -%}
+            </div>
+
+            {%- render 'main-cart-upsells' -%}
+          </div>
+        </div>
+        <div class="bg-pale_grey p-5">
+          <div class="mb-5 flex w-full justify-center bg-cornflower py-1 text-center text-small text-white">Spend £45.99 more to get free standard delivery</div>
+          <div class="my-cart__footer mt-auto">
+            {% assign total_discount = 0 %}
+            {% for item in cart.items %}
+              {% if item.variant.compare_at_price > item.price %}
+                {% assign item_discount = item.variant.compare_at_price | minus: item.price %}
+                {% assign total_discount = total_discount | plus: item_discount %}
+              {% endif %}
+            {% endfor %}
+
+            <div class="flex flex-col gap-3">
+              <span class="cart__subtotal flex justify-between text-[13px] font-semibold leading-4"
+                >Total: <span class="money">{{ cart.total_price | money_with_currency }}</span></span
+              >
+              {%- if total_discount > 0 -%}
+                <span class="flex justify-between text-[13px] font-semibold leading-4"
+                  >Discount: <span>{{ total_discount | money_with_currency }}</span></span
+                >
+              {%- endif -%}
+            </div>
+
+            {% form 'cart', cart, id: 'my-ajax-cart-form' %}
+              <button
+                class="btn button-primary mt-5 w-full font-semibold"
+                type="submit"
+                name="checkout">
+                Checkout
+              </button>
+
+              <div class="vendor-messaging flex items-center justify-center gap-3 py-2">
+                <span class="text-[13px]">{{ section.settings.vendor_message }}</span>
+
+                {%- if section.settings.vendor_image_alt != blank -%}
+                  {%- assign alt = section.settings.vendor_image_alt -%}
+                {%- else -%}
+                  {%- assign alt = section.settings.vendor_message -%}
+                {%- endif -%}
+
+                {%- render 'image', image: section.settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%}
+              </div>
+            {% endform %}
+
+            <div class="slideout-cart-discount">
+              <span id="applied-discount-code-slideout" class="w-full">
+                <span class="applied-discount-code-wrapper-slideout w-full justify-between rounded-full bg-pale_ink px-3 py-2 font-semibold">
+                  <span class="applied-discount-code-value-slideout"></span>
+                  <button id="clear-discount-btn-slideout" class="btn-icon">X</button>
+                </span>
+              </span>
+              <small id="discount-code-error-slideout"></small>
+              <div class="discount-form my-5 grid grid-cols-[3fr,1fr] items-center border-b border-t border-pale_ink py-3">
+                <input type="text" id="discount-code-input-slideout" autocomplete="on" value="" placeholder="Discount Code" class="text-[13px]">
+                <button id="apply-discount-btn-slideout" class="btn-icon !justify-end !text-right text-[13px] font-semibold">Submit</button>
+              </div>
+            </div>
+
+            <a href="/" class="mini-cart__close btn w-full"> Continue Shopping </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main-cart>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "vendor_message",
+      "label": "Vendor Message",
+      "default": "Your vendor message here"
+    },
+    {
+      "type": "text",
+      "id": "vendor_image_alt",
+      "label": "Vendor Image Alternative text"
+    },
+    {
+      "type": "image_picker",
+      "id": "vendor_image",
+      "label": "Vendor Image"
+    },
+    {
+      "type": "collection",
+      "id": "upsell_collection",
+      "label": "Upsell Collection"
+    }
+  ]
+}
+{% endschema %}

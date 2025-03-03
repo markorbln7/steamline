@@ -1,0 +1,33 @@
+{% if cart.currency.iso_code == shop.currency %}
+<script type="text/javascript">
+
+var afterpay_product_selector = '.product__actions--holderr';
+var afterpay_product_css = {'margin-top': '10px'};
+var afterpay_logo_theme = 'colour';
+var afterpay_msg_size = 'xs';
+
+var afterpay_cart_static_selector = '.cart__summary';
+var afterpay_cart_static_css = {'text-align': 'center'};
+
+var afterpay_variable_subtotal_fallback_selector = '.cart__summary';
+
+var afterpay_dynamic_cart_integration_enabled = true;
+var afterpay_dynamic_cart_selector = '.mini-cart__totalss';
+
+var afterpay_footer_logo_theme = 'black';
+
+var afterpay_js_language = {{ localization.language.iso_code | slice: 0, 2 | json }};
+var afterpay_js_country = {{ localization.country.iso_code | json }};
+var afterpay_shop_currency = {{ shop.currency | json }};
+var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+var afterpay_shop_money_format = {{ shop.money_format | json }};
+var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+var afterpay_theme_name = {{ theme.name | json }};
+var afterpay_product = {{ product | json }};
+var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+var afterpay_cart_total_price = {{ cart.total_price | json }};
+var afterpay_js_snippet_version = '1.2.0';
+</script>
+<script src="https://static.afterpay.com/shopify-afterpay-javascript.js" type="text/javascript"></script>
+{% else %}
+{% endif %}

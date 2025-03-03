@@ -1,0 +1,235 @@
+
+
+{% liquid
+  assign collection_paginate_int = section.settings.collection_paginate | times: 1 
+%}
+
+{% paginate collection.products by collection_paginate_int %}
+  {% assign updated_count = paginate.current_offset | plus: paginate.page_size %}
+
+  <main-collection>
+    <div
+      id="CollectionSection"
+      data-section-id="{{ section.id }}"
+      data-section-type="main-collection"
+      data-total-collection-pages="{{ paginate.pages }}"
+      data-items-per-page="{{ section.settings.collection_paginate }}"
+      data-default-sort-by="{{ collection.default_sort_by }}">
+
+      {% liquid 
+        assign has_quick_links = false
+
+        if collection.metafields.plp.quick_links.value.count > 0
+          assign has_quick_links = true
+        endif
+      %}
+      
+      {%- render 'plp-quick-links' -%} 
+ 
+      <div class="wrapper">
+        <div class="collection__wrapper pb-16">
+          <div data-infinite-scroll-content>
+            <div class="grid lg:grid-cols-12 gap-11">
+              <div class="collection-filter-drawer fixed lg:relative top-0 lg:top-auto left-0 lg:left-auto right-0 lg:right-auto bottom-0 lg:bottom-auto w-[350px] lg:w-auto transform transition-transform duration-300 ease-in-out bg-white z-[100] lg:z-auto p-5 lg:p-0 overflow-x-scroll -translate-x-full lg:translate-x-0 lg:col-span-3" data-collection-filter-drawer>
+                <form class="collection-navbar" data-collection-navbar>
+                  {% render 'collection-filters', results: collection %}
+                </form>
+              </div>
+              <div class="col-span-9 sm:col-span-12 lg:col-span-9">
+                <div class="border-l border-r border-t border-b border-light_ink lg:border-0 grid grid-cols-2 lg:flex w-full items-center justify-between mb-8 {% if has_quick_links == false %}mt-8 lg:mt-16{% endif %}">
+                  <div class="flex items-center lg:gap-x-8 w-full">
+                    <button type="button" class="collection-filter__toggle is-inactive block lg:hidden w-full !border-0 flex-1 !font-normal text-small" data-collection-filter-toggle>
+                      Filter
+                    </button> 
+                    <div class="prod-count hidden lg:block flex-1" aria-live="polite">
+                      {% assign updated_count = paginate.current_offset | plus: paginate.page_size %}
+                      <span class="paginate-total flex" data-collection-pagination>
+                        {{ paginate.current_offset | plus: 1 }}
+                        <p>{% if paginate.items < paginate.page_size %} - {{ paginate.items }} of {{ paginate.items }}{% else %} - {% if paginate.items > updated_count %}{{ updated_count }}{% else %}{{ paginate.items }}{% endif %} of {{ paginate.items}}{% endif %} Products </p>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-1">
+                    {%- render 'collection-sort' -%}
+                  </div>
+                </div>
+
+                {%- liquid
+                  assign total_items = paginate.items | strip | plus: 0
+
+                  if paginate.current_page == paginate.pages
+                    assign items_count = paginate.items | plus: 0
+                    assign scrollProgressWidth = 100
+                  else
+                    assign items_count = paginate.current_page | times: collection_paginate_int | plus: 0
+                    assign scrollProgressWidth = items_count | times: 100 | divided_by: total_items
+                  endif
+                -%}
+
+                <div
+                  class="collection-grid main-collection--listing grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3"
+                  aria-label="Product listings"
+                  data-scroll-progress="{{ scrollProgressWidth }}"
+                  data-collection-grid>
+                  
+                  {% liquid
+                    assign lazyload = false
+                  
+                    for product in collection.products
+                      assign forloop_index = forloop.index | plus: paginate.current_offset
+
+                      assign lazyload = lazyload | default: false
+
+                      if lazyload
+                        assign loading = 'lazy'
+                      else
+                        assign loading = 'eager'
+                      endif
+
+                      if forloop.index > 2
+                        assign lazyload = true
+                      endif 
+
+                      for disruptor in collection.metafields.plp.disruptor_blocks.value
+                        assign disruptor_block_pos = disruptor.disruptor_block_position | plus: 0 
+
+                        if forloop_index == disruptor_block_pos
+                          render 'disruptor-block', type: 'collection-testimonial', disruptor: disruptor
+                        endif
+                      endfor
+
+                      for video_disruptor in collection.metafields.plp.disruptor_video_blocks.value
+                        assign video_disruptor_block_pos = video_disruptor.video_block_position | plus: 0 
+
+                        if forloop_index == video_disruptor_block_pos
+                          render 'disruptor-block', type: 'collection-video', disruptor: video_disruptor
+                        endif
+                      endfor
+
+                      render 'product-card', product: product, lazyload: loading, page_number: paginate.current_page, wishlist: true
+                    endfor
+                  %}
+                </div>                
+              </div>
+            </div>
+
+
+            <div data-collection-pagination>
+            {% if paginate.items > paginate.page_size %}
+
+            {%- if section.settings.enable_infinite_scroll and paginate.items > paginate.page_size -%}
+              <div data-infinite-scroll="next-parent" class="flex justify-center pt-8">
+                <div class="infinite-scroll flex flex-col items-center justify-center" data-infinite-scroll="next">
+
+                  {%- unless paginate.current_page == paginate.pages -%}
+                    <a
+                      href="{{ paginate.next.url }}"
+                      class="btn"
+                      data-infinite-load="next"
+                      data-load-page="{{ paginate.current_page | plus: 1 }}"
+                      role="button">
+                      <span data-infinite-load-text>{{ 'collections.layout.view_more' | t }}</span>
+                    </a>
+                  {%- endunless -%}
+                </div>
+              </div>
+            {%- else -%}
+              {% if paginate.pages > 1 %}
+                <div data-collection-pagination>
+                  {% render 'pagination', paginate: paginate, show_prev_next: true, center: true %}
+                </div>
+              {% endif %}
+            {%- endif -%}
+
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {%- if section.settings.enable_infinite_scroll -%}
+        <script>
+          window.infiniteScrollSectionId = {{ section.id | json }};
+          window.infiniteScrollHandle = {{ collection.handle | json }};
+          window.infiniteScrollPaginationSize = {{ paginate.pages | json }};
+          window.infiniteScrollItemCount = {{ paginate.items | json }};
+        </script>
+      {%- endif -%}
+    </div>
+
+    <div class="fader fader--filter-modal"></div>
+  </main-collection>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection",
+  "class": "main-collection overflow-x-hidden",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collection Navigation Settings"
+    },
+    {
+      "type": "link_list",
+      "id": "list",
+      "label": "Collection List",
+      "info": "Specify the navigation list with the relevant collections"
+    },
+    {
+      "type": "header",
+      "content": "Collection Settings"
+    },
+    {
+      "type": "range",
+      "id": "collection_paginate",
+      "label": "Products per page",
+      "default": 12,
+      "min": 4,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Collection navbar settings"
+    },
+    {
+      "type": "header",
+      "content": "Sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_collection_sort",
+      "label": "Include collection sorting",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Filters"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_collection_filters",
+      "label": "Include collection filters",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Infinite scroll settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_scroll",
+      "label": "Enable Infinite Scroll",
+      "default": true,
+      "info": "Removes pagination and adds load more/load previous buttons"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

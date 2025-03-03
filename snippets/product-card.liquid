@@ -1,0 +1,166 @@
+{% liquid
+  assign class = 'h-auto object-cover' | append: class
+  assign alt = alt | default: image.alt | escape
+  assign width = width | default: image.width | default: 800
+  assign height = height | default: image.height | default: width | times: 1.25
+  assign current_variant = product.selected_or_first_available_variant
+%}
+
+{%- liquid
+  assign IsStrikethroughLive = shop.metafields.global.IsStrikethroughLive.value
+  assign StrikethroughPricePaid = shop.metafields.global.StrikethroughPricePaid.value
+-%}
+
+<div
+  class="product-card relative {% unless type == 'hotspot' %}pb-5{% endunless %}"
+  x-data="{ 
+    selectedUrl: '{{ product.url }}', 
+    selectedImgSrc: '{{ product.images[2] | img_url: '600x' }}', 
+    selectedSecondImgSrc: '{{ product.images[1] | img_url: '600x' }}', 
+    selectedTitle: '{{ product.title | replace: 'Carryon', 'Carry-On' }}',
+    selectedAvailable: {{ product.available | json }}
+  }"
+  data-product-card
+  {% if page_number %}
+    data-page-number="{{ page_number }}"
+  {% endif %}
+  data-selected-variant-id="{{ current_variant.id }}"
+  data-product-id="{{ product.id }}"
+>
+  <div class="absolute right-2 top-2 z-10">
+    {% if product.compare_at_price > product.price %} 
+    <span class="product-card__roundel flex items-center gap-1 rounded-2xl bg-red px-3 text-[10px] font-bold text-white">
+      {% assign discount_percentage = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price %}
+      {{ discount_percentage | round: 0 }}% OFF
+    </span>
+  {% endif %}
+  </div>
+  <div class="group relative overflow-hidden bg-pale_grey">
+    <a href="{{ product.url }}" :href="selectedUrl">
+      <img
+        class="h-full transform transition duration-500 ease-in-out aspect-square {{ class }}"
+        alt="{{ alt }}"
+        :src="selectedImgSrc"
+        width="{{ width }}"
+        height="{{ height }}" 
+        loading="{{ lazyload }}"
+        fetchpriority="{{ priority }}"
+        decoding="{{ decoding }}">
+
+      {%- if settings.show_second_image and product.images.size > 1 -%}
+        <div class="invisible absolute left-0 top-0 h-full w-full transform overflow-hidden opacity-0 transition duration-500 ease-in-out group-hover:visible group-hover:opacity-100">
+          <img
+            class="h-full transform transition duration-500 ease-in-out aspect-square {{ class }}"
+            alt="{{ alt }}"
+            :src="selectedSecondImgSrc"
+            width="{{ width }}"
+            height="{{ height }}"
+            loading="{{ lazyload }}" 
+            fetchpriority="{{ priority }}"
+            decoding="{{ decoding }}">
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+
+  <div class="mt-4 w-full border-t border-pale_ink pt-4">
+    <div class="flex flex-col gap-y-1">
+      {% liquid
+        assign prod_title = product.title 
+        assign type = product.type | capitalize | replace: 'Carryon', 'Carry-On'
+      %}
+
+      <div class="flex justify-between">
+        <h4 class="font-heading text-base lg:text-lbase text-darkest pr-4 lg:pr-0">
+          <a href="{{ product.url }}" :href="selectedUrl" x-text="selectedTitle">{{ prod_title | replace: 'Carryon', 'Carry-On' }}</a>
+        </h4>
+        {% if wishlist %}
+          <div class="wishlist">
+            {%- render 'wishlist-button', product: product -%}
+          </div>
+        {% endif %} 
+      </div>
+      <span class="text-base text-darkest">{{ type }}</span>
+
+      <a href="{{ product.url }}" :href="selectedUrl" class="text-base font-semibold text-darkest">
+        {% liquid 
+          if type == 'desktop'
+            assign class = 'hidden lg:block'
+            assign text_size = 'font-heading text-[20px] lg:text-md'
+          elsif type == 'mobile'
+            assign class = 'flex justify-end lg:hidden'
+            assign text_size = 'font-heading text-[20px] lg:text-md'
+          elsif type == 'card'
+            assign class = 'text-base font-semibold'
+          endif
+        %}
+        
+        <div class="{{ class }}">
+          {% if product.price_varies %}
+            <span>
+              {% capture price_min %}{{ product.price_min | money }}{% endcapture %}
+              {{ 'products.product.from_text_html' | t: price: price_min }}
+            </span>
+          {% else %}
+            <span class="flex items-end lg:justify-start gap-x-3 flex-wrap lg:flex-nowrap">
+              {% if product.compare_at_price > product.price %}
+                <span class="hidden">{{ 'products.product.regular_price' | t }}</span>
+                <s class="{{ text_size }} text-light_ink" data-compare-price>{{ product.compare_at_price | money_without_trailing_zeros }}</s>
+              {% endif %}
+              {% if type == 'card' %}
+                <h4 
+                  class="{{ text_size }}"
+                  data-product-price
+                >
+                  
+                <!-- Strikethrough Code Start -->
+                {%- if IsStrikethroughLive == true -%}
+                  <span class="line-through">{{ product.price | money_without_trailing_zeros }}</span> <span class="text-red-500">{{ product.price | times: StrikethroughPricePaid | money_without_trailing_zeros }}</span>
+                {%- else -%}
+                  {{ product.price | money_without_trailing_zeros }}
+                {%- endif -%}
+                <!-- Strikethrough Code End -->
+                  
+                </h4>
+              {% else %}
+              <h3 
+                class="{{ text_size }}"
+                data-product-price
+               >
+
+              <!-- Strikethrough Code Start -->
+              {%- if IsStrikethroughLive == true -%}
+                <span class="line-through">{{ product.price | money_without_trailing_zeros }}</span> <span class="text-red-500">{{ product.price | times: StrikethroughPricePaid | money_without_trailing_zeros }}</span>
+              {%- else -%}
+                {{ product.price | money_without_trailing_zeros }}
+              {%- endif -%}
+              <!-- Strikethrough Code End -->
+                
+              </h3>
+              {% endif %}
+            </span>
+            <div x-show="!selectedAvailable" class="flex text-small pt-1 font-bold text-mid_ink">
+            Sold Out
+            </div>
+          {% endif %}
+        </div>
+        
+      </a>
+    </div>
+    <div class="mt-4 flex gap-x-2">
+      {% for associated_product in product.metafields.pdp.associated_products.value %}
+        <div
+          class="swatch__item h-5 w-5 cursor-pointer rounded-full outline outline-2 outline-white shadow relative"
+          :style="{ backgroundColor: '{{ associated_product.metafields.pdp.colour }}', borderColor: selectedUrl === '/products/{{ associated_product.handle }}' ? 'white' : 'transparent', boxShadow: selectedUrl === '/products/{{ associated_product.handle }}' ? '0px 0px 7px 0px rgba(0, 0, 0, 0.25)' : 'none' }"
+          @click="selectedUrl = '/products/{{ associated_product.handle }}'; selectedImgSrc = '{{ associated_product.images[2] | img_url: '600x' }}'; selectedSecondImgSrc = '{{ associated_product.images[1] | img_url: '600x' }}'; selectedTitle = '{{ associated_product.title | replace: 'Carryon', 'Carry-On' }}'; selectedAvailable = {{ associated_product.available | json }};"
+          data-colour="{{ associated_product.metafields.pdp.colour }}"
+          x-data="{ tooltip: false }" @mouseenter="tooltip = true" @mouseleave="tooltip = false">
+          <span class="sr-only">{{ associated_product.title }}</span>
+          <div x-show="tooltip && window.innerWidth >= 1024" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 text-white text-xs bg-darkest font-semibold" style="display: none;">
+            {{ associated_product.metafields.pdp.colour_title }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

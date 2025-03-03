@@ -1,0 +1,215 @@
+<footer
+  data-section-id="{{ section.id }}"
+  data-section-type="footer"
+  class="flex flex-col gap-y-16 bg-white px-4 py-4 md:px-11 md:py-16"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+  <div
+    class="md:grid md:grid-cols-5 md:gap-3"
+    x-show="shown"
+    x-transition.opacity 
+  >
+    {% for block in section.blocks limit: 4 %}
+      <nav 
+        class="footer-nav flex flex-col gap-y-2"
+        role="region"
+        x-data="{
+          id: {{ forloop.index }}, 
+          get expanded() {
+              return this.active === this.id
+          },
+          set expanded(value) {
+              this.active = value ? this.id : null
+          },
+        }"
+      >
+        <h5 class="text-base py-4 lg:py-0 border-b border-light_ink lg:border-0 lg:text-[14px] font-semibold text-darkest">
+          <button
+            x-on:click="expanded = !expanded"
+            :aria-expanded="expanded"
+            class="btn-icon !flex !items-center !justify-between w-full cursor-default"
+          >
+            {{ block.settings.block_title }}
+            <span x-show="expanded" aria-hidden="true" class="ml-4 lg:hidden">
+              {%- render 'icon', icon: 'minus' -%}
+            </span> 
+            <span x-show="!expanded" aria-hidden="true" class="ml-4 lg:hidden">
+              {%- render 'icon', icon: 'plus' -%}
+            </span>
+          </button>
+        </h5>
+        <ul 
+          class="flex flex-col gap-y-1 sm:!contents"
+          x-show="expanded" x-collapse
+        >
+          {% for link in block.settings.footer_menu_block.links %}
+            <li>
+              <a class="text-[14px] text-mid_ink hover:border-b border-mid_ink" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endfor %}
+
+    <div class="flex flex-col lg:gap-y-8">
+      <nav  
+        class="footer-nav flex flex-col gap-y-2"
+        x-data="{
+          id: 5,
+          get expanded() {
+              return this.active === this.id
+          },
+          set expanded(value) {
+              this.active = value ? this.id : null
+          },
+        }"
+      >
+        {% for block in section.blocks offset: 4 limit: 1 %}
+          <h5 class="text-base py-4 lg:py-0 border-b border-light_ink lg:border-0 lg:text-[14px] font-semibold text-darkest">
+            <button
+              x-on:click="expanded = !expanded"
+              :aria-expanded="expanded"
+              class="btn-icon !flex !items-center !justify-between w-full"
+            >
+              {{ block.settings.block_title }}
+              <span x-show="expanded" aria-hidden="true" class="ml-4 lg:hidden">
+                {%- render 'icon', icon: 'minus' -%}
+              </span>
+              <span x-show="!expanded" aria-hidden="true" class="ml-4 lg:hidden">
+                {%- render 'icon', icon: 'plus' -%}
+              </span>
+            </button>
+          </h5>
+          <ul 
+            class="flex flex-col gap-y-1 sm:!contents" 
+            x-show="expanded" x-collapse
+          >
+            {% for link in block.settings.footer_menu_block.links %}
+              <li>
+                <a class="text-[14px] text-mid_ink hover:border-b border-mid_ink" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </nav>
+      <nav 
+        class="footer-nav flex flex-col gap-y-2"
+        x-data="{
+          id: 6,
+          get expanded() {
+              return this.active === this.id
+          },
+          set expanded(value) {
+              this.active = value ? this.id : null
+          },
+        }"
+      >
+        <h5 class="text-base py-4 lg:py-0 border-b border-light_ink lg:border-0 lg:text-[14px] font-semibold text-darkest">
+          <button
+            x-on:click="expanded = !expanded"
+            :aria-expanded="expanded"
+            class="btn-icon !flex !items-center !justify-between w-full"
+          >
+            Social
+            <span x-show="expanded" aria-hidden="true" class="ml-4 lg:hidden">
+              {%- render 'icon', icon: 'minus' -%}
+            </span>
+            <span x-show="!expanded" aria-hidden="true" class="ml-4 lg:hidden">
+              {%- render 'icon', icon: 'plus' -%}
+            </span>
+          </button>
+        </h5>
+        {%- assign social_accounts = 'Instagram, Facebook, Pinterest, YouTube, Snapchat, TikTok, Twitter, Tumblr, Vimeo,' | split: ', ' -%}
+
+        <div 
+          class="sm:!contents"
+          x-show="expanded" x-collapse
+        >
+          <ul class="flex gap-x-4">
+          {% for social in social_accounts %}
+            {%- assign social_handle = social | handleize -%}
+            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+
+            {% if settings[social_link] != blank %}
+              <li class="inline-flex">
+                <a href="{{ settings[social_link] }}" class="hover:opacity-85 transition-opacity duration-100" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" aria-label="{{ social }}">
+                  {% render 'icon', icon: social_handle -%}
+                  <span class="hidden">{{ social }}</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="flex items-center flex-wrap justify-center lg:justify-between gap-y-8 lg:gap-y-0">
+    <div class="flex gap-x-4">
+      {% render 'image', image: section.settings.payment_options_image, alt: 'Payment Options' %}
+    </div>
+    <div class="flex gap-x-4 text-[12px] text-darkest flex-wrap justify-center lg:justify-normal">
+      <span class="flex gap-x-4"
+        >Copyright &copy; {{ 'now' | date: '%Y' }}
+        {{ shop.name }}
+        <span class="hidden lg:block">|</span>
+      </span>
+      <ul class="flex gap-x-4">
+        {% for link in section.settings.base_footer_menu.links %}
+          <li class="flex gap-x-4">
+            <a class="text-[12px] text-darkest hover:border-b border-darkest" href="{{ link.url }}">{{ link.title }}</a>
+            {% unless forloop.last -%}
+              <span>|</span>
+            {%- endunless %}
+          </li>
+        {% endfor %}
+       
+        <li class="flex items-center gap-2"><span>|</span><div id="custom__md-footer-selector-block"></div>{%- render 'icon', icon: 'chevron-dark' -%}</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_options_image",
+      "label": "Payment Options Image",
+      "info": "Upload an image to display as the payment options available in the footer."
+    },
+    {
+      "type": "link_list",
+      "id": "base_footer_menu",
+      "label": "Base footer menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer_nav_col",
+      "name": "Footer menu block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "info": "Text to display on the panel button."
+        },
+        {
+          "type": "link_list",
+          "id": "footer_menu_block",
+          "label": "Menu block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

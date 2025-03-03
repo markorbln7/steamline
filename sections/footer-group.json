@@ -1,0 +1,118 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "press-slider": {
+      "type": "press-slider",
+      "blocks": {
+        "slider_block_G6nWRT": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "Five star luxury. Impossibly chic.",
+            "slide_logo": "shopify:\/\/shop_images\/image_1.png",
+            "slide_logo_alt": "Vogue"
+          }
+        },
+        "slider_block_zfwBVF": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "If you want a luxury leather suitcase, SteamLine Luggage is your brand.",
+            "slide_logo": "shopify:\/\/shop_images\/GQ.png",
+            "slide_logo_alt": "GQ"
+          }
+        },
+        "slider_block_rTcFJU": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "The highly-coveted travel brand is a purveyor of devastatingly chic suitcases that will make you feel like your vacation has already begun.",
+            "slide_logo": "shopify:\/\/shop_images\/2_esquire_white_25px.png",
+            "slide_logo_alt": "Esquire"
+          }
+        },
+        "slider_block_iUNbGX": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "Every woman dreams of luxury luggage - now is your moment to indulge with SteamLine Luggage.",
+            "slide_logo": "shopify:\/\/shop_images\/HARPERS.png",
+            "slide_logo_alt": "Bazaar"
+          }
+        },
+        "slider_block_YGKJz9": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "This vintage-inspired trunk by SteamLine Luggage is top of our holiday wish list.",
+            "slide_logo": "shopify:\/\/shop_images\/CONDE_NAST.png",
+            "slide_logo_alt": "Conde Nast"
+          }
+        }
+      },
+      "block_order": [
+        "slider_block_G6nWRT",
+        "slider_block_zfwBVF",
+        "slider_block_rTcFJU",
+        "slider_block_iUNbGX",
+        "slider_block_YGKJz9"
+      ],
+      "settings": {
+        "newsletter_video": "shopify:\/\/files\/videos\/steamline-travel-beautifully-hom.mp4",
+        "newsletter_title": "Never Miss a Thing.",
+        "newsletter_text": "Our weekly email newsletter keeps you up to date with our latest products, exclusive colour ways, inspires travel and exudes luxury."
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer_nav_col_nm8GY4": {
+          "type": "footer_nav_col",
+          "settings": {
+            "block_title": "Shop by",
+            "footer_menu_block": "footer-block-1"
+          }
+        },
+        "footer_nav_col_Un6Fzz": {
+          "type": "footer_nav_col",
+          "settings": {
+            "block_title": "Bestselling collections",
+            "footer_menu_block": "footer-block-2"
+          }
+        },
+        "footer_nav_col_hrhpMB": {
+          "type": "footer_nav_col",
+          "settings": {
+            "block_title": "Customer",
+            "footer_menu_block": "footer-block-3"
+          }
+        },
+        "footer_nav_col_HqqKqA": {
+          "type": "footer_nav_col",
+          "settings": {
+            "block_title": "About us",
+            "footer_menu_block": "footer-block-4"
+          }
+        },
+        "footer_nav_col_eeYTUM": {
+          "type": "footer_nav_col",
+          "settings": {
+            "block_title": "Credits",
+            "footer_menu_block": "footer-block-5"
+          }
+        }
+      },
+      "block_order": [
+        "footer_nav_col_nm8GY4",
+        "footer_nav_col_Un6Fzz",
+        "footer_nav_col_hrhpMB",
+        "footer_nav_col_HqqKqA",
+        "footer_nav_col_eeYTUM"
+      ],
+      "settings": {
+        "payment_options_image": "shopify:\/\/shop_images\/payments.webp",
+        "base_footer_menu": "base-footer-menu"
+      }
+    }
+  },
+  "order": [
+    "press-slider",
+    "footer"
+  ]
+}

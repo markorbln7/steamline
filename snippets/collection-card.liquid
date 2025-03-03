@@ -1,0 +1,54 @@
+<div
+  class="flex flex-col gap-4 relative"
+  x-data="{ selectedUrl: '{{ collection.url }}', selectedTitle: '{{ collection.title }}', selectedImgSrc: '{{ collection.featured_image.src | image_url: width: 600 }}' }"
+  role="region"
+  aria-labelledby="collectionCardTitle-{{ collection.id }}">
+
+  {% if sale_roundel %}
+    <div class="absolute right-2 top-2 z-10">
+      <div class="product-card__roundel flex items-center gap-1 rounded-2xl bg-red px-3 text-[10px] font-bold text-white">{{ sale_roundel }}</div>
+    </div>
+  {% endif %}
+
+  <div class="collection-image-container" role="img" aria-label="{{ collection.title }} image">
+    <a href="{{ collection.url }}" :href="selectedUrl">
+      <div class="collection-image">
+        <img
+          alt="{{ collection.title }}"
+          :src="selectedImgSrc"
+          width="600"
+          height="600" 
+          loading="{{ lazyload }}"
+        >
+      </div>
+    </a> 
+  </div>
+  <div class="collection-card__title flex flex-col gap-y-4 border-t border-pale_ink py-4">
+    <h2 class="h4 text-[18px] lg:text-[22px] leading-6" id="collectionCardTitle-{{ collection.id }}">
+      <a href="{{ collection.url }}" class="collection-url" :href="selectedUrl" x-text="selectedTitle">{{ collection.title }}</a>
+    </h2>
+ 
+    <div class="swatch-container flex gap-2" role="list" aria-label="Associated collections">
+      {% assign total_associated_collections = collection.metafields.plp.associated_collections.value %}
+      {% assign default_colour = collection.metafields.plp.colour %}
+
+      {% if total_associated_collections.count == 0 %}
+        <div class="swatch__item h-5 w-5 cursor-pointer rounded-full border-2 border-white shadow" :style="{ backgroundColor: '{{ default_colour }}', borderColor: 'transparent', boxShadow: 'none' }" data-colour="{{ default_colour }}" role="listitem" aria-label="Default color swatch">
+          <span class="sr-only">Default color</span>
+        </div>
+      {% endif %}
+
+      {% for associated_collection in collection.metafields.plp.associated_collections.value %}
+        <div
+          class="swatch__item h-5 w-5 cursor-pointer rounded-full border-2 border-white shadow"
+          :style="{ backgroundColor: '{{ associated_collection.metafields.plp.colour }}', borderColor: selectedUrl === '/collections/{{ associated_collection.handle }}' ? 'white' : 'transparent', boxShadow: selectedUrl === '/collections/{{ associated_collection.handle }}' ? '0px 0px 7px 0px rgba(0, 0, 0, 0.25)' : 'none' }"
+          @click="selectedUrl = '/collections/{{ associated_collection.handle }}'; selectedTitle = '{{ associated_collection.title }}'; selectedImgSrc = '{{ associated_collection.featured_image | image_url: width: 600 }}'; if (selectedTitle !== '{{ collection.title }}') { document.getElementById('collectionCardTitle-{{ collection.id }}').innerText = selectedTitle; } loading = true;"
+          data-colour="{{ associated_collection.metafields.plp.colour }}"
+          role="listitem"
+          aria-label="{{ associated_collection.title }} color swatch">
+          <span class="sr-only">{{ associated_collection.title }}</span>
+        </div>
+      {% endfor %} 
+    </div>
+  </div> 
+</div>

@@ -1,0 +1,224 @@
+<div x-show="isMobileMenuOpen" class="fixed lg:hidden inset-0" x-cloak>
+  {% liquid 
+    assign menu = section.settings.menu
+    assign menu = menus[menu] | default: false
+    assign blocks = section.blocks | default: false
+    assign blocks_megamenu_image = blocks | where: 'type', 'megamenu_image'
+    assign mobile_collection_list = section.settings.mobile_collection_list
+  %}
+
+  <div
+    @click="closeMobileMenu"
+    x-show="isMobileMenuOpen"
+    x-transition.opacity
+    class="mobile-underlay absolute inset-0 text-black bg-black-underlay cursor-pointer">
+    <svg class="w-48 h-48 icon-close svg-stroke pointer-events-none absolute top-12 right-12">
+      <use xlink:href="#close"></use>
+    </svg>
+  </div>
+  <nav
+    x-show="isMobileMenuOpen"
+    x-transition:enter="transition duration-200 ease-in-out"
+    x-transition:enter-start="transform -translate-x-full"
+    x-transition:enter-end="transform translate-x-0"
+    x-transition:leave="transition duration-200 ease-in-out"
+    x-transition:leave-start="transform translate-x-0"
+    x-transition:leave-end="transform -translate-x-full"
+    class="mobile-menu absolute left-0 top-0 bottom-0 flex flex-col h-full bg-pale_grey pt-28 w-full">
+    <div class="relative flex flex-row flex-grow overflow-hidden">
+      <ul
+        x-show="submenuOpen == -1"
+        x-transition:enter="transition duration-200 ease-in-out"
+        x-transition:enter-start="transform -translate-x-full"
+        x-transition:enter-end="transform translate-x-0"
+        x-transition:leave="transition duration-200 ease-in-out"
+        x-transition:leave-start="transform translate-x-0"
+        x-transition:leave-end="transform -translate-x-full"
+        class=" flex flex-col w-full bg-pale_grey h4 overflow-y-auto overflow-x-hidden">
+        {% if section.settings.sale_url %}
+          <li class="mobile-menu-item flex flex-row items-center p-4 border-b border-b-pale_ink">
+            <a href="{{ section.settings.sale_url }}" class="text-red text-nowrap font-semibold">{{ section.settings.sale_text }}</a>
+          </li>
+        {% endif %}
+        {% for link in menu.links %}
+          <li class="mobile-menu-item flex flex-row items-center p-4 border-b border-b-pale_ink" data-index="{{ forloop.index }}">
+            {% assign isExternal = false %}
+            {% if link.url contains 'https://' %}
+              {% assign isExternal = true %}
+            {% endif %}
+            <a
+              class="menu-link-anchor text-dark_ink font-semibold"
+              href="{{ link.url }}"
+              {% if isExternal %}
+                target="_blank" rel="nofollow noopener"
+              {% endif %}>
+              {{ link.title }}
+            </a>
+            {% if link.links != empty %}
+              <button @click="openSubmenu" class="appearance-none flex flex-row justify-end flex-grow border-none p-0">
+                {% render 'icon', icon: 'arrow-right' %}
+              </button>
+            {% endif %}
+          </li>
+        {% endfor %}
+        
+      </ul>
+      {% for link in menu.links %}
+        {% if link.links != empty %}
+          <div
+            x-show="submenuOpen == {{ forloop.index }}"
+            x-transition:enter="transition duration-200 ease-in-out"
+            x-transition:enter-start="transform translate-x-full"
+            x-transition:enter-end="transform translate-x-0"
+            x-transition:leave="transition duration-200 ease-in-out"
+            x-transition:leave-start="transform translate-x-0"
+            x-transition:leave-end="transform translate-x-full"
+            class="mobile-submenu mobile-submenu-{{ forloop.index }} absolute inset-0 overflow-auto w-full flex flex-col bg-pale_grey"
+            data-index="{{ forloop.index }}">
+            <button
+              @click="closeSubmenu"
+              class="btn button-icon mobile-menu-item !text-left !justify-start p-4 flex gap-x-2">
+              {% render 'icon', icon: 'arrow-left' %}
+              <span class="">{{ link.title }}</span>
+            </button>
+
+            <ul class="flex flex-col overflow-y-auto h-full w-full text-p text-black py-[10px]">
+              <div x-data="{ active: 1 }" class="w-full">
+                {% for sublink in link.links %}
+                  {%- if link.title contains 'Collection' -%}
+                    <li class="mobile-submenu-item flex flex-row items-center p-4 border-b border-b-pale_ink w-full">
+                      <a class="text-dark_ink" href="{{ sublink.url }}" {% if isExternal %} target="_blank" rel="nofollow noopener"{% endif %}>{{ sublink.title }}</a>
+                    </li>
+                  {%- else -%}
+                  <li class="mobile-submenu-item flex flex-row items-center p-4 border-b border-b-pale_ink w-full">
+                    {% assign isExternal = false %}
+                    {% if sublink.url contains 'https://' %}
+                      {% assign isExternal = true %}
+                    {% endif %}
+
+                    <div
+                      class="w-full"
+                      x-data="
+                        {
+                          id: {{ forloop.index }},
+                          get expanded() {
+                              return this.active === this.id
+                          },
+                          set expanded(value) {
+                              this.active = value ? this.id : null
+                          },
+                        }
+                      "
+                      role="region">
+                      <button
+                        x-on:click="expanded = !expanded"
+                        :aria-expanded="expanded"
+                        class="btn button-icon flex w-full items-center justify-between text-dark_ink font-semibold">
+                        <span>{{ sublink.title }}</span>
+                        <span x-show="expanded" aria-hidden="true">
+                          {%- render 'icon', icon: 'minus' -%}
+                        </span>
+                        <span x-show="!expanded" aria-hidden="true">
+                          {%- render 'icon', icon: 'plus' -%}
+                        </span>
+                      </button>
+
+                      <div x-show="expanded" x-collapse class="py-4 w-full">
+                        <ul class="w-full">
+                          {% for grandchildlink in sublink.links %}
+                            {%- if grandchildlink.title contains '#' -%}
+                              <span class="block pb-4 pt-5 font-semibold">{{- grandchildlink.title | remove: '#' -}}</span>
+                            {%- else -%}
+                              {%- if grandchildlink.title contains 'swatch--' -%}
+                                <li class="swatch mb-2 mr-2 inline-flex" role="none">
+                                  <a
+                                    class="swatch--{{ grandchildlink.title | remove: 'swatch--' | downcase }} h-8 w-8 rounded-full shadow-md"
+                                    href="{{ grandchildlink.url }}"
+                                    role="menuitem">
+                                    <span class="hidden">{{ grandchildlink.title | remove: 'swatch--' }}</span>
+                                  </a>
+                                </li>
+                              {%- else -%}
+                                <li class="w-full py-2">
+                                  <a
+                                    class="text-dark_ink"
+                                    href="{{ grandchildlink.url }}"
+                                    {% if isExternal %}
+                                      target="_blank" rel="nofollow noopener"
+                                    {% endif %}>
+                                    {{- grandchildlink.title -}}
+                                  </a>
+                                </li>
+                              {%- endif -%}
+                            {%- endif -%}
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  {%- endif -%}
+                {% endfor %}
+              </div>
+
+              {%- for block in blocks_megamenu_image -%}
+                {% if block.settings.heading == link.title %}
+                  <div class="flex flex-col text-left w-full px-4 pt-8" role="menuitem">
+                    {% if block.settings.megamenu_img_url != null %}
+                      <a href="{{ block.settings.megamenu_img_url }}" role="menuitem">
+                    {% endif %}
+                    <div class="group relative overflow-hidden" role="menuitem">
+                      <div class="h-full w-full overflow-hidden ">
+                        {% render 'image' with block.settings.megamenu_img_mobile, class: ' shrink-0 ', lazyload: eager, width: 600 %}
+                      </div>
+                    </div>
+
+                    {% if block.settings.megamenu_img_label != blank %}
+                      <span class="block py-2 text-[14px] font-semibold">{{- block.settings.megamenu_img_label -}}</span>
+                    {% endif %}
+                    {% if block.settings.megamenu_img_url != null %}
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {%- endfor -%}
+
+              {%- if link.title contains 'Collection' -%}
+                <div class="w-full pl-4 mt-8">
+                  <span class="text-light_ink font-semibold block py-4">{{ section.settings.mobile_collections_title }}</span>
+                  <div
+                    class="splide"
+                    aria-label="Collection mobile slider"
+                    data-splide='
+                      {
+                        "type": "loop",
+                        "perPage": 2.5,
+                        "perMove": 1,
+                        "autoplay": false,
+                        "pagination": false,
+                        "arrows": false,
+                        "gap": 20,
+                        "drag": true
+                      }
+                    '>
+                    <div class="splide__track">
+                      <ul class="splide__list">
+                        {% for collection in mobile_collection_list limit: 8 %}
+                          <li class="collection-item  splide__slide" role="menuitem">
+                            <a href="{{ collection.url }}">
+                              {% render 'image' with collection.featured_image, class: ' bg-[#eeeeee] w-full', lazyload: eager, width: 150 %}
+                              <span class="block pt-3 font-heading text-[14px]">{{ collection.title }}</span>
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </ul>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </nav>
+</div>

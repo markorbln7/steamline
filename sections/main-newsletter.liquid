@@ -1,0 +1,115 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="main-newsletter"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  {%- liquid
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4
+      assign loading = true
+    endif
+  -%}
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="w-full h-full relative">
+      <div class="text-center p-6 lg:p-11 absolute w-[90%] lg:w-[50%]  left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center gap-y-4 flex-col bg-white_op_eighty">
+        <h1 class="text-darkest text-md lg:text-lg font-heading">Sign up to our Newsletter</h1>
+        <p class="text-lbase">{{ section.settings.title }}</p>
+        <p class="text-base">{{ section.settings.subtitle }}</p>
+        
+        <form 
+          id="newsletter-form" 
+          action="//manage.kmail-lists.com/subscriptions/subscribe" 
+          data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" 
+          method="post" 
+          target="_blank" 
+          novalidate="novalidate" 
+          autocomplete="off" 
+          autocorrect="off" 
+          autocapitalize="off"
+          class="border-darkest border-b py-3 focus-within:border-darkest w-full"
+        >
+
+          <input type="hidden" name="g" value="VjYQTY" />
+          <input type="hidden" name="$fields" value="$first_name" />
+
+          <div class="flex justify-between gap-x-2">
+            <input 
+              required
+              type="email" 
+              id="newsletter-email" 
+              class="w-full outline-none bg-transparent"
+              name="email" 
+              placeholder="Email Address" 
+              autocorrect="off"
+              autocapitalize="off"
+            />
+
+            <button 
+              type="submit" 
+              class="btn-icon text-small font-semibold transform hover:opacity-80"
+              name="commit"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div class="klaviyo_messages newsletter-messages">
+            <p class="success_message text-small font-semibold py-2 text-center" style="display: none;"> success </p>
+            <p class="error_message text-small font-semibold py-2 text-center" style="display: none;"> error</p>
+          </div>
+        </form>
+
+        <p class="text-small text-darkest">
+          *Discount codes cannot be used during sale periods or combined with other promotions
+        </p>
+      </div>
+      {%- render 'image', image: section.settings.error_image, class: ' hidden lg:block object-fit w-full', alt: '404', lazyload: loading, width: 1800 -%}
+      {%- render 'image', image: section.settings.mobile_error_image, class: ' block lg:hidden object-fit w-full', alt: '404', lazyload: loading, width: 800 -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Text to display for a page title",
+      "default": "Sign up to our email marketing list and get 10% off your next purchase"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Text to display for a page subtitle",
+      "default": "I confirm I have read and agree to the steamlineluggage.com privacy policy"
+    },
+    {
+      "type": "image_picker",
+      "id": "error_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_error_image",
+      "label": "Mobile Background Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter page",
+      "category": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

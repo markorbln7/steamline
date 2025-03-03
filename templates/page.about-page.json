@@ -1,0 +1,364 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "centered",
+        "desktop_image": "shopify:\/\/shop_images\/ABOUTUS2-HERO.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/aboutus-mob.jpg",
+        "desktop_image_alt": "About us",
+        "title": "About us",
+        "description": "The SteamLine slogan S.L.O.W.: Travel Slowly, Lovingly, Openly, and with Wonder is reflected in all we make and do. Our founder Sara Banks's thoughtfulness and personality is reflected throughout our heartfelt and creative product assortment, beautiful inside and out. Our attention to detail and smart accessories betray a deep understanding of and reverence for the needs and honor of travel. We are gentle in all our efforts and seek to spread goodwill, positivity, and joy through the beauty of cases that help create memories through the #SteamLineMoments that enhance your way.",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers",
+        "hide_ribbon_title": false,
+        "hide_ribbon": false
+      }
+    },
+    "main": {
+      "type": "main-about",
+      "settings": {
+        "about_intro": "Creating vintage-inspired luggage for the modern traveler",
+        "icon_row_title_one": "Female founded",
+        "icon_row_copy_one": "Founded by current CEO Sara Banks, lifelong traveler and mother of four adventurous boys.",
+        "icon_row_title_two": "Quality First",
+        "icon_row_copy_two": "Innovative materials deliver uncompromised performance for the long haul.",
+        "icon_row_title_three": "Sustainability Focused",
+        "icon_row_copy_three": "Ongoing improvements for increased sustainability in all products and practices"
+      }
+    },
+    "image_text_row_KidG7j": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/Sara-aboutus.jpg",
+        "image_footnote": "CEO Sara Banks",
+        "image_footnote_link": "",
+        "title": "How it all began",
+        "copy": "<p>After crossing the globe and observing that luggage was rarely both beautiful and well-built, in 2008 SteamLine Luggage was founded by Sara Banks to restore a sense of elegance to modern travel. With suitcases as stylish as the most beautiful accessory and worthy of each traveler’s personal style, a new way of seeing travel was born. What began as just four elegant, vintage-inspired designs is today a body of exquisitely crafted collections that inspire travelers of every nature.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_BT8EnT": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": true,
+        "image": "shopify:\/\/shop_images\/ourapproach-aboutus.jpg",
+        "image_footnote": "The first collection",
+        "image_footnote_link": "",
+        "title": "Our approach",
+        "copy": "<p>SteamLine creates the world’s most photogenic high-performance luggage to enhance the joy of travel each step of their way. The result has been the phenomenon of “SteamLine Moments,” the frenzy of compliments and conversations that are sparked by our cases. Our signature look brightens long lines and jet lags with the reminder that travel is a celebration of life—and itself worth celebrating.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "brand_timeline_ehKN8D": {
+      "type": "brand-timeline",
+      "blocks": {
+        "slider_block_rbXQNA": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2005",
+            "block_text": "SteamLine founder Sara Banks moves from America to Ireland"
+          }
+        },
+        "slider_block_7MWRfw": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2008",
+            "block_text": "First four collections are launched with unique character names, the still best-selling vegan-leather Entrepreneur, and now retired Aviator, Producer, and Ambassador in five sizes: Stowaway, Carryon, Overnighter, Briefcase, and Vanity"
+          }
+        },
+        "slider_block_AMimrT": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2010",
+            "block_text": "Ran SteamLine as a wholesale business selling to Selfridges in England and David Jones in Australia"
+          }
+        },
+        "slider_block_QMQmit": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2012",
+            "block_text": "Collaborated with Clarks shoewear in the U.S. for their window displays and was featured in Lucky Magazine and Daily Candy. Launched in the U.S. at Neiman Marcus"
+          }
+        },
+        "slider_block_qj8wQj": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2013",
+            "block_text": "Collaborated with Kate Spade New York for their \"Things we Love\" collection"
+          }
+        },
+        "slider_block_P4DPJ7": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2015",
+            "block_text": "After being featured in What to Expect when You're Expecting, became a starring cast member in Hot Pursuit with Reese Witherspoon. Collaborated with Reiss Menswear."
+          }
+        },
+        "slider_block_yR9Q7p": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2017",
+            "block_text": "The beginning of SteamLine Prints with The Botanist"
+          }
+        },
+        "slider_block_CRcYVr": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2018",
+            "block_text": "Collaboration with Alice and Olivia and the launch of protective suitcase covers featuring SteamLine Prints"
+          }
+        },
+        "slider_block_4dUpex": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2019",
+            "block_text": "Collaboration with Burton Snowboards and the launch of The Mini, our first handbag!"
+          }
+        },
+        "slider_block_VEgVin": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2020",
+            "block_text": "Collaboration with John Fluevog. COVID and the launch of SteamLine at Home to emphasize our decorative and functional uses between trips. “Trailblazer” luggage sticker collaboration with film designer Annie Atkins 2020 and launch of our first children’s luggage collection with Maisonette"
+          }
+        },
+        "slider_block_nUD7BR": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2021",
+            "block_text": "SteamLine founder and family put the SteamLine values into practice and began our two-year trip around the world"
+          }
+        },
+        "slider_block_JDhRjq": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2022",
+            "block_text": "Illustrator collaboration with Ireland’s Lauren Taylor"
+          }
+        },
+        "slider_block_BgaFcW": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2023",
+            "block_text": "The Pink Entrepreneur accompanies Margot Robbie on Barbie press tour, and the Yellow Correspondent is approved by Anna Wintour for Robbie Vogue shoot. The launch of our fully recycled cosmetic bags and packing cubes in our gallery of SteamLine Prints"
+          }
+        },
+        "slider_block_KVgNzd": {
+          "type": "slider_block",
+          "settings": {
+            "block_title": "2024",
+            "block_text": "The launch of our Italian-made handbags and accessories"
+          }
+        }
+      },
+      "block_order": [
+        "slider_block_rbXQNA",
+        "slider_block_7MWRfw",
+        "slider_block_AMimrT",
+        "slider_block_QMQmit",
+        "slider_block_qj8wQj",
+        "slider_block_P4DPJ7",
+        "slider_block_yR9Q7p",
+        "slider_block_CRcYVr",
+        "slider_block_4dUpex",
+        "slider_block_VEgVin",
+        "slider_block_nUD7BR",
+        "slider_block_JDhRjq",
+        "slider_block_BgaFcW",
+        "slider_block_KVgNzd"
+      ],
+      "settings": {}
+    },
+    "brand_highlights_Cir3Hc": {
+      "type": "brand-highlights",
+      "blocks": {
+        "block_g3bwct": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handmade-in-italy.jpg",
+            "slide_image_alt": "Handcrafted",
+            "title": "Handcrafted",
+            "copy": "Working with the same team of artisans for over 15 years, each piece of luggage is made by hand. Fiberboard bases are molded and shaped to create the form before leather straps and corners are hand-stitched and riveted into place. Our printed linings and covers are hand-illustrated by artists, making each case an artistic collaboration inside and out. We have recently partnered with craftspeople in Pisa, Italy who handcraft our new canvas and leather Navigator accessory range."
+          }
+        },
+        "block_cNbRj9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Topgrainleatherupdated-desk.jpg",
+            "slide_image_alt": "Top Grain Leather",
+            "title": "Top Grain Leather",
+            "copy": "We use top-grain quality leather\nexclusively for our corners, handles, and straps, it is a solid leather that is workable and light-weight for travel. This particular leather features a stunning finish that gives the case a smooth feel and look, while also preventing stains from settling."
+          }
+        },
+        "block_g4QDJB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vegan-desk.jpg",
+            "slide_image_alt": "Vegan Leather",
+            "title": "Vegan Leather",
+            "copy": "Vegan leather is a cruelty-free leather alternative. It is made from a polyurethane to imitate leather. As well as being animal friendly, the price point of vegan leather is also attractive. Lightweight and durable, this leather alternative is a beautiful animal friendly option for leather luggage."
+          }
+        },
+        "block_HyPgQc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_354_df5f6d17-7f60-41d1-a43d-229480fbcffa.png",
+            "slide_image_alt": "Original Print Designs",
+            "title": "Original Print Designs",
+            "copy": "A distinctive feature of SteamLine is our artist-illustrated fabrics featrured on our linings, covers and accessories. We take pride in our collaborations with artists from around the world, transforming hand-rendered illustrations into works of art. Our mission is to make every step of your journey exciting and beautiful, starting from the moment you pack for the adventure ahead."
+          }
+        },
+        "block_WXEDjU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Plastic-bottles.jpg",
+            "slide_image_alt": "Recycled bottles",
+            "title": "Recycled bottles (Accessories)",
+            "copy": "Our protective covers, packing cubes and cosmetic cases are made from 3-10 plastic water bottles each. We are using this material in efforts to keep plastic out of the landfill and repurposed as functional items giving them a longer, circular life."
+          }
+        },
+        "block_Jq3Mg3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardware.png",
+            "slide_image_alt": "Solid Alloy Hardware",
+            "title": "Solid Alloy Hardware",
+            "copy": "Our locks, studs and other metal hardware are made of a nickel-plated alloy. It's corrosion-resistant and very strong. It can also be made in many colors such as silver, gold, brushed antique gold all made to compliment the vintage style of our luggage whilst being durable for modern travel."
+          }
+        },
+        "block_qfEVHc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/chromefreeleatherupdated-desk.jpg",
+            "slide_image_alt": "Chrome-free Sustainable Italian Leather",
+            "title": "Chrome-free Sustainable Italian Leather",
+            "copy": "We have chosen chrome-free leather for our new Navigator range which means that chrome is not used in the tanning process. This means less pollution, cleaner waste streams and improved biodegradability. Although it is significantly more expensive than other types of leather, the quality and craftsmanship is impeccable."
+          }
+        },
+        "block_wFhV8N": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/linen-desk.jpg",
+            "slide_image_alt": "Natural Linen & Rattan",
+            "title": "Natural Linen & Rattan",
+            "copy": "Linen is renowned for its natural beauty and durability. Made from fibers of the flax plant, linen is one of the oldest textiles in the world, making it the perfect material for SteamLine’s old-world glamour. \n<p>Our Rattan is a sustainable, Balinese-sourced, plant material. Often woven into a wicker weave, rattan is at once lightweight and incredibly durable.<\/p>"
+          }
+        },
+        "block_VUkzjy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pasco-aboutus.jpg",
+            "slide_image_alt": "Japanese Pasco Fiberboard",
+            "title": "Japanese Pasco Fiberboard",
+            "copy": "Pasco fiberboard, a versatile Japanese fiberboard, is made with wood pulp and recycled paper. We use this Pasco fiberboard as it is a water-resistant, durable, pliable and environmentally-friendly material. It is uniquely able to take vibrant color, creating a modern look that combines the old world with the new."
+          }
+        },
+        "block_JdtXgm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bondedleatherupdate-desk.jpg",
+            "slide_image_alt": "Recycled Bonded Leather",
+            "title": "Recycled Bonded Leather",
+            "copy": "We choose bonded leather to cover the larger surface area of our cases because it is lightweight and durable, making it ideal for modern travel. This particular style of leather is a low-waste option, often called “recycled leather,” as it is created by bonding smaller pieces of leather together before stretching them over a fiber sheet."
+          }
+        }
+      },
+      "block_order": [
+        "block_g3bwct",
+        "block_cNbRj9",
+        "block_g4QDJB",
+        "block_HyPgQc",
+        "block_WXEDjU",
+        "block_Jq3Mg3",
+        "block_qfEVHc",
+        "block_wFhV8N",
+        "block_VUkzjy",
+        "block_JdtXgm"
+      ],
+      "settings": {
+        "title": "Unparalleled craftmanship & quality materials.",
+        "copy": "We’d like to think we’ve considered everything when it comes to giving you the beauty of SteamLine with the utmost modern performance. Because your travels are priceless and deserve the best. We are always here to take suggestions on any features that would mean the world to you."
+      }
+    },
+    "brand_values_yaqnn4": {
+      "type": "brand-values",
+      "settings": {
+        "title": "Sustainability efforts",
+        "copy": "In recent years we’ve concentrated our efforts on making ongoing incremental improvements toward increased sustainability. We are dedicated to reducing our carbon footprint through each of our products and practices.",
+        "button_text": "Read more",
+        "button_link": "https:\/\/steamlineluggage.com\/pages\/sustainability"
+      }
+    },
+    "brand_team_Fm86LL": {
+      "type": "brand-team",
+      "blocks": {
+        "block_W3K67L": {
+          "type": "block",
+          "settings": {
+            "block_size": "large",
+            "team_image": "shopify:\/\/shop_images\/MTTUS-aboutus.jpg",
+            "name": "USA",
+            "role": "",
+            "bio": "The US team includes our beautiful wordsmith and copywriter, Cassandra, our wonderful PR duo Maggie and Christina and not least Lynne our super Social Media guru."
+          }
+        },
+        "block_xR6W7z": {
+          "type": "block",
+          "settings": {
+            "block_size": "large",
+            "team_image": "shopify:\/\/shop_images\/MTTIre-aboutus.jpg",
+            "name": "Ireland",
+            "role": "",
+            "bio": "The Irish-based team is comprised of Niamh, our utterly brilliant Marketing & Operations Director, Cathy our iconic Customer Experience Manager and not forgetting the person who made it all happen, our CEO, Sara Banks of course!"
+          }
+        },
+        "block_qQy4k4": {
+          "type": "block",
+          "settings": {
+            "block_size": "large",
+            "team_image": "shopify:\/\/shop_images\/MTTShekha-aboutus.jpg",
+            "name": "Mauritius",
+            "role": "",
+            "bio": "Mauritius is home to our superb Shekha who manages all things Logistics for the company. She's mastered the art of getting our precious cargo from point A to point B faster than you can say \"SteamLine Luggage.\""
+          }
+        },
+        "block_BmmCWE": {
+          "type": "block",
+          "settings": {
+            "block_size": "large",
+            "team_image": "shopify:\/\/shop_images\/MTTBoys-aboutus.jpg",
+            "name": "Portugal\/Spain",
+            "role": "",
+            "bio": "Barcelona-based Guillermo is our phenomenal photographer and the reason you first fall in love with a SteamLine. He endeavours to bring you one step closer to our products with his breathtakingly beautiful photoshoots. Working their magic here on a recent photoshoot with the amazing Lisbon-based Eoin, who partners with us for creative direction and design."
+          }
+        }
+      },
+      "block_order": [
+        "block_W3K67L",
+        "block_xR6W7z",
+        "block_qQy4k4",
+        "block_BmmCWE"
+      ],
+      "settings": {
+        "title": "Meet the team",
+        "copy": "SteamLine leadership has been proud to support our team’s time zones, travels, family planning, and passion projects with schedule and workplace flexibility since long before the pandemic changed how (and where) the world works. We are not only supportive of but insistent on a work-life balance. Our team of gentle souls is bonded by our common travel slogan S.L.O.W.: Travel Slowly, Lovingly, Openly, and with Wonder.\n\n\nHeadquartered in Ireland, our extended team can be found in London, New York City, Florida, Maine, Mauritius, Lisbon, and Barcelona."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main",
+    "image_text_row_KidG7j",
+    "image_text_row_BT8EnT",
+    "brand_timeline_ehKN8D",
+    "brand_highlights_Cir3Hc",
+    "brand_values_yaqnn4",
+    "brand_team_Fm86LL"
+  ]
+}

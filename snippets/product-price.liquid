@@ -1,0 +1,81 @@
+{% liquid 
+  if type == 'desktop'
+    assign class = 'hidden lg:block'
+    assign text_size = 'font-heading text-[20px] lg:text-md'
+  elsif type == 'mobile'
+    assign class = 'flex justify-end lg:hidden'
+    assign text_size = 'font-heading text-[20px] lg:text-md'
+  elsif type == 'card'
+    assign class = 'text-base font-semibold'
+  endif
+%}
+
+{%- liquid
+  assign IsStrikethroughLive = shop.metafields.global.IsStrikethroughLive.value
+  assign StrikethroughPricePaid = shop.metafields.global.StrikethroughPricePaid.value
+-%}
+
+<div class="{{ class }}">
+  {% if product.price_varies %}
+    <span>
+      {% capture price_min %}{{ product.price_min | money }}{% endcapture %}
+      {{ 'products.product.from_text_html' | t: price: price_min }}
+    </span>
+  {% else %}
+    <span class="flex items-end lg:justify-start gap-x-3 flex-wrap lg:flex-nowrap">
+      {% if product.compare_at_price > product.price %}
+        <span class="hidden">{{ 'products.product.regular_price' | t }}</span>
+        <s class="{{ text_size }} text-red" data-compare-price>{{ product.compare_at_price | money_without_trailing_zeros }}</s>
+      {% endif %}
+      {% if type == 'card' %}
+        <h4 
+          class="{{ text_size }}"
+          data-product-price
+        >
+          
+        <!-- Strikethrough Code Start -->
+        {%- if IsStrikethroughLive == true -%}
+          <span class="line-through">{{ product.price | money_without_trailing_zeros }}</span> <span class="text-red-500">{{ product.price | times: StrikethroughPricePaid | money_without_trailing_zeros }}</span>
+        {%- else -%}
+          {{ product.price | money_without_trailing_zeros }}
+        {%- endif -%}
+        <!-- Strikethrough Code End -->
+          
+        </h4>
+      {% else %}
+      <h3 
+        class="{{ text_size }}"
+        data-product-price
+       >
+
+        <!-- Strikethrough Code Start -->
+        {%- if IsStrikethroughLive == true -%}
+          <span class="line-through">{{ product.price | money_without_trailing_zeros }}</span> <span class="text-red-500">{{ product.price | times: StrikethroughPricePaid | money_without_trailing_zeros }}</span>
+        {%- else -%}
+          {{ product.price | money_without_trailing_zeros }}
+        {%- endif -%}
+        <!-- Strikethrough Code End -->
+        
+      </h3>
+      {% endif %}
+      
+      {% unless type == 'card' %}
+
+        {% liquid 
+          assign show_duties = false
+
+          assign currency = cart.currency.iso_code
+          if currency == 'EUR' or currency == 'GBP'
+            assign show_duties = true
+          endif
+        %}
+
+        {% if show_duties %}
+          <span class="pb-1 text-small text-mid_ink hidden lg:block">incl. taxes &amp; duties</span>
+        {% endif %}
+      {% endunless %} 
+
+    </span>
+  {% endif %}
+</div>
+

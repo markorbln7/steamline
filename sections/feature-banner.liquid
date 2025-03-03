@@ -1,0 +1,151 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="feature-banner"
+  class="relative flex max-h-[650px]"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+  {%- liquid
+    if section.settings.hero_image_alt != blank
+      assign alt = section.settings.hero_image_alt
+    else
+      assign alt = section.settings.hero_title
+    endif 
+
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4 
+      assign loading = true
+    endif
+    
+    assign desk_pos = 'lg:w-1/2 xl:w-2/5 lg:bottom-auto lg:translate-x-0 lg:left-11 lg:top-1/2 lg:-translate-y-1/2'
+    assign mob_pos = 'w-[90%] bottom-5 left-1/2 -translate-x-1/2'
+
+    if section.settings.desktop_position == 'left'
+      assign desk_pos = 'lg:w-1/2 xl:w-2/6 lg:bottom-auto lg:translate-x-0 lg:left-11 lg:top-1/2 lg:-translate-y-1/2'
+    elsif section.settings.desktop_position == 'center'
+      assign desk_pos = 'lg:w-1/2 xl:w-2/6 lg:bottom-auto text-center lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2'
+    elsif section.settings.desktop_position == 'right'
+      assign desk_pos = 'lg:w-1/2 xl:w-2/6 lg:bottom-auto lg:translate-x-0 lg:right-11 lg:top-1/2 lg:-translate-y-1/2'
+    endif
+
+    if section.settings.mobile_position == 'bottom'
+      assign mob_pos = 'w-[90%] bottom-5 left-1/2 -translate-x-1/2'
+    elsif section.settings.mobile_position == 'top'
+      assign mob_pos = 'w-[90%] top-5 left-1/2 -translate-x-1/2'
+    elsif section.settings.mobile_position == 'center'
+      assign mob_pos = 'w-[90%] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'
+    endif
+  -%}
+
+  {%- render 'image', image: section.settings.hero_image, class: ' object-fit w-full hidden md:block', alt: alt, lazyload: loading, width: 1800 -%}
+  {%- render 'image', image: section.settings.mobile_hero_image, class: ' object-fit w-full block md:hidden !h-[650px]', alt: alt, lazyload: loading, width: 800 -%}
+
+  <div class="frosty bg-white_op_fifty absolute flex transform flex-col gap-y-7 rounded-md p-4 lg:p-7 {{ mob_pos }} {{ desk_pos }}" aria-live="polite">
+    <div class="flex flex-col gap-y-4 text-center {% if section.settings.desktop_position == 'center' %}text-center {% else %}lg:text-left{% endif %}">
+      <h3 class="font-heading text-md font-normal text-darkest">{{ section.settings.hero_title }}</h3>
+      <p class="text-base text-pretty text-darkest">{{ section.settings.hero_subtitle }}</p>
+    </div>
+    <div class="hero-cta text-center {% if section.settings.desktop_position == 'center' %}text-center {% else %}lg:text-left{% endif %}">
+      <a href="{{ section.settings.hero_cta_link }}" class="button-primary" aria-label="Call to action">{{ section.settings.hero_cta_text }}</a>
+    </div>
+  </div>
+
+  {% if section.settings.photo_credit != blank %}
+    <div class="absolute bottom-2 right-2 text-small font-semibold text-white">
+      {{ section.settings.photo_credit }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Feature Banner",
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_position",
+      "label": "Desktop Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_position",
+      "label": "Mobile Position",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Subtitle",
+      "default": "Discover our latest collection"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Desktop Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_hero_image",
+      "label": "Mobile Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "photo_credit",
+      "label": "Photo Credit",
+      "default": "Credit: Tatler, 2024"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Banner"
+    }
+  ]
+}
+{% endschema %}

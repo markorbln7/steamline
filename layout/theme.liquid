@@ -1,0 +1,155 @@
+<!doctype html>
+  <html class="no-js" lang="{{ request.locale.iso_code }}">
+    <head>
+      
+      {% include 'booster-seo' %}
+
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="generator" content="adastra">
+      <meta name="theme-color" content="#ffffff">
+      <meta name="background-color" content="#ffffff">
+      <meta name="name" content="{{ shop.name }}">
+      <meta name="google-site-verification" content="n9_9EYP933pldNl81R7hoK-nKgIYJx0xj7dFnFvXSpo" />
+      <meta name="google-site-verification" content="UE-N4sL1Wil196a97g9q-QkyUMLYkzmebxKK0owkIs8" />
+  
+      <link rel="canonical" href="{{ canonical_url }}">
+  
+      {% if settings.favicon != blank %}
+        <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 512, height: 512 }}" sizes="512x512">
+      {% endif %}
+  
+      {% if canonical_url == 'https://steamlineluggage.com/collections' %}
+        {% comment %}<title>View Our Vintage Luggage Collections - Steamline Luggage</title>{% endcomment %}
+        {% comment %}<meta name="description" content="Wherever you go next, it iss going to feel extraordinary. ">{% endcomment %}
+      {% else %}
+        {% comment %}<title>{{ page_title }}</title>{% endcomment %}
+        {% comment %}<meta name="description" content="Wherever you go next, it iss going to feel extraordinary. ">{% endcomment %}
+      {% endif %}
+  
+      {%- render 'hreflang'-%}
+  
+      {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
+      <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  
+      {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
+      {% unless settings.type_heading.system? and settings.type_body.system? %}
+        <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      {% endunless %}
+  
+      {% liquid
+        render 'colors'
+        render 'typography'
+      %}
+  
+      <script>
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
+        window.addEventListener('load', () => document.documentElement.classList.add('ready'));
+  
+        window.theme = {
+          strings: {
+            addToCart: {{ 'products.product.add_to_cart' | t | json }},
+            soldOut: {{ 'products.product.sold_out' | t | json }},
+            unavailable: {{ 'products.product.unavailable' | t | json }},
+            cartTitle: {{ 'cart.general.title' | t | json }},
+            subtotal: {{ 'cart.general.subtotal' | t | json }},
+            shipping: {{ 'cart.general.shipping' | t | json }},
+            checkout: {{ 'cart.general.checkout' | t | json }},
+            closeCart: {{ 'cart.general.close_cart' | t | json }},
+            cartEmpty: {{ 'cart.general.empty' | t | json }},
+            itemQuantity: {{ 'cart.general.item_quantity' | t | json }},
+            dismissErrorMessage: {{ 'cart.general.dismiss_error_message' | t | json }},
+            freeShippingBar: {
+              remaining: {{ 'cart.freeShippingBar.remaining' | t | json }},
+              reached: {{ 'cart.freeShippingBar.reached' | t | json }},
+            }
+          },
+          moneyFormat: {{ shop.money_format | json }},
+          cart: {{ cart | json }},
+          freeShippingBar: {
+            enabled: {{ settings.free_shipping_bar_enabled | json }},
+            serviceOne: {{ settings.free_shipping_bar_service_1 | json }},
+            thresholdOne: {{ settings.free_shipping_bar_threshold_1 | default: 0 | json }},
+            {%- liquid
+              assign threshold_1_num = settings.free_shipping_bar_threshold_1 | plus: 0
+              assign threshold_2_num = settings.free_shipping_bar_threshold_2 | plus: 0
+              if threshold_2_num > threshold_1_num and settings.free_shipping_bar_service_2 != blank
+                assign valid_threshold_2 = true
+              endif
+            -%}
+            {%- if valid_threshold_2 -%}
+            serviceTwo: {{ settings.free_shipping_bar_service_2 | json }},
+            thresholdTwo: {{ settings.free_shipping_bar_threshold_2 | json }},
+            {% endif %}
+          },
+          locale: {
+            endonymName: {{ request.locale.endonym_name | json }},
+            isoCode: {{ request.locale.iso_code | json }},
+            name: {{ request.locale.name | json }},
+            primary: {{ request.locale.primary | json }},
+            rootUrl: {{ request.locale.root_url | json }},
+            shopDomain: {{ shop.domain | json }}
+          }
+        };
+      </script>
+  
+      <!-- shopify/apps -->
+      {{ content_for_header }}
+  
+      {% render 'vendor-google' placement:'head' %}
+  
+      {% liquid
+        # Always add entrypoint below content_for_header
+        render 'adastra' with 'base.css'
+        render 'adastra' with 'index.js'
+      %}
+    </head>
+    <body x-data="mobileMenu">
+      {% render 'vendor-google' placement:'body' %}
+  
+      <a class="visuallyhidden focusable skip-link" href="#MainContent">Skip to content</a>
+      {% sections 'header-group' %}
+  
+      <main
+        id="MainContent"
+        tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+  
+      {%- section 'swatches' -%}
+      {%- section 'slideout-cart' -%}
+  
+      {% sections 'footer-group' %}
+  
+      {% liquid
+        render 'json-ld'
+        render 'vendor-klaviyo-bis'
+        render 'vendor-hotjar'
+      %}
+  
+      {% if product %}
+        {% render 'vendor-klaviyo-product' %}
+      {% endif %}
+  
+      <script>
+        window.shopUrl = '{{ request.origin }}'
+        window.routes = {
+          cart_add_url: '{{ routes.cart_add_url }}',
+          cart_change_url: '{{ routes.cart_change_url }}',
+          cart_update_url: '{{ routes.cart_update_url }}',
+          cart_url: '{{ routes.cart_url }}',
+          predictive_search_url: '{{ routes.predictive_search_url }}',
+          product_recommendations_url: '{{ routes.product_recommendations_url }}'
+        }
+      </script>
+  
+      <script type="application/json" data-ajax-cart-initial-state>
+        {{ cart | json }}
+      </script>
+
+      <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    </body>
+  </html>
+  

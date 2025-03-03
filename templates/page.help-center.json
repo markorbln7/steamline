@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "page_banner_WgD94J": {
+      "type": "page-banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/Rectangle_12.png",
+        "desktop_image_alt": "Help Centre",
+        "title": "Help Centre",
+        "description": ""
+      }
+    },
+    "main": {
+      "type": "help-center",
+      "settings": {
+        "helpful_links": "help-centre"
+      }
+    }
+  },
+  "order": [
+    "page_banner_WgD94J",
+    "main"
+  ]
+}

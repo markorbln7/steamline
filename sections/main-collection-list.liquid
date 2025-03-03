@@ -1,0 +1,171 @@
+<div data-section-id="{{ section.id }}" data-section-type="main-collection-list">
+  <div class="wrapper">
+    <div class="grid gap-x-4 gap-y-5 pb-11 grid-cols-12 md:gap-x-6 md:gap-y-5 md:py-16">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          {% liquid 
+            assign collection = collections[block.settings.collection]
+
+            assign lazyload = lazyload | default: false
+                
+            if lazyload
+              assign loading = 'lazy'
+            else
+              assign loading = 'eager'
+            endif
+
+            if forloop.index > 3
+              assign lazyload = true
+            endif 
+          %} 
+
+          {% if block.type == 'collection' %}
+            <div class="collection-list__grid-item col-span-6 md:col-span-4 lg:col-span-3">
+              {%- render 'collection-card', collection: collection, lazyload: loading, sale_roundel: block.settings.sale_roundel -%}
+            </div>
+          {% elsif block.type == 'disruptor-block' %}
+            <div class="collection-list__grid-item col-span-12 md:col-span-4 lg:col-span-3 relative">
+              {%- render 'disruptor-block', 
+                type: 'testimonial',
+                disruptor_block_copy: block.settings.disruptor_block_copy,
+                disruptor_block_logo: block.settings.disruptor_block_logo
+              -%}
+            </div>
+          {% elsif block.type == 'block-video' %}
+            <div class="collection-list__grid-item col-span-12 md:col-span-4 lg:col-span-3 relative">
+              {%- render 'disruptor-block', 
+                type: 'video',
+                disruptor_block_video: block.settings.disruptor_block_video,
+                disruptor_block_video_poster: block.settings.disruptor_block_video_poster,
+                disruptor_block_video_title: block.settings.disruptor_block_video_title,
+                disruptor_block_video_link: block.settings.disruptor_block_video_link,
+                disruptor_block_video_link_text: block.settings.disruptor_block_video_link_text,
+                disruptor_block_customer_name: block.settings.disruptor_block_customer_name
+              -%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for collection in collections %}
+          {% unless collection.handle == 'frontpage' %}
+            <div class="collection-list__grid-item">
+              {% liquid 
+                assign lazyload = lazyload | default: false
+                
+                if lazyload
+                  assign loading = 'lazy'
+                else
+                  assign loading = 'eager'
+                endif
+
+                if forloop.index > 3
+                  assign lazyload = true
+                endif 
+              %}
+
+              {%- render 'collection-card', collection: collection, lazyload: loading -%}
+            </div>
+          {% endunless %} 
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection List",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        },
+        {
+          "label": "Sale roundel",
+          "id": "sale_roundel",
+          "type": "text",
+          "info": "The sale roundel text."
+        }
+      ]
+    },
+    {
+      "type": "disruptor-block",
+      "name": "Disruptor - Testimonial",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Disruptor Block - Testimonial"
+        },
+        {
+          "label": "Disruptor Block Copy",
+          "id": "disruptor_block_copy",
+          "type": "textarea",
+          "info": "The copy for the disruptor block. This is the block that will be shown in the disruptor block position."
+        },
+        {
+          "label": "Disruptor Block Logo",
+          "id": "disruptor_block_logo",
+          "type": "image_picker"
+        }
+      ]
+    },
+    {
+      "type": "block-video",
+      "name": "Disruptor Block - Video",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Disruptor Block - Video"
+        },
+        {
+          "label": "Disruptor - Video",
+          "id": "disruptor_block_video",
+          "type": "video"
+        },
+        {
+          "label": "Disruptor Block Video Poster",
+          "id": "disruptor_block_video_poster",
+          "type": "image_picker"
+        },
+        {
+          "label": "Title",
+          "id": "disruptor_block_video_title",
+          "type": "text",
+          "info": "The title for the disruptor block video."
+        },
+        {
+          "label": "Disruptor Block Video Link",
+          "id": "disruptor_block_video_link",
+          "type": "url",
+          "info": "The link for the disruptor block video."
+        },
+        {
+          "label": "Disruptor Block Video Link Text",
+          "id": "disruptor_block_video_link_text",
+          "type": "text",
+          "info": "The text for the disruptor block video link."
+        },
+        {
+          "label": "Customer Name",
+          "id": "disruptor_block_customer_name",
+          "type": "text",
+          "info": "The customer name for the disruptor block video."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List",
+      "category": "Collection List"
+    }
+  ]
+}
+{% endschema %}

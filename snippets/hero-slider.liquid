@@ -1,0 +1,17 @@
+<div 
+  class="splide w-full hidden lg:block"
+  aria-label="hero slider"
+  data-splide-auto-scroll-hero
+> 
+  <div class="splide__track min-h-[600px]">
+    <div class="splide__list">
+      {% for block in section.blocks %}
+        <div class="splide__slide flex items-center justify-center">
+          {%- render 'image', image: block.settings.slider_image, class: ' !w-full', alt: section.settings.hero_title, lazyload: false, width: 1000 -%}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div> 
+
+{%- render 'image', image: section.settings.mobile_hero_image, class: ' object-fit w-full block md:hidden', alt: alt, lazyload: loading, width: 800 -%}

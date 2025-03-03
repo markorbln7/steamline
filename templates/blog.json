@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "page_banner_ELj7c7": {
+      "type": "page-banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/10._IMG_3040b_Desk.webp",
+        "desktop_image_alt": "Travel Beautifully",
+        "title": "Travel Beautifully",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "blog_paginate": 12
+      }
+    }
+  },
+  "order": [
+    "page_banner_ELj7c7",
+    "main"
+  ]
+}

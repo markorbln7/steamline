@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "page_banner_xftYPC": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/Care-hero.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/productcare-hero-mob.jpg",
+        "desktop_image_alt": "",
+        "title": "Product Care",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "image_text_row_zWpwcR": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/Botanistcover-care.jpg",
+        "image_footnote": "The Botanist Protective Cover",
+        "image_footnote_link": "",
+        "title": "Use your Protective Cover",
+        "copy": "<p>Enclosed with all of our Carry-Ons and Check-in Luggage you will find a protective rain cover for your luggage. Please use the protective cover when you need to check-in or think you might be on rougher terrain. Simply slip the cover over your case and whisk it off again when you want to attract the attention of passer-by and fellow travel companions.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_er8Ywm": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": true,
+        "image": "shopify:\/\/shop_images\/Editor-care.jpg",
+        "image_footnote": "The Editor Collection",
+        "image_footnote_link": "",
+        "title": "Cleaning your case",
+        "copy": "<p>To clean your case, please wipe clean with a soft damp cloth. Always choose an appropriate cleaning material so as not to discolour the case exterior. Strong cleaners or abrasive products are not recommended. Gently dry the surface if excess water is on your luggage for any lengthy period of time.<\/p><p>For the linen in The Editor collection, you can use a foam shoe or upholstery cleaner to gently rub out any dirt or debris from the linen fibers. <\/p><p>For our Pasco fibreboard collections (The Starlet, Correspondent, Sweetheart, Industrialist, Illustrators) scuff marks can be removed from the exterior with a neutral color gum eraser.<br\/><br\/>Spillage of liquids inside the case should be cleaned as soon as possible with a dry absorbent cloth. Although our poly-satin linings are very easy to keep clean and care for, if not dried immediately, excess liquids may stain or discolour the lining or affect the shape of the case.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_4YEDCw": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/Stickercase-aboutus.jpg",
+        "image_footnote": "The Diplomat Collection",
+        "image_footnote_link": "",
+        "title": "Removing Airline Stickers",
+        "copy": "<p>Airlines love a badly placed stubborn sticker! We advise being careful when removing travel\/ airline communication stickers as these can tear the surface of your case. We recommend using a hairdryer on strong adhesives such as airline stickers to gently loosen and remove stickers from your Steamline luggage. Stubborn or sticky glue residue can be safely removed using a simple alcohol like isopropyl. A test patch is highly recommended before total application<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_7RVCyg": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": true,
+        "image": "shopify:\/\/shop_images\/Sweetheart-care.jpg",
+        "image_footnote": "The Sweetheart Collection",
+        "image_footnote_link": "",
+        "title": "Storing your Steamline Luggage",
+        "copy": "<p>When not in use, ideally stand your empty case in an upward position rather than on its side. If flat, please refrain from laying heavy objects upon the exterior especially when empty. Heavy pressure on top of an empty suitcase can misalign the luggage and affect the lock alignment. Please ensure that the case is not crammed into a space where deformation may occur when empty.<\/p><p>The dust bag provided with your luggage is recommended if storing out of sight.<br\/>It is also best to avoid leaving heavy items inside the suitcase for extended periods of time. Doing so may affect the shape or cause damage to the suitcase. <\/p><p>You can store blankets, towels, or seasonal clothing in your luggage. This will actually help keep the shape in tack when in storage for long periods.<\/p><p>Steamline cases are best stored in a cool, well-ventilated place. Do not allow your Steamline to be exposed to direct sunlight, high temperatures or damp. Doing so may affect the shape and\/or the paint finish. <\/p><p>And remember, the best part about SteamLine is its eye-catching, photogenic quality! SteamLine is one of the few luggage brands in that world that you needn’t store out of sight when not on the move. See our <a href=\"https:\/\/steamlineluggage.com\/blogs\/news\/steamline-at-home-decorative-storage-solutions\" target=\"_blank\" title=\"https:\/\/steamlineluggage.com\/blogs\/news\/steamline-at-home-decorative-storage-solutions\"><span style=\"text-decoration:underline\"><strong>SteamLine at Home<\/strong><\/span><\/a> page for inspiration!<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    }
+  },
+  "order": [
+    "page_banner_xftYPC",
+    "main",
+    "image_text_row_zWpwcR",
+    "image_text_row_er8Ywm",
+    "image_text_row_4YEDCw",
+    "image_text_row_7RVCyg"
+  ]
+}

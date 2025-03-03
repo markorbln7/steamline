@@ -1,0 +1,118 @@
+<div
+  id="ProductSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="brand-team"
+  aria-labelledby="BrandTeam"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+>
+  {%- liquid
+    assign lazyload = false
+
+    if section.index > 2
+      assign lazyload = true
+    endif
+
+    assign alt = section.settings.title
+  -%}
+
+  <div
+    class="relative w-full"
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="bg-pale_grey w-full py-16 px-4 lg:px-11">
+      <div class="flex flex-col gap-y-11 items-center text-center">
+        <h3 class="px-4 lg:px-0 font-heading text-md lg:text-lg">{{ section.settings.title }}</h3>
+        <p class="text-base lg:text-lbase leading-6 max-w-[960px] m-auto">{{ section.settings.copy }}</p>
+      </div>
+      <div class="grid grid-cols-12 lg:gap-x-11 gap-y-16 pt-16">
+        {% for block in section.blocks %}
+          {% liquid 
+            if block.settings.block_size == 'large'
+              assign block_size = 'col-span-12 lg:col-span-6'
+            else
+              assign block_size = 'col-span-12 lg:col-span-3'
+            endif
+          %}
+
+          <div class="{{ block_size }}">
+            <div class="flex flex-col gap-y-4">
+              {%- render 'image', image: block.settings.team_image, class: ' object-fit w-full', alt: alt, lazyload: lazyload, width: 800 -%}
+              <h4 class="text-small font-semibold">{{ block.settings.name }} <span class="block">{{ block.settings.role }}</span></h4>
+              <p class="text-small lg:max-w-[70%]">{{ block.settings.bio }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "select",
+          "id": "block_size",
+          "label": "Block Size",
+          "options": [
+            {
+              "value": "large",
+              "label": "Large"
+            },
+            {
+              "value": "small",
+              "label": "Small"
+            }
+          ],
+          "default": "small"
+        },
+        {
+          "type": "image_picker",
+          "id": "team_image",
+          "label": "Team Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "Bio"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Team",
+      "category": "Brand"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{% comment %}
+  Shopify Wishlist
+  Usage:
+    - Replace the snippet name ('product-card') with your existing product card snippet
+    - Pass the product object as a snippet variable named 'product'
+{% endcomment %}
+
+{%- liquid
+  assign loading = false
+  if section.index <= 3
+    assign loading = 'eager'
+    assign priority = 'high'
+  elsif section.index >= 4
+    assign loading = 'lazy'
+    assign decoding = 'async'
+  endif
+-%}
+
+
+{% render 'product-card', product: product, loading: loading, priority: priority, decoding: decoding, wishlist: true %}
+
+{% schema %}
+{
+  "name": "Product Card",
+  "presets": [
+    {
+      "name": "Product Card",
+    }
+  ]
+}
+{% endschema %}

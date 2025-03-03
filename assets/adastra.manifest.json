@@ -1,0 +1,27 @@
+{
+  "src\/entrypoints\/base.css": {
+    "file": "base-08d950cb.css",
+    "isEntry": true,
+    "src": "src\/entrypoints\/base.css"
+  },
+  "src\/entrypoints\/index.css": {
+    "file": "index-6c527891.css",
+    "src": "src\/entrypoints\/index.css"
+  },
+  "src\/entrypoints\/index.js": {
+    "css": [
+      "index-6c527891.css"
+    ],
+    "dynamicImports": [
+      "src\/main-collection.js"
+    ],
+    "file": "index-022f7fb8.js",
+    "isEntry": true,
+    "src": "src\/entrypoints\/index.js"
+  },
+  "src\/main-collection.js": {
+    "file": "main-collection-d4ea1d98.js",
+    "isDynamicEntry": true,
+    "src": "src\/main-collection.js"
+  }
+}

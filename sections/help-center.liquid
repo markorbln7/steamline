@@ -1,0 +1,46 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="help-center"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    <div class="grid grid-cols-12 pb-16 md:py-16">
+      <div class="col-span-12 md:col-span-3">
+        <ul class="flex overflow-x-auto gap-x-2 whitespace-nowrap md:flex-col gap-y-4 scrollbar-hide mb-10">
+          {% for link in section.settings.helpful_links.links %}
+            <li>
+              <a {% if link.active %}class="border-b border-darkest font-semibold"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-span-12 md:col-span-6">
+        <div class="flex flex-col prose">
+        <h2 class="font-heading text-md text-darkest">{{ page.title | remove: 'V2' }}</h2>
+        {{ page.content }}
+        </div>
+      </div>
+      <div class="col-span-3">
+
+      </div>
+    </div>
+  </div> 
+</section>
+
+{% schema %}
+{
+  "name": "Help Center",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "helpful_links",
+      "label": "Helpful Links menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,145 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collection"
+  class="featured-categories w-full"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+  aria-labelledby="featured-collection-heading"
+  role="region">
+  <h2 id="featured-collection-heading" class="sr-only">Featured Collection</h2>
+  
+  {%- liquid
+    if section.settings.hero_image_alt != blank
+      assign alt = section.settings.hero_image_alt
+    else
+      assign alt = section.settings.hero_title
+    endif
+
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4 
+      assign loading = true
+    endif
+
+    assign img_pos = 'order-1'
+    assign desc_pos = 'order-2'
+    if section.settings.image_pos == 'right'
+      assign img_pos = 'order-1 lg:order-2'
+      assign desc_pos = 'order-2 lg:order-1'
+    endif
+  -%}
+
+  <div
+    class="grid grid-cols-12"
+    x-show="shown"
+    x-transition.opacity
+    aria-live="polite"
+    aria-busy="{{ loading }}">
+    
+    <div class="col-span-12 lg:col-span-8 {{ img_pos }}">
+      <a href="{{ section.settings.link }}" class="hover:opacity-95 transition-opacity duration-300">
+        {%- render 'image', image: section.settings.image, class: ' hidden lg:block object-fit w-full h-full aspect-square lg:aspect-video', alt: alt, lazyload: loading, width: 1000 -%}
+        {%- render 'image', image: section.settings.mobile_image, class: ' block lg:hidden object-fit w-full h-full aspect-auto', alt: alt, lazyload: loading, width: 600 -%}
+      </a>
+    </div>
+    <div class="col-span-12 lg:col-span-4 bg-[#EFEFEF] px-8 pt-5 pb-10 lg:py-5 {{ desc_pos }} flex items-center justify-center">
+      <div class="flex flex-col lg:gap-y-5 items-center ">
+        <a href="{{ section.settings.link }}"  class="hover:opacity-95 transition-opacity duration-300">
+          {%- render 'image', image: section.settings.product_image, class: ' object-fit w-full h-full max-w-[340px] hidden lg:block', alt: alt, lazyload: loading, width: 500 -%}
+        </a>
+        <div class="flex flex-col gap-y-3 items-center max-w-[350px]"> 
+          <div class="flex flex-row gap-x-2">
+            {% if section.settings.product_roundel != blank %}
+              <span class="bg-cornflower text-white p-2 rounded-full leading-none text-[11px] uppercase font-extrabold">{{ section.settings.product_roundel }}</span> 
+            {% endif %}
+            {% if section.settings.sale_roundel != blank %}
+              <div class="bg-red rounded-full p-2 text-white text-[11px] uppercase font-semibold inline-flex items-center justify-center leading-none">
+                {{ section.settings.sale_roundel }}
+              </div>
+            {% endif %}
+          </div>
+
+          <h3 class="font-heading text-md text-darkest">{{ section.settings.title }}</h3>
+          <p class="text-center text-small text-darkest">{{ section.settings.description }}</p>
+          <a href="{{ section.settings.link }}" class="font-semibold text-small text-darkest border-b-2 border-transparent hover:border-darkest transition-all">{{ section.settings.link_text }}</a>
+        </div>
+      </div>
+    </div> 
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "product_roundel",
+      "label": "Product Roundel",
+      "default": "Bestseller"
+    },
+    {
+      "type": "text",
+      "id": "sale_roundel",
+      "label": "Sale Roundel"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

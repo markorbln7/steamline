@@ -1,0 +1,133 @@
+<div
+  id="ProductSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="brand-values"
+  aria-labelledby="BrandValues"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+>
+
+  <div
+    class="relative w-full"
+    x-show="shown"
+    x-transition.opacity>
+    <div class="flex flex-col gap-y-11 py-11 lg:py-24 ">
+
+      <div class="flex flex-col gap-y-11 items-center text-center px-4 lg:px-11">
+        <h3 class="px-4 lg:px-0 font-heading text-md lg:text-lg">{{ section.settings.title }}</h3>
+        <p class="text-lbase leading-6 max-w-[960px] m-auto">{{ section.settings.copy }}</p>
+      </div>
+      
+      <div class="max-w-full py-16 px-4 lg:px-11 flex justify-start lg:justify-center gap-11 flex-wrap">
+        {% for block in section.blocks %}
+          <div class="lg:text-center flex flex-col gap-y-3 flex-1 min-w-[200px] md:min-w-[240px]">
+            <div class="flex justify-start lg:justify-center">
+              <div class="w-11 h-11 bg-darkest rounded-full flex items-center justify-center lg:m-auto">
+                {% assign value_icon = block.settings.value_icon %}
+                {%- render 'icon', icon: value_icon -%}
+              </div>
+            </div>
+            <h4 class="font-heading text-lbase">{{ block.settings.title }}</h4>
+            <p>{{ block.settings.copy }}</p>
+
+            {% if block.settings.link != null %}
+            <a href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        {%- if section.settings.button_link != null -%}
+        <div class="flex justify-center flex-1">
+          <a href="{{ section.settings.button_link }}" class="btn button-primary">{{ section.settings.button_text }}</a>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Values",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    { 
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Brand Value",
+      "settings": [
+        {
+          "type": "select",
+          "id": "value_icon",
+          "label": "Value Icon",
+          "options": [
+            {
+              "value": "plant",
+              "label": "Plant"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "badge",
+              "label": "Badge"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            }
+          ],
+          "default": "plant"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Values",
+      "category": "Brand"
+    }
+  ]
+}
+{% endschema %}

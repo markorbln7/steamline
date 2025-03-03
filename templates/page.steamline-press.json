@@ -1,0 +1,426 @@
+{
+  "sections": {
+    "page_banner_xFwhXY": {
+      "type": "page-banner",
+      "disabled": true,
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/press-hero-desk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/press-hero-mob.jpg",
+        "desktop_image_alt": "",
+        "title": "",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-press",
+      "blocks": {
+        "press_block_j7hY9F": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Travel + Leisure, Dec 2023",
+            "press_copy": "The Explorer collection featured in the December Gift Guide.",
+            "press_image": "shopify:\/\/shop_images\/Travel_Leisurecover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Travel_Leisurehover-desk.jpg",
+            "press_image_alt": "Travel + Leisure, Dec 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_REwwbM": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Conde Nast Traveller, Nov 2023",
+            "press_copy": "The Sweetheart Carryon featured in the November Style File shoot.",
+            "press_image": "shopify:\/\/shop_images\/CondeNastcover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/CondeNasthover-desk.jpg",
+            "press_image_alt": "Conde Nast Traveller, Nov 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_rXxbzh": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Wedding H Korea, Oct 2023",
+            "press_copy": "The Entrepreneur Lip Print Carryon featured in the October 'Honeymoon Essentials' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Hcover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Hhover-desk.jpg",
+            "press_image_alt": "Wedding H Korea, Oct 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_z3XhLA": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "ELLE, Aug 2023",
+            "press_copy": "The Diplomat Cream Carryon featured in the August 'Shop Cairo' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Ellecover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/ELLEhover-desk.jpg",
+            "press_image_alt": "ELLE, Aug 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_ryH9e7": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Tatler, July 2023",
+            "press_copy": "The Entrepreneur Pink and Alchemist collections featured in the July photoshoot in conjunction with the Barbie movie promotion.",
+            "press_image": "shopify:\/\/shop_images\/Tatlercover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Tatlerhover-desk.jpg",
+            "press_image_alt": "Tatler, July 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_qnxLWM": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Vogue, May 2023",
+            "press_copy": "The Correspondent Yellow collection featured in the May photoshoot with Margot Robbie promoting the Barbie movie.",
+            "press_image": "shopify:\/\/shop_images\/Vogue-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Vogue2023hover-desk.jpg",
+            "press_image_alt": "Vogue, May 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_yp3cp3": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "British Vogue, Apr 2020",
+            "press_copy": "The Anthropologist Orange Checkin Spinner featured in the April 'Ride & Seek' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/BritishVogue-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/BritishVoguehover-desk.jpg",
+            "logo_image": "shopify:\/\/shop_images\/vogue.svg",
+            "press_image_alt": "British Vogue, Apr 2020",
+            "press_link": ""
+          }
+        },
+        "press_block_QCHNTg": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Marie Claire, Nov 2018",
+            "press_copy": "The Anthropologist Navy Carryon featured in the November 'Going Places' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/MarieClairecover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/marieclairehover-desk.jpg",
+            "press_image_alt": "Marie Claire, Nov 2018",
+            "press_link": ""
+          }
+        },
+        "press_block_kjQzn9": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Red Magazine, July 2018",
+            "press_copy": "The Correspondent Pink Suitcase featured in the July 'Come fly with me' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Redcover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Redhover-desk.jpg",
+            "press_image_alt": "Red Magazine, July 2018",
+            "press_link": ""
+          }
+        },
+        "press_block_4wtwCT": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Vogue, Dec 2017",
+            "press_copy": "The Anthropologist Orange Carryon featured in the December 'Travel time' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Vogue2017-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Vogue2017hover-desk.jpg",
+            "logo_image": "shopify:\/\/shop_images\/vogue.svg",
+            "press_image_alt": "Vogue, Dec 2017",
+            "press_link": ""
+          }
+        },
+        "press_block_xABCEA": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "Glamour, June 2017",
+            "press_copy": "The Jetsetter Vanity featured in the June 'Summer Weekend Checklist' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Glamourcover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Glamourhover-desk.jpg",
+            "press_image_alt": "Glamour, June 2017",
+            "press_link": ""
+          }
+        },
+        "press_block_jkDwiB": {
+          "type": "press_block",
+          "settings": {
+            "is_press": true,
+            "press_title": "W Magazine, Dec 2016",
+            "press_copy": "The Diplomat Cream Stowaway featured in the December 'Most Wanted' Style Guide.",
+            "press_image": "shopify:\/\/shop_images\/Wcover-desk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/Whover-desk.jpg",
+            "press_image_alt": "W Magazine, Dec 2016",
+            "press_link": ""
+          }
+        },
+        "press_block_TBm3Pa": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Conde Nast Traveler, Apr 2024, 'Best Tote Bags: The Navigator Tote'",
+            "press_copy": "\"Though new to the tote game, SteamLine has crafted an incredibly roomy carry-all with a structured silhouette made from...\"",
+            "press_image": "shopify:\/\/shop_images\/totenut-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/conde-nast-traveler_1b34d47f-027b-4671-b288-7261eb82b9f7.svg",
+            "press_image_alt": "Conde Nast Traveler, Apr 2024, 'Best Tote Bags: The Navigator Tote'",
+            "press_link": "https:\/\/www.cntraveler.com\/story\/best-tote-bags"
+          }
+        },
+        "press_block_mMyQYQ": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Town & Country, Apr 2024 - 'Best Retro-Inspired Luxury Luggage: The Sweetheart'",
+            "press_copy": "\"Since 2005, SteamLine has put a fresh, contemporary spin on timeless vintage silhouettes. Delightfully feminine and...\"",
+            "press_image": "shopify:\/\/shop_images\/sweet-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/town-and-country-magazine.svg",
+            "press_image_alt": "Town & Country, Apr 2024 - 'The 13 Best Luxury Luggage for Traveling in Style: Best Retro-Inspired, The Sweetheart'",
+            "press_link": "https:\/\/www.townandcountrymag.com\/leisure\/travel-guide\/g37886837\/best-designer-luxury-luggage-brands\/"
+          }
+        },
+        "press_block_U4i6MB": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Veranda, Mar 2024 - '9 Best Luggage Sets, Most Stylish Set: The Diplomat'",
+            "press_copy": "\"Designed for the classic traveler, collections from the chic brand Steamline Luggage are so beautifully made the...\"",
+            "press_image": "shopify:\/\/shop_images\/dipcr-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-veranda.svg",
+            "press_image_alt": "Veranda, Mar 2024 - '9 Best Luggage Sets: Most Stylish Set, The Diplomat'",
+            "press_link": "https:\/\/www.veranda.com\/shopping\/g60298597\/best-luggage-sets\/"
+          }
+        },
+        "press_block_rgkX3L": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Dujour, Feb 2024 - 'Your New Favorite Colorful Luggage: The Correspondent'",
+            "press_copy": "\"Elevate your travel experience with these vibrant, compact and stylish new pieces...\"",
+            "press_image": "shopify:\/\/shop_images\/corryell-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-Dujour.svg",
+            "press_image_alt": "Dujour, Feb 2024 - 'Your New Favorite Colorful Luggage: The Correspondent Yellow'",
+            "press_link": "https:\/\/dujour.com\/gallery\/new-suitcases-luggage\/#slide-5"
+          }
+        },
+        "press_block_nWMEfB": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Conde Nast Traveller UK, Feb 2024 - 'The best stylish trunk luggage: The Architect'",
+            "press_copy": "\"Its offerings are more affordable than Globe-Trotter and available in a smorgasbord of chic colourways, with....\"",
+            "press_image": "shopify:\/\/shop_images\/arccr-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-conde-nast-traveller-UK.svg",
+            "press_image_alt": "Conde Nast Traveller UK, Feb 2024 - 'The best stylish trunk luggage to buy in 2024: The Architect'",
+            "press_link": "https:\/\/www.cntraveller.com\/article\/trunk-luggage"
+          }
+        },
+        "press_block_BYkCPa": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Oprah, Feb 2024 - 'The 8 Best Carry-On Luggage, Most Stylish: The Editor'",
+            "press_copy": "\"With this classic and elegant case, you'll look chic and put together while strolling through the airport. Top and side carry...\"",
+            "press_image": "shopify:\/\/shop_images\/edbl-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-oprah.svg",
+            "press_image_alt": "Oprah, Feb 2024 - 'The 8 Best Carry-On Luggage and Travel Bags of 2024, Most Stylish: The Editor'",
+            "press_link": "https:\/\/www.oprahdaily.com\/life\/g41039403\/best-carry-on-luggage\/"
+          }
+        },
+        "press_block_6GygrU": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Conde Nast Traveler, Feb 2024 - 'The Best Packing Cubes List'",
+            "press_copy": "\"When it comes to design, SteamLine's luggage and travel accessories always stand out—and this applies to the...\"",
+            "press_image": "shopify:\/\/shop_images\/pc-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/conde-nast-traveler.svg",
+            "press_image_alt": "Conde Nast Traveler, Feb 2024 - 'The Best Packing Cubes to Keep Your Suitcase Organized'",
+            "press_link": "https:\/\/www.cntraveler.com\/story\/best-packing-cubes"
+          }
+        },
+        "press_block_z93rJQ": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Glamour UK, Feb 2024 - '15 best underseat luggage bags: The Editor'",
+            "press_copy": "Featured The Editor collection in the shoot accompanying the list.",
+            "press_image": "shopify:\/\/shop_images\/edbr-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-glamour_uk.svg",
+            "press_image_alt": "Glamour UK, Feb 2024 - '15 best underseat luggage bags: The Editor'",
+            "press_link": "https:\/\/www.glamourmagazine.co.uk\/article\/underseat-luggage"
+          }
+        },
+        "press_block_DkriJi": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Good Morning America, Jan 2024 - 'Best Floral List: The Botanist & Packing Cubes'",
+            "press_copy": "Featured The Botanist & The Floral Packing Cubes in their curated list.",
+            "press_image": "shopify:\/\/shop_images\/bot-press_3233b7d0-c444-4167-bc58-b20a6763f3ec.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-good-morning-america.svg",
+            "press_image_alt": "Good Morning America, Jan 2024 - 'Best Floral Apparel & Accessories: The Botanist & The Floral Packing Cubes'",
+            "press_link": "https:\/\/www.goodmorningamerica.com\/shop\/story\/floral-apparel-accessories-spring-98010751"
+          }
+        },
+        "press_block_dByrPA": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Travel + Leisure, Jan 2024 - 'The 8 Best Travel Trunks. Best Style: The Sweetheart'",
+            "press_copy": "\"If you’re looking for a suitcase that will garner attention no matter where you are, this posh, vintage-inspired suitcase...\"",
+            "press_image": "shopify:\/\/shop_images\/sweet-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-travel-leisure.svg",
+            "press_image_alt": "Travel + Leisure, Jan 2024 - 'The 8 Best Travel Trunks. Best Style: The Sweetheart'",
+            "press_link": "https:\/\/www.travelandleisure.com\/best-travel-trunks-7968426"
+          }
+        },
+        "press_block_EHPAJe": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Harper's Bazaar, Jan 2024 'Best Retro Luggage for Frequent Fliers: The Starlet'",
+            "press_copy": "\"The structured shape, ivory straps, and gold hardware on this SteamLine suitcase gives it a charming retro flair. This case...\"",
+            "press_image": "shopify:\/\/shop_images\/starl-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/logo-harpers-bazaar.svg",
+            "press_image_alt": "Harper's Bazaar, Jan 2024 - 'The 13 Best Luggage Sets for Frequent Fliers: Best Retro Luggage: The Starlet'",
+            "press_link": "https:\/\/www.harpersbazaar.com\/fashion\/trends\/g43844073\/best-luggage-sets\/"
+          }
+        },
+        "press_block_9RtEFg": {
+          "type": "press_block",
+          "settings": {
+            "is_press": false,
+            "press_title": "Vogue, Nov 2023 - 'Best Hardside Roller Carry-On: The Entrepreneur'",
+            "press_copy": "Featured The Entrepreneur collection in their curated list.",
+            "press_image": "shopify:\/\/shop_images\/ent-press.jpg",
+            "logo_image": "shopify:\/\/shop_images\/vogue.svg",
+            "press_image_alt": "Vogue, Nov 2023 - 'Best Hardside Roller Carry-On: The Entrepreneur'",
+            "press_link": "https:\/\/www.vogue.com\/article\/best-carry-on-luggage-bags"
+          }
+        },
+        "press_block_k6DCYQ": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "Vogue, Mar 2024",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/GQ.svg",
+            "press_image_alt": "Vogue, Mar 2024",
+            "press_link": ""
+          }
+        },
+        "press_block_V4XizQ": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "Vogue, Dec, 2023",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/elle.svg",
+            "press_image_alt": "Vogue, Dec, 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_xMVPa7": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "Conde Nast Traveller, Feb 2024",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/Vanity_Fair.svg",
+            "press_image_alt": "Conde Nast Traveller, Feb 2024",
+            "press_link": ""
+          }
+        },
+        "press_block_nFeyUd": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "Vogue, Mar 2024",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/logo-ad-us_1.svg",
+            "press_image_alt": "Vogue, Mar 2024",
+            "press_link": ""
+          }
+        },
+        "press_block_4gA9qY": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "Vogue, Dec, 2023",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/gloss-logo.svg",
+            "press_image_alt": "Vogue, Dec, 2023",
+            "press_link": ""
+          }
+        },
+        "press_block_eFmaxn": {
+          "type": "press_block",
+          "disabled": true,
+          "settings": {
+            "is_press": false,
+            "press_title": "W, 2024",
+            "press_copy": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.”",
+            "logo_image": "shopify:\/\/shop_images\/irish-independent.svg",
+            "press_image_alt": "W, 2024",
+            "press_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "press_block_j7hY9F",
+        "press_block_REwwbM",
+        "press_block_rXxbzh",
+        "press_block_z3XhLA",
+        "press_block_ryH9e7",
+        "press_block_qnxLWM",
+        "press_block_yp3cp3",
+        "press_block_QCHNTg",
+        "press_block_kjQzn9",
+        "press_block_4wtwCT",
+        "press_block_xABCEA",
+        "press_block_jkDwiB",
+        "press_block_TBm3Pa",
+        "press_block_mMyQYQ",
+        "press_block_U4i6MB",
+        "press_block_rgkX3L",
+        "press_block_nWMEfB",
+        "press_block_BYkCPa",
+        "press_block_6GygrU",
+        "press_block_z93rJQ",
+        "press_block_DkriJi",
+        "press_block_dByrPA",
+        "press_block_EHPAJe",
+        "press_block_9RtEFg",
+        "press_block_k6DCYQ",
+        "press_block_V4XizQ",
+        "press_block_xMVPa7",
+        "press_block_nFeyUd",
+        "press_block_4gA9qY",
+        "press_block_eFmaxn"
+      ],
+      "settings": {
+        "online_image": "shopify:\/\/shop_images\/press-bg.png"
+      }
+    }
+  },
+  "order": [
+    "page_banner_xFwhXY",
+    "main"
+  ]
+}

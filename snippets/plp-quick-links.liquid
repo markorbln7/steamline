@@ -1,0 +1,37 @@
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign pageUrl = contentForQuerystring
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | split: '.myshopify.com'
+  | last
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+-%} 
+{% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
+
+{% if collection.metafields.plp.quick_links.value.count > 0 %}
+  <ul class="flex justify-start lg:justify-center gap-x-3 lg:gap-1 py-6 lg:py-14 overflow-x-auto pl-4 lg:pl-0 scrollbar-hide">
+    {% for cat in collection.metafields.plp.quick_links.value %}
+      {% liquid
+        assign cat_active = false
+        assign final_url_handle = finalurl | handleize
+        assign cat_link_handle = cat.link | handleize
+        if final_url_handle == cat_link_handle
+          assign cat_active = true
+        endif
+      %}
+
+      <li class="flex-shrink-0 lg:w-32 lg:h-44">
+        <a
+          href="{{ cat.link }}#CollectionSection"
+          class="flex flex-col gap-y-2 items-center w-full h-full {% if cat_active %} border-b-2 border-darkest{% endif %}">
+          {%- render 'image', image: cat.image, class: ' hidden lg:block !min-h-[140px]', alt: cat.title, lazyload: false, width: 160, height: 160 -%}
+          <span class="text-[14px] text-dark_ink lg:pb-3 {% if cat_active %}font-bold{% endif %}">{{ cat.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

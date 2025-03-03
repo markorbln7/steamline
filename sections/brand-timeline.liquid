@@ -1,0 +1,113 @@
+<div
+  id="brand-timeline-container"
+  data-section-id="brand-timeline"
+  data-section-type="brand-timeline"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="ml-11 lg:ml-24 py-10 lg:py-20">
+      <div
+        class="splide w-full relative before:content-[''] before:absolute before:top-[9px] before:left-0 before:w-full before:h-[1px] before:bg-[#E1E2FF]"
+        aria-label="Brand Timeline"
+        data-splide-progress="true"
+        data-splide='
+          {
+            "type": "slide",
+            "perMove": 1,
+            "autoplay": false,
+            "pagination": false,
+            "arrows": true,
+            "speed": 800,
+            "gap": 40,
+            "drag": true,
+            "breakpoints": {
+              "640": { 
+                "perPage": 1.2,
+                "perMove": 1.2,
+                "focus": "center",
+                "snap": false
+              },
+              "3000": {
+                "perPage": 4
+              }
+            }
+          }
+        '>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {%- for block in section.blocks -%}
+              <li class="splide__slide">
+                <div class=" w-5 h-5 bg-cornflower rounded-full flex mb-8"></div>
+                <div class="flex flex-col gap-y-4">
+                  <div class="flex flex-col gap-y-3 relative">
+                    <h3 class="font-heading_light text-lbase">{{ block.settings.block_title }}</h3>
+                    <p>{{ block.settings.block_text }}</p>
+                  </div>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="relative mt-11 hidden lg:flex items-center justify-start gap-6">
+          <div class="slider-progress relative h-[2px] w-[90%] bg-light_ink">
+            <div class="slider-progress-bar h-[2px] w-0 bg-mid_ink"></div>
+          </div>
+
+          <div class="splide__arrows relative flex gap-x-1">
+            <button class="splide__arrow splide__arrow--prev !relative !left-0 !top-0 !w-5 !transform-none !bg-transparent">
+              {% render 'icon', icon: 'right-chevron-dark' %}
+            </button>
+            <button class="splide__arrow splide__arrow--next !relative !right-0 !top-0 !w-5 !transform-none !bg-transparent">
+              {% render 'icon', icon: 'right-chevron-dark' %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider-progress-bar {
+    transition: width 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand Timeline",
+  "class": "brand-timeline-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slider_block",
+      "name": "Slider block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "info": "Title (Year)"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Block Text",
+          "info": "Text to display"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Timeline",
+      "category": "Brand"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,114 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="main-about"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="grid grid-cols-12 py-11 lg:py-24">
+      <div class="col-span-12 flex justify-center">
+        <h2 class="text-md lg:text-xl text-center flex flex-col gap-y-4 max-w-[830px] mx-auto px-11 lg:px-0">
+          {{ section.settings.about_intro }}
+        </h2>
+      </div>
+    </div>
+    <div class="max-w-full bg-pale_grey py-16 px-4 lg:px-11 flex justify-start lg:justify-center gap-x-11 gap-y-11 lg:gap-y-0 flex-wrap">
+      <div class="max-w-[290px] lg:text-center flex flex-col gap-y-3">
+        <div class="w-11 h-11 bg-cornflower rounded-full flex items-center justify-center lg:m-auto">
+          {%- render 'icon', icon: 'female' -%}
+        </div>
+        <h4 class="font-heading text-lbase">{{ section.settings.icon_row_title_one }}</h4>
+        <p>{{ section.settings.icon_row_copy_one }}</p>
+      </div>
+      <div class="max-w-[290px] lg:text-center flex flex-col gap-y-3">
+        <div class="w-11 h-11 bg-cornflower rounded-full flex items-center justify-center lg:m-auto">
+          {%- render 'icon', icon: 'quality' -%}
+        </div>
+        <h4 class="font-heading text-lbase">{{ section.settings.icon_row_title_two }}</h4>
+        <p>{{ section.settings.icon_row_copy_two }}</p>
+      </div>
+      <div class="max-w-[290px] lg:text-center flex flex-col gap-y-3">
+        <div class="w-11 h-11 bg-cornflower rounded-full flex items-center justify-center lg:m-auto">
+          {%- render 'icon', icon: 'sustainability' -%}
+        </div>
+        <h4 class="font-heading text-lbase">{{ section.settings.icon_row_title_three }}</h4>
+        <p>{{ section.settings.icon_row_copy_three }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "about_intro",
+      "label": "About introduction",
+      "info": "Text to display for a page introduction"
+    },
+    {
+      "type": "header",
+      "content": "Icon row"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_row_image_one",
+      "label": "Icon row image one",
+      "info": "Upload an image to display as the icon row image"
+    },
+    {
+      "type": "text",
+      "id": "icon_row_title_one",
+      "label": "Icon row title one",
+      "info": "Text to display for a title"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_row_copy_one",
+      "label": "Icon row copy one",
+      "info": "Copy to display for the icon row"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_row_image_two",
+      "label": "Icon row image two",
+      "info": "Upload an image to display as the icon row image"
+    },
+    {
+      "type": "text",
+      "id": "icon_row_title_two",
+      "label": "Icon row title two",
+      "info": "Text to display for a title"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_row_copy_two",
+      "label": "Icon row copy two",
+      "info": "Copy to display for the icon row"
+    },
+    {
+      "type": "text",
+      "id": "icon_row_title_three",
+      "label": "Icon row title three",
+      "info": "Text to display for a title"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_row_copy_three",
+      "label": "Icon row copy three",
+      "info": "Copy to display for the icon row"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About page",
+      "category": "About"
+    }
+  ]
+}
+{% endschema %}

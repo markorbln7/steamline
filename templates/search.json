@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "page_banner_WXbG3r": {
+      "type": "page-banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/overnighter-cb.jpg",
+        "desktop_image_alt": "Search",
+        "title": "Search",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-search",
+      "settings": {
+        "list": "",
+        "collection_paginate": 12,
+        "include_collection_sort": true,
+        "include_collection_filters": true
+      }
+    }
+  },
+  "order": [
+    "page_banner_WXbG3r",
+    "main"
+  ]
+}

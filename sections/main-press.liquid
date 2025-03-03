@@ -1,0 +1,216 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="help-center"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    <div class="grid grid-cols-12 py-11 lg:py-24">
+      <div class="col-span-12 flex justify-center">
+        <h1 class="text-xl lg:text-display text-center flex flex-col gap-y-4">
+          {{ page.title }}
+          <span class="block text-base font-body text-dark_ink leading-5">{{ page.content }}</span>
+        </h1>
+      </div>
+    </div>
+    <div class="grid grid-cols-12 gap-y-8 lg:gap-y-16 md:gap-x-8 lg:gap-x-11 py-11 lg:py-16">
+      {%- for block in section.blocks -%}
+        {% liquid 
+
+          assign loading = ''
+          assign priority = ''
+          assign decoding = ''
+
+          if forloop.index > 4
+            assign loading = 'lazy'
+            assign decoding = 'async'
+            assign priority = 'auto'
+          else 
+            assign loading = 'eager'
+            assign priority = 'high'
+            assign decoding = 'auto'
+          endif 
+
+          if block.settings.is_press
+            assign press_type = true
+          else
+            assign press_type = false
+          endif
+        %}
+
+        <div class="col-span-12 md:col-span-4 lg:col-span-3 {% if block.settings.press_link == null %} flex flex-col gap-y-4 {% endif %}">
+          <div class="relative">
+            {% liquid 
+              assign block_title = ''
+
+              if press_type == true
+                assign block_title = 'Print Press'
+              else
+                assign block_title = 'Online Press'
+              endif
+            %}
+            
+            {% if press_type == true %}
+              <div class="relative w-full h-full">
+                {%- 
+                  render 'image', 
+                  image: block.settings.press_image, 
+                  class: ' w-full h-full object-cover aspect-auto transition-opacity duration-700 ease-in-out', 
+                  alt: block.settings.press_image_alt, 
+                  lazyload: loading,  
+                  priority: priority, 
+                  decoding: decoding, 
+                  width: 500 
+                -%}
+
+                <div class="absolute w-full top-0 left-0 flex h-full opacity-0 hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                  {%- 
+                    render 'image', 
+                    image: block.settings.hover_image, 
+                    class: ' w-full h-full object-cover aspect-auto', 
+                    alt: block.settings.press_image_alt, 
+                    lazyload: loading, 
+                    priority: priority, 
+                    decoding: decoding, 
+                    width: 500
+                  -%}
+                </div>
+              </div>
+            {% else %}
+              <div class="w-full h-full flex justify-center items-center aspect-auto">
+                {% if block.settings.press_link != null %}
+                  <a class="flex flex-col relative" href="{{ block.settings.press_link }}" target="_blank" rel="noopener noreferrer">
+                {% endif %}
+                  <span class="text-center flex flex-col gap-y-2 items-center justify-center absolute bottom-0 transform left-0 w-full h-[80px] bg-white_op">
+                    <span class="text-small text-darkest">Featured in</span>
+                    <div class="max-h-[30px]">
+                      {%- 
+                        render 'image', 
+                        image: block.settings.logo_image, 
+                        class: ' w-full h-full !object-contain aspect-auto', 
+                        alt: block.settings.press_image_alt, 
+                        lazyload: loading, 
+                        priority: priority, 
+                        decoding: decoding, 
+                        height: 30
+                      -%}
+                    </div>
+                  </span>
+
+                  {%- 
+                    render 'image', 
+                    image: block.settings.press_image, 
+                    class: ' w-full h-full object-cover aspect-auto', 
+                    alt: block.settings.press_image_alt, 
+                    lazyload: loading, 
+                    priority: priority, 
+                    decoding: decoding, 
+                    width: 500
+                  -%}
+
+                {% if block.settings.press_link %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+          <div class="flex flex-col gap-y-4 {% if block.settings.press_link != null %}mt-4{% endif %}">
+            <div class="text-small font-semibold text-darkest_ink pb-1">{{ block_title }}</div>
+            <h3 class="font-heading text-base text-darkest_ink">
+              {{ block.settings.press_title }}
+            </h3>
+            <span class="text-small">
+              {{ block.settings.press_copy }}
+            </span>
+
+            {% if block.settings.press_link != null %}
+            <a class="text-small inline-flex hover:underline font-semibold" href="{{ block.settings.press_link }}" target="_blank" rel="noopener noreferrer">
+              Read more
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "online_image",
+      "label": "Online bg"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "press_block",
+      "name": "Press block",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "is_press",
+          "label": "Is this a press feature?",
+          "default": false,
+          "info": "Check this box if the feature is a press release"
+        },
+        {
+          "type": "text",
+          "id": "press_title",
+          "label": "Title",
+          "info": "Text to display for a title"
+        },
+        {
+          "type": "textarea",
+          "id": "press_copy",
+          "label": "Copy",
+          "info": "Copy to display for the press article"
+        },
+        {
+          "type": "image_picker",
+          "id": "press_image",
+          "label": "Image",
+          "info": "Upload an image to display as the press cover"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover Image",
+          "info": "Upload an image to display as the press hover image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo",
+          "info": "Upload an image to display as the logo"
+        },
+        {
+          "type": "text",
+          "id": "press_image_alt",
+          "label": "Image Alt Text",
+          "info": "Alt text for the image."
+        },
+        {
+          "type": "url",
+          "id": "press_link",
+          "label": "Link",
+          "info": "Link to the press article. Leave blank if the article is not available."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press page",
+      "category": "Press"
+    }
+  ]
+}
+{% endschema %}

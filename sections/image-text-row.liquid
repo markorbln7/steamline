@@ -1,0 +1,120 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="image-text-row"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  {%- liquid
+    if section.settings.image_alt != blank
+      assign alt = section.settings.image_alt
+    else
+      assign alt = section.settings.title
+    endif
+
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4
+      assign loading = true
+    endif
+
+    if section.settings.image_right
+      assign image_pos = 'order-1 md:order-2'
+      assign text_pos = 'order-2 md:order-1'
+    else
+      assign image_pos = 'order-1 md:order-1'
+      assign text_pos = 'order-2 md:order-2'
+    endif
+  -%}
+  
+  <div 
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="lg:py-11 px-4 lg:px-11 grid lg:grid-cols-2 gap-x-8 lg:gap-x-11 xl:gap-x-24 gap-y-6 lg:gap-y-0 mb-11 lg:mb-0">
+      <div class="col-span-1 {{ image_pos }}">
+        {%- render 'image', image: section.settings.image, class: ' object-fit w-full', alt: alt, lazyload: loading, width: 800 -%}
+        {%- if section.settings.image_footnote != blank -%}
+          {%- if section.settings.image_footnote_link != blank -%}
+            <a href="{{ section.settings.image_footnote_link }}" class="font-semibold text-small pt-4 hover:border-b hover:border-darkest inline-flex">
+              {{ section.settings.image_footnote }}
+            </a>
+          {%- else -%}
+            <span class="font-semibold text-small block pt-4">{{ section.settings.image_footnote }}</span>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+      <div class="col-span-1 flex flex-col items-start justify-center gap-y-8 {{ text_pos }}">
+        <h3 class="font-heading text-md">{{ section.settings.title }}</h3>
+        <span class="text-base leading-6 max-w-[580px]">{{ section.settings.copy }}</span>
+
+        {%- if section.settings.link != blank -%}
+          <a href="{{ section.settings.link }}" class="btn button-primary inline-flex w-auto">{{ section.settings.link_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image and text row",
+  "class": "image-text-row",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Image on right"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_footnote",
+      "label": "Image Footnote",
+      "info": "Footnote"
+    },
+    {
+      "type": "url",
+      "id": "image_footnote_link",
+      "label": "Image Footnote Link",
+      "info": "Link"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Copy",
+      "info": "Copy"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "info": "Link Text",
+      "default": "Read More"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image and text row",
+      "category": "Components"
+    }
+  ]
+}
+{% endschema %}

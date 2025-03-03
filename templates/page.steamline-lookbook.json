@@ -1,0 +1,603 @@
+{
+  "sections": {
+    "lookbook": {
+      "type": "main-lookbook",
+      "blocks": {
+        "lookbook_block_a6LUAU": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-crossbody-clutch",
+            "hotspot_top_pos": 83,
+            "hotspot_left_pos": 48,
+            "image": "shopify:\/\/shop_images\/crossbody3-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_PTdexe": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-tote",
+            "hotspot_top_pos": 55,
+            "hotspot_left_pos": 55,
+            "image": "shopify:\/\/shop_images\/nav-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_PFpecH": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-desert-glitter-crossbody-clutch",
+            "hotspot_top_pos": 73,
+            "hotspot_left_pos": 38,
+            "image": "shopify:\/\/shop_images\/crossbody2-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_b9nqA9": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-micro-tote",
+            "hotspot_top_pos": 84,
+            "hotspot_left_pos": 58,
+            "image": "shopify:\/\/shop_images\/D1_ca0e923d-3315-47ab-b54b-c1072e09d927.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_B3XGLy": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-desert-glitter-laptop-case",
+            "hotspot_top_pos": 46,
+            "hotspot_left_pos": 47,
+            "image": "shopify:\/\/shop_images\/lap-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_yVmew4": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-black-weekender-duffle-bag",
+            "hotspot_top_pos": 72,
+            "hotspot_left_pos": 60,
+            "image": "shopify:\/\/shop_images\/duff-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_xj7EVE": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-black-carryon",
+            "hotspot_top_pos": 79,
+            "hotspot_left_pos": 55,
+            "image": "shopify:\/\/shop_images\/blackdip-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_ENjQiX": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-hunter-green-mini",
+            "hotspot_top_pos": 15,
+            "hotspot_left_pos": 48,
+            "image": "shopify:\/\/shop_images\/huntgrreddip-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_GNbynM": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-botanist-pink-hatbox-deluxe",
+            "hotspot_top_pos": 55,
+            "hotspot_left_pos": 37,
+            "image": "shopify:\/\/shop_images\/bot-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_7QKptY": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-industrialist-carryon",
+            "hotspot_top_pos": 65,
+            "hotspot_left_pos": 63,
+            "image": "shopify:\/\/shop_images\/D10_f8754739-91db-4e45-a7f1-622a86d70616.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_iDzcWe": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-industrialist-check-in-spinner",
+            "hotspot_top_pos": 73,
+            "hotspot_left_pos": 44,
+            "image": "shopify:\/\/shop_images\/ind-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_B3PUFy": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-anthropologist-orange-vanity",
+            "hotspot_top_pos": 72,
+            "hotspot_left_pos": 25,
+            "image": "shopify:\/\/shop_images\/anthroor-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_KUz8hd": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-editor-sea-green-small-hatbox",
+            "hotspot_top_pos": 78,
+            "hotspot_left_pos": 27,
+            "image": "shopify:\/\/shop_images\/edtl-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_8XgBib": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-alchemist-hatbox-deluxe",
+            "hotspot_top_pos": 50,
+            "hotspot_left_pos": 33,
+            "image": "shopify:\/\/shop_images\/alch-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_UChP4Y": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-editor-brown-carryon",
+            "hotspot_top_pos": 53,
+            "hotspot_left_pos": 70,
+            "image": "shopify:\/\/shop_images\/edbr-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_yDKYBy": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-red-overnighter",
+            "hotspot_top_pos": 51,
+            "hotspot_left_pos": 61,
+            "image": "shopify:\/\/shop_images\/entred-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_dGGiBX": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-starlet-hatbox-large",
+            "hotspot_top_pos": 78,
+            "hotspot_left_pos": 26,
+            "image": "shopify:\/\/shop_images\/D6.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_bnLtJj": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "starlet-carryon-gold",
+            "hotspot_top_pos": 63,
+            "hotspot_left_pos": 75,
+            "image": "shopify:\/\/shop_images\/D7_44bc3b38-9178-4048-9aa9-6d396d5ae865.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_mzLfez": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-starlet-spinner",
+            "hotspot_top_pos": 81,
+            "hotspot_left_pos": 32,
+            "image": "shopify:\/\/shop_images\/starlet-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_FLUKeE": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-lip-print-hatbox-deluxe",
+            "hotspot_top_pos": 78,
+            "hotspot_left_pos": 16,
+            "image": "shopify:\/\/shop_images\/lipprint-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_h9DE4b": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-illustrator-blue-carryon",
+            "hotspot_top_pos": 59,
+            "hotspot_left_pos": 64,
+            "image": "shopify:\/\/shop_images\/D4_ad3a0a81-624c-43f7-95e4-f97e184f4e5c.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_3Q6DrN": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-cream-carryon",
+            "hotspot_top_pos": 59,
+            "hotspot_left_pos": 49,
+            "image": "shopify:\/\/shop_images\/crmdip2-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_EN4hM7": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-cream-stowaway",
+            "hotspot_top_pos": 75,
+            "hotspot_left_pos": 86,
+            "image": "shopify:\/\/shop_images\/D5_7b012caa-a8da-45ed-8108-a9bfe4dc27a6.png",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_cDcFRK": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-black-mini",
+            "hotspot_top_pos": 68,
+            "hotspot_left_pos": 47,
+            "image": "shopify:\/\/shop_images\/bldip-lkbk-desk.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "lookbook_block_xVgFaQ": {
+          "type": "lookbook_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-navy-carryon",
+            "hotspot_top_pos": 65,
+            "hotspot_left_pos": 82,
+            "image": "shopify:\/\/shop_images\/D8_ae28c3ad-21eb-40b9-ad82-af77b639f29d.png",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_m6iFbJ": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-crossbody-clutch",
+            "hotspot_top_pos": 85,
+            "hotspot_left_pos": 61,
+            "image": "shopify:\/\/shop_images\/crossbody3-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_WLkdWa": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-tote",
+            "hotspot_top_pos": 53,
+            "hotspot_left_pos": 50,
+            "image": "shopify:\/\/shop_images\/nav-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_BxtJTW": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-desert-glitter-crossbody-clutch",
+            "hotspot_top_pos": 74,
+            "hotspot_left_pos": 34,
+            "image": "shopify:\/\/shop_images\/crossbody2-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_HXcfJb": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-nut-micro-tote",
+            "hotspot_top_pos": 69,
+            "hotspot_left_pos": 40,
+            "image": "shopify:\/\/shop_images\/082A6787-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_Rahrnd": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-desert-glitter-laptop-case",
+            "hotspot_top_pos": 46,
+            "hotspot_left_pos": 39,
+            "image": "shopify:\/\/shop_images\/lap-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_QLTpMw": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-navigator-black-weekender-duffle-bag",
+            "hotspot_top_pos": 74,
+            "hotspot_left_pos": 72,
+            "image": "shopify:\/\/shop_images\/duff-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_DjtwFa": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-black-carryon",
+            "hotspot_top_pos": 88,
+            "hotspot_left_pos": 52,
+            "image": "shopify:\/\/shop_images\/blackdip-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_Rfidrr": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-hunter-green-mini",
+            "hotspot_top_pos": 15,
+            "hotspot_left_pos": 53,
+            "image": "shopify:\/\/shop_images\/huntgrreddip-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_BMjc4X": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-botanist-pink-hatbox-deluxe",
+            "hotspot_top_pos": 57,
+            "hotspot_left_pos": 24,
+            "image": "shopify:\/\/shop_images\/bot-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_JRXGWi": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-industrialist-carryon",
+            "hotspot_top_pos": 79,
+            "hotspot_left_pos": 68,
+            "image": "shopify:\/\/shop_images\/IMG_5254-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_8PtWbF": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-industrialist-check-in-spinner",
+            "hotspot_top_pos": 80,
+            "hotspot_left_pos": 35,
+            "image": "shopify:\/\/shop_images\/ind-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_fJK8hR": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-anthropologist-orange-vanity",
+            "hotspot_top_pos": 80,
+            "hotspot_left_pos": 46,
+            "image": "shopify:\/\/shop_images\/anthroor-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_X38q7V": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-editor-sea-green-small-hatbox",
+            "hotspot_top_pos": 87,
+            "hotspot_left_pos": 29,
+            "image": "shopify:\/\/shop_images\/edtl-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_TzRVKz": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-alchemist-hatbox-deluxe",
+            "hotspot_top_pos": 50,
+            "hotspot_left_pos": 20,
+            "image": "shopify:\/\/shop_images\/alch-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_876WbQ": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-red-overnighter",
+            "hotspot_top_pos": 47,
+            "hotspot_left_pos": 69,
+            "image": "shopify:\/\/shop_images\/entred-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_TwUxBF": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-starlet-hatbox-large",
+            "hotspot_top_pos": 70,
+            "hotspot_left_pos": 16,
+            "image": "shopify:\/\/shop_images\/IMG_4170-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_itdnTr": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "starlet-carryon-gold",
+            "hotspot_top_pos": 71,
+            "hotspot_left_pos": 67,
+            "image": "shopify:\/\/shop_images\/IMG_4095_1_-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_dz4KJL": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-starlet-spinner",
+            "hotspot_top_pos": 78,
+            "hotspot_left_pos": 9,
+            "image": "shopify:\/\/shop_images\/starlet-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_U3KdFt": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-lip-print-hatbox-deluxe",
+            "hotspot_top_pos": 82,
+            "hotspot_left_pos": 25,
+            "image": "shopify:\/\/shop_images\/lipprint-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_7ttn3E": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-illustrator-blue-carryon",
+            "hotspot_top_pos": 85,
+            "hotspot_left_pos": 83,
+            "image": "shopify:\/\/shop_images\/082A6525-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_DwNMzr": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-cream-carryon",
+            "hotspot_top_pos": 64,
+            "hotspot_left_pos": 84,
+            "image": "shopify:\/\/shop_images\/crmdip2-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_wEBrhy": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-cream-stowaway",
+            "hotspot_top_pos": 60,
+            "hotspot_left_pos": 76,
+            "image": "shopify:\/\/shop_images\/IMG_3403_steamline_kenia45413-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_tCe77U": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-diplomat-black-mini",
+            "hotspot_top_pos": 65,
+            "hotspot_left_pos": 59,
+            "image": "shopify:\/\/shop_images\/bldip-lkbk-mob.jpg",
+            "img_src_alt": ""
+          }
+        },
+        "mobile_block_Ua8DHM": {
+          "type": "mobile_block",
+          "settings": {
+            "use_hotspot": true,
+            "hotspot_product": "the-entrepreneur-navy-carryon",
+            "hotspot_top_pos": 72,
+            "hotspot_left_pos": 72,
+            "image": "shopify:\/\/shop_images\/IMG_8178b-MOB.jpg",
+            "img_src_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_block_a6LUAU",
+        "lookbook_block_PTdexe",
+        "lookbook_block_PFpecH",
+        "lookbook_block_b9nqA9",
+        "lookbook_block_B3XGLy",
+        "lookbook_block_yVmew4",
+        "lookbook_block_xj7EVE",
+        "lookbook_block_ENjQiX",
+        "lookbook_block_GNbynM",
+        "lookbook_block_7QKptY",
+        "lookbook_block_iDzcWe",
+        "lookbook_block_B3PUFy",
+        "lookbook_block_KUz8hd",
+        "lookbook_block_8XgBib",
+        "lookbook_block_UChP4Y",
+        "lookbook_block_yDKYBy",
+        "lookbook_block_dGGiBX",
+        "lookbook_block_bnLtJj",
+        "lookbook_block_mzLfez",
+        "lookbook_block_FLUKeE",
+        "lookbook_block_h9DE4b",
+        "lookbook_block_3Q6DrN",
+        "lookbook_block_EN4hM7",
+        "lookbook_block_cDcFRK",
+        "lookbook_block_xVgFaQ",
+        "mobile_block_m6iFbJ",
+        "mobile_block_WLkdWa",
+        "mobile_block_BxtJTW",
+        "mobile_block_HXcfJb",
+        "mobile_block_Rahrnd",
+        "mobile_block_QLTpMw",
+        "mobile_block_DjtwFa",
+        "mobile_block_Rfidrr",
+        "mobile_block_BMjc4X",
+        "mobile_block_JRXGWi",
+        "mobile_block_8PtWbF",
+        "mobile_block_fJK8hR",
+        "mobile_block_X38q7V",
+        "mobile_block_TzRVKz",
+        "mobile_block_876WbQ",
+        "mobile_block_TwUxBF",
+        "mobile_block_itdnTr",
+        "mobile_block_dz4KJL",
+        "mobile_block_U3KdFt",
+        "mobile_block_7ttn3E",
+        "mobile_block_DwNMzr",
+        "mobile_block_wEBrhy",
+        "mobile_block_tCe77U",
+        "mobile_block_Ua8DHM"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "lookbook"
+  ]
+}

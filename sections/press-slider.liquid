@@ -1,0 +1,220 @@
+<div
+  id="press-slider-container"
+  data-section-id="press-slider"
+  data-section-type="press-slider"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+  <div
+    class="md:grid md:grid-cols-2"
+    x-show="shown"
+    x-transition.opacity>
+    <div class="bg-darkest">
+      <div class="flex h-full flex-col items-center justify-center px-11 py-16">
+        <div
+          class="splide w-full"
+          aria-label="Press Slider"
+          data-splide-progress="true"
+          data-splide='
+            {
+              "type": "loop",
+              "perPage": 1,
+              "autoplay": true,
+              "pagination": false,
+              "arrows": true,
+              "speed": 800,
+              "easing": "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+              "interval": 5000
+            }
+          '>
+          <div class="splide__track">
+            <ul class="splide__list">
+              {%- for block in section.blocks -%}
+                <li class="splide__slide h-full w-full ">
+                  <div class="flex flex-col gap-y-4 text-center"> 
+                    <span class="flex justify-center">
+                      {% render 'icon', icon: 'apost' %}
+                    </span>
+                    <div class="flex flex-col gap-y-8 relative">
+                      <h3 class="font-heading_light text-md text-white">{{ block.settings.block_title }}</h3>
+                      {%- if block.settings.slide_logo != null -%}
+                        {%- if block.settings.slide_logo_alt != blank -%}
+                          {%- assign alt = block.settings.slide_logo_alt -%}
+                        {%- else -%}
+                          {%- assign alt = block.settings.slide_text -%}
+                        {%- endif -%}
+                        {%- render 'image', image: block.settings.slide_logo, width: 300, class: ' max-w-[110px] m-auto !h-full relative', height: 30 alt: alt, lazyload: true -%}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          <div class="relative mt-11 flex items-center justify-between gap-x-3">
+            <div class="slider-progress relative h-[2px] w-[90%] bg-[#78788A]">
+              <div class="slider-progress-bar h-[2px] w-0 bg-white"></div>
+            </div>
+
+            <div class="splide__arrows relative flex gap-x-1">
+              <button class="splide__arrow splide__arrow--prev !relative !left-0 !top-0 !w-5 !transform-none !bg-transparent">
+                {% render 'icon', icon: 'chevron' %}
+              </button>
+              <button class="splide__arrow splide__arrow--next !relative !right-0 !top-0 !w-5 !transform-none !bg-transparent">
+                {% render 'icon', icon: 'chevron' %}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative flex items-center justify-center min-h-[330px] lg:min-h-[370px]">
+      <div class="relative z-10 m-auto h-auto w-[90%] lg:w-5/6 bg-white bg-opacity-95 p-5 lg:p-11">
+        <h3 class="pb-4 font-heading text-lg text-dark_ink">
+          {{ section.settings.newsletter_title }}
+        </h3>
+        <p class="pb-4 text-small text-dark_ink">
+          {{ section.settings.newsletter_text }}
+        </p>
+
+
+        <form 
+          id="newsletter-form" 
+          action="//manage.kmail-lists.com/subscriptions/subscribe" 
+          data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" 
+          method="post" 
+          target="_blank" 
+          novalidate="novalidate" 
+          autocomplete="off" 
+          autocorrect="off" 
+          autocapitalize="off"
+          class="border-light-ink border-b py-3 focus-within:border-darkest"
+        >
+
+          <input type="hidden" name="g" value="VjYQTY" />
+          <input type="hidden" name="$fields" value="$first_name" />
+
+          <div class="flex justify-between gap-x-2">
+            <input 
+              required
+              type="email" 
+              id="newsletter-email" 
+              class="w-full outline-none"
+              name="email" 
+              placeholder="Email Address" 
+              autocorrect="off"
+              autocapitalize="off"
+            />
+
+            <button 
+              type="submit" 
+              class="btn-icon text-small font-semibold transform hover:opacity-80"
+              name="commit"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div class="klaviyo_messages newsletter-messages">
+            <p class="success_message text-small font-semibold py-2 text-center" style="display: none;"> success </p>
+            <p class="error_message text-small font-semibold py-2 text-center" style="display: none;"> error</p>
+          </div>
+        </form>
+      </div>
+      <div class="absolute left-0 top-0 h-full w-full">
+        {%- if section.settings.newsletter_video == null -%}
+          {% render 'image', image: section.settings.newsletter_bg, class: 'w-full h-full object-cover', lazyload: true %}
+        {%- else -%}
+          <video
+            preload="metadata"
+            data-lazyvids
+            class="absolute left-0 top-0 h-full w-full object-cover aspect-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="{{ section.settings.newsletter_bg | image_url }}">
+            <source src="{{ section.settings.newsletter_video | video_tag }}" type="video/mp4">
+          </video>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+
+<script>
+  KlaviyoSubscribe.attachToForms('#newsletter-form', {
+    hide_form_on_success: true
+  });
+</script>
+
+<style>
+  .slider-progress-bar {
+    transition: width 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Press slider",
+  "class": "press-slider-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_bg",
+      "label": "Newsletter Background",
+      "info": "Upload an image to display as the background for the newsletter."
+    },
+    {
+      "type": "video",
+      "id": "newsletter_video",
+      "label": "Newsletter Video",
+      "info": "Upload a video to display as the background for the newsletter."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "info": "Title for the newsletter."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter Text",
+      "info": "Text for the newsletter."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_block",
+      "name": "Slider block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "info": "Text to display on the panel button."
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_logo",
+          "label": "Slide Logo",
+          "info": "Upload an image to display as the logo for the slide."
+        },
+        {
+          "type": "text",
+          "id": "slide_logo_alt",
+          "label": "Slide Logo Alt Text",
+          "info": "Alt text for the slide logo."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

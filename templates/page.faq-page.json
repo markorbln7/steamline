@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "hide_overlay": false,
+        "landing_page_style": false,
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/Rectangle_12.png",
+        "mobile_image": "shopify:\/\/shop_images\/contactus-mob.jpg",
+        "desktop_image_alt": "Help centre",
+        "title": "Help centre",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers",
+        "hide_ribbon_title": false,
+        "hide_ribbon": false
+      }
+    },
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "faq_block_JtGr4r": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Payment",
+            "faq_block_description": "<p><strong>How can I pay for my order?<\/strong><\/p><p>On our website, you can make a payment via PayPal, ShopPay, Afterpay or using any major credit card. Rest assured that our payment process is 100% secure.<\/p><p><\/p><p><strong>Is my payment secure?<\/strong><\/p><p>Yes, of course! Shopping online with Steamline Luggage is 100% secure. We use a payment service provider, Stripe, to handle our credit card transactions. Stripe is a leader in online security, and maintains several layers of technology to keep your information safe and secure at all times. We also offer PayPal as an alternative payment method, should you so wish. If you have any queries regarding the security of our payments process, please contact our team at: <a href=\"mailto:hello@steamlineluggage.com\">hello@steamlineluggage.com<\/a> and we will be happy to assist you.<\/p>"
+          }
+        },
+        "faq_block_4yj8Yp": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Shipping & Delivery",
+            "faq_block_description": "<p><strong>How do I track my order?<\/strong><\/p><p>Once we have received payment from you, we will work to get your order dispatched from our warehouse and into the hands of our shipping partners. Once this stage has been completed, you will automatically receive an email from us containing your shipping details and tracking number. Once your order has left our warehouse you will be able to track its whereabouts by following the link in the email mentioned above, right up until such time as it is in your hands.<\/p><p><strong>How long until I receive my order?<\/strong><\/p><p>Please see our <a href=\"https:\/\/steamlineluggage.com\/pages\/delivery\"><span style=\"text-decoration:underline\">delivery page<\/span><\/a> for information.<\/p><p><strong>Do you ship to P.O. Boxes?<\/strong> <\/p><p>Unfortunately, we are not able to guarantee delivery to P.O. Boxes.<\/p>"
+          }
+        },
+        "faq_block_LTcmmy": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "International Orders",
+            "faq_block_description": "<p><strong>What countries do you ship to? <\/strong><\/p><p>We ship to the US, UK, Europe, Canada, Australia, New Zealand the Middle East, China, Hong Kong and Singapore. Contact us if your country isn't on this list and we will see if we can accomodate you.<\/p><p><strong>Will I have to pay customs charges?<\/strong><\/p><p>Orders outside the EU, UK and the USA are subject to local customs charges.  <\/p><p>Please see our <a href=\"https:\/\/steamlineluggage.com\/pages\/shipping-duties\" title=\"https:\/\/steamlineluggage.com\/pages\/shipping-duties\">Shipping & Delivery<\/a> page for more information.<\/p>"
+          }
+        },
+        "faq_block_zmTCU8": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Returns",
+            "faq_block_description": "<p><strong>How do I return my item?<\/strong><\/p><p>For information on our returns process please see our <a href=\"https:\/\/steamlineluggage.com\/pages\/returns\" title=\"Returns\">returns page<\/a>.<\/p><p><\/p><p><strong>What if there is something wrong with my order?<\/strong><\/p><p>In the unlikely event you are not completely satisfied with you order please email <a href=\"mailto:hello@steamlineluggage.com\">hello@steamlineluggage.com<\/a> and we will resolve it for you as quickly as possible.<\/p>"
+          }
+        },
+        "faq_block_n3zAJC": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Afterpay",
+            "faq_block_description": "<p><strong>What is <\/strong><em><strong>Installments with Afterpay<\/strong><\/em><strong>?<\/strong><\/p><p>Installments with Afterpay is a service that allows you to make purchases now and pay for them over time. To learn more, visit <a href=\"http:\/\/www.afterpay.com\/\" target=\"_blank\">www.afterpay.com<\/a><\/p><p><strong>How do I use <\/strong><em><strong>Installments with Afterpay<\/strong><\/em><strong>?<\/strong><\/p><p><strong>**PLEASE NOTE:<\/strong> If Afterpay doesn't display after entering your email address, please select the <strong>Continue as Guest<\/strong> option to proceed with Afterpay.**<\/p><p>Simply add your desired SteamLine pieces to the cart and checkout as normal. At the checkout, choose Afterpay as your payment method. First-time customers will need to register with Afterpay and provide payment details, as usual, returning customers simply log in to make their purchase. <\/p><p>Please note that all items in your shopping bag must be eligible for Installments with Afterpay. A minimum purchase amount may apply and you must meet additional eligibility requirements to qualify.<\/p><p><strong>Where can I use <\/strong><em><strong>Installments with Afterpay<\/strong><\/em><strong>?<\/strong><\/p><p>Afterpay is only offered to our customers in regions where an Afterpay or Clearpay Account can be created (US, CA, AU, NZ for Afterpay, UK for Clearpay).  Customers must have a billing address, shipping address, credit card, debit card, or bank account, and a mobile phone number in the corresponding region to set up an account with Afterpay or Clearpay<\/p><p><strong>Where can I find common questions about payments?<\/strong><\/p><p>Check out the <a href=\"https:\/\/help.afterpay.com\/hc\/en-us\/sections\/203376123-Payments\" target=\"_blank\" title=\"https:\/\/help.afterpay.com\/hc\/en-us\/sections\/203376123-Payments\">Afterpay Payments FAQ<\/a>.<\/p><p><strong>When will my items be delivered if I use <\/strong><em><strong>Installments with Afterpay<\/strong><\/em><strong>?<\/strong><\/p><p>Afterpay orders are delivered pursuant to our usual delivery time frames after you complete your order online.<\/p><p><strong>How do I return or exchange an item purchased using <\/strong><em><strong>Installments with Afterpay<\/strong><\/em><strong>?<\/strong><\/p><p>Subject to our return and refund policies, if you have changed your mind, you may be able to return your Afterpay purchase for a refund. Please check that your return or exchange meets our Return policy <a href=\"https:\/\/steamlineluggage.com\/pages\/returns\" target=\"_blank\">here<\/a>. Afterpay will be notified of your return and will process the appropriate refunds. Please do not return your purchase to Afterpay.<\/p><p>If you are fully returning items you purchased using the monthly payments option and a refund is owed, any amounts paid towards the good or service will be refunded; any interest that has already been paid will not be refunded. You may be charged interest for the period of time before your refund is processed.<\/p><p>If you believe there is fault or concern with your Afterpay purchase payment, please contact Afterpay customer support at <a href=\"mailto:info@afterpay.com\" target=\"_blank\">info@afterpay.com<\/a><\/p>"
+          }
+        },
+        "faq_block_m3jKrA": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Luggage Details",
+            "faq_block_description": "<p><strong>Can I customize my luggage?<\/strong><\/p><p>Unfortunately we don’t currently offer a customization or monogramming service.<\/p><p>However, it is something that we’re very interested in doing in the future. Please email your suggestions to <a href=\"mailto:hello@steamlineluggage.com\">hello@steamlineluggage.com<\/a> and we`ll keep you updated.<\/p><p><strong>Can Steamline Luggage Stowaway cases be used as cabin baggage when travelling by air?<\/strong><\/p><p>Good question! We all know how strict airlines have become on cabin baggage allowances in recent years.<\/p><p>Unfortunately, the answer is no. Measuring 23.6 x 15.7 x 8.3 inches (60 x 40 x 21 cm), our Stowaway cases are simply too large to be used as cabin baggage.  <\/p><p>However, all cases in our Carryon category have been designed specifically to meet these strict regulations, and as such they make perfect inflight companions.  Don’t forget that our smaller attaché luggage items can also be used as cabin baggage.<\/p>"
+          }
+        },
+        "faq_block_nzKbm6": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Product Care",
+            "faq_block_description": "<p><strong>How do I care for my luggage? <\/strong><\/p><p>As with any natural leather product, the appearance of your Steamline Luggage will change over time. The vegetable-tanned leather softens and often patinas depending on your own adventures around the world and how well it is stored during your sojourns at home. These changes are entirely expected and will not affect your luggage’s functionality. In fact, in our own experience, well-used luggage is usually accompanied by a very happy traveller!<\/p><p><strong>Protective Cover<\/strong><\/p><p>Again, please use the protective cover when you need to check-in or think you might be on rougher terrain. Simply slip the cover over your case and whisk it off again when you want to attract the attention of passersby and fellow travel companions.<\/p><p>You can read more about our product care <a href=\"https:\/\/docs.google.com\/document\/d\/1lOGucC6xg-J8NGC85vpYE_qOQP1QaFzS\/edit#heading=h.i7h1zn75p9i3\"><span style=\"text-decoration:underline\">here<\/span><\/a>. <\/p><p><strong>If the case gets black marks from the luggage belt, can I remove them?<\/strong><\/p><p>Yes you can! Using a neutral color, gum eraser, these black marks can be removed easily. <\/p><p><\/p>"
+          }
+        },
+        "faq_block_UUmfNF": {
+          "type": "faq_block",
+          "disabled": true,
+          "settings": {
+            "faq_block_title": "Covid-19",
+            "faq_block_description": "<p><strong>I haven't received my tracking information yet. When will I receive it?<\/strong><\/p><p>Currently, shipping has slowed across the globe because of the Covid-19 Pandemic. As a result, your order may take a few days longer to reach you. Once your order has been shipped, you'll receive a tracking link, so that you can track your SteamLine Luggage order right to your doorstep!<\/p><p><\/p><p><strong>Has Covid-19 affected shipping times?<\/strong><\/p><p>Covid-19 has affected all aspects of our daily lives. While we are still open for business here at SteamLine Luggage, our shipping times have been affected. Presently we are experiencing slightly longer timeframes in all aspects of the shipping process. Currently our shipping times are 10 business days, but this can be longer or shorter depending on order volume.<\/p><p><\/p><p><strong>What are you doing to ensure your teams safety?<\/strong><\/p><p>We take the safety of everyone at SteamLine Luggage very seriously. As such we have introduced a number of health-and-safety measures not only in line with government guidelines, but exceeding them! These include remote working where possible, reduced staffing and social distancing in our warehouses, as well as increased hygiene practices.<\/p><p><\/p><p><strong>Are you still shipping to countries where Covid-19 restrictions are tighter?<\/strong><\/p><p>Yes, we are! We are shipping to countries worldwide, many of them with restrictions both on a national level, or regionally also.<\/p><p><\/p><p><strong>Has Covid-19 affected the returns process?<\/strong><\/p><p>We are grateful that overall, no, Covid-19 has not greatly affected our returns process. It has caused some delays, but other than a slightly longer time-frame for processing a return in our warehouses, nothing has changed. As always, if you wish to return your purchase, email our team at hello@steamlineluggage.com and we will initiate the process for you. Your returned item must be in a perfect, unused condition and in it's original packaging.<\/p>"
+          }
+        },
+        "faq_block_Bx3gLq": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "How to set  the Combination Lock",
+            "faq_block_description": "<p>Four quick steps will allow you to change the combination lock to whatever you desire.<\/p><ol><li>Open the lock by sliding the square button away from the combination dials to release the latch. Note the combination code will be set at 000 when it arrives to you.<\/li><li>While the lock is open, slide the square button towards the combination dials. Keep holding this button until you have completed the next step and have reset the lock.<\/li><li>Set your new combination by rolling each dial until it displays your desired code making sure the three digits are centered in the middle and that your new code is something that you will remember in the future.<\/li><\/ol><p>Release the button.<\/p>"
+          }
+        },
+        "faq_block_wDrCTF": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Keys- Where are they & ordering replacements",
+            "faq_block_description": "<p><strong>Where to find the keys<\/strong><\/p><p>The keys are located inside the case in the corner of the inside pocket.<\/p><p><strong>I’ve lost my keys, how can I get a replacement set?<\/strong><\/p><p>Firstly, we are so sorry to hear this. We can of course send you replacement keys. In order to do this, please send us an email to hello@steamlineluggage.com with your original order number and a clear image of the lock. We will send you the appropriate key you need!<\/p>"
+          }
+        },
+        "faq_block_EKTMyF": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Lifetime Refurbishment Program",
+            "faq_block_description": "<p>Luggage for Life is SteamLine's lifetime luggage refurbishment program. In partnership with<a href=\"https:\/\/www.modernleathergoods.com\/\" target=\"_blank\" title=\"https:\/\/www.modernleathergoods.com\">Modern Leather Goods <\/a>in New York City, we will work with you to make any cosmetic or mechanical repairs to your SteamLine case for the life of your luggage. Please contact us at<a href=\"mailto:hello@steamlineluggage.com\" title=\"mailto:hello@steamlineluggage.com\">hello@steamlineluggage.com<\/a>to begin reviewing your needs!<\/p>"
+          }
+        },
+        "faq_block_9tB3q7": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Clearance Items",
+            "faq_block_description": "<p><strong>I purchased my item on clearance. Can I return it?<\/strong><\/p><p>We are sorry to say that there is a strict no-return policy on clearance items discounted over 30%.<\/p><p><strong>There are minor cosmetic blemishes on a piece I purchased on clearance. Why?<\/strong><\/p><p>Clearance products are tested to the same standards and hold the same warranty as any other products, but may have minor cosmetic blemishes as they are end of line stock and therefore have been in storage for longer periods.<\/p>"
+          }
+        },
+        "faq_block_gRn3cB": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Storing your SteamLine Luggage",
+            "faq_block_description": "<p><strong>Storing your Steamline Luggage<\/strong><\/p><p>When not in use, ideally stand your empty case in an upward position rather than on its side. If flat, please refrain from laying heavy objects upon the exterior especially when empty. Heavy pressure on top of an empty suitcase can misalign the locks. <\/p><p>The dust bag provided with your luggage is recommended if storing out of sight.<\/p><p>You can store blankets, towels, or seasonal clothing in your luggage. This will actually help keep the shape intact when in storage for long periods.<\/p><p>Steamline cases are best stored in a cool, well-ventilated place. Do not allow your Steamline to be exposed to direct sunlight, high temperatures or damp. Doing so may affect the shape and\/or the paint finish.<br\/><\/p>"
+          }
+        },
+        "faq_block_KTRndm": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Out of Stock items",
+            "faq_block_description": "<p><strong>I’d like to order a case that is out of stock. How long will I be waiting?<\/strong><\/p><p>The wait time will depend on the luggage that you have in mind and the time of year. Our lead time for making the luggage can be a little long as each product is made by hand. The best thing to do is to sign up for our newsletter so you’ll be the first to hear about restocked collections, new collections and promotions. You can also contact our team regarding availability and for more accurate information about a specific piece at <a href=\"mailto:hello@steamlineluggage.com\"><span style=\"text-decoration:underline\">hello@steamlineluggage.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "faq_block_3QpTdN": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Do I need to use the protective cover?",
+            "faq_block_description": "<p>We strongly recommend covering the case when it needs to be checked in. Luggage handlers are not easy on luggage and this will help prevent blemishes and marks. Sometimes the luggage belt may mark the corners and the body of the of case.<\/p>"
+          }
+        },
+        "faq_block_gyWRAX": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Product Dimensions",
+            "faq_block_description": "<p><strong>What are the dimensions of SteamLine Luggage Hatboxes?<\/strong><\/p><p>Our Hatboxes come in three sizes, Small, Large and Deluxe. The dimensions and weight of each are as follows: Small: 12\" x 11\" x 4\" & 3.1lbs. Large: 15\" x 14\" x 6\" & 3.5lbs. Deluxe: 18\" x 16.5\" x 7\" & 4.2lbs.<\/p><p><strong>What are the dimensions of SteamLine Luggage Vanity Cases?<\/strong><\/p><p>In general our Vanity cases measure 11.8 x 7.9 x 4.7 inches (30 x 20 x 12 cm) and weigh 1.8kg<strong> <\/strong><\/p><p><strong>What are the dimensions of SteamLine Luggage Carry On Cases?<\/strong><\/p><p>In general our Carry On cases measure 19.7 x 14.6 x 6.7 inches (50 x 37 x 17 cm) and weigh 4.5kg<\/p><p><strong>What are the dimensions of SteamLine Luggage Check in\/ Stowaway cases?<\/strong><\/p><p>The sizes vary from collection to collection, but in general our Stowaway cases measure 23.6 x 15.7 x 8.3 inches (60 x 40 x 21 cm) and weigh 5.6kg.<\/p><p><strong>What are the dimensions of SteamLine Luggage Check In Spinner cases?<\/strong><\/p><p>The dimensions vary from collection to collection but in general our Spinner cases measure 26.7 x 16.2 x 9.8 inches (68 x 40 x 25 cm) and weigh 6.6kg.<\/p><p><\/p><p><\/p>"
+          }
+        },
+        "faq_block_3RE8jG": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Why do your carryons and stowaways only have 2 wheels?",
+            "faq_block_description": "<p>SteamLine was designed to achieve the most aesthetically beautiful suitcase that was fit for convenient and easy travel. The two wheels are “poured” plastic so they are similar to skateboard wheels. They are silent, glide wheels that can handle rough terrain and most importantly, they are set into the suitcase to keep in line with the vintage style suitcases that never had wheels. In fact, our original designs were trying to hide the wheels as much as possible. <\/p><p>We launched the 4 wheel Spinner suitcase in reply to the many requests we were getting for a bigger suitcase and we felt the larger suitcase could handle the 4 wheels that stuck out of the bottom without destroying the overall aesthetic of the overall piece of luggage. However, we have been getting many more requests for the 4 wheels on the Carryons so stay tuned, we are currently working on 4 spinners wheels that are as aesthetically pleasing as they are functional. <\/p>"
+          }
+        },
+        "faq_block_JYVQeU": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "Is the luggage durable?",
+            "faq_block_description": "<p>Yes it is. We have gone to great lengths to marry durability with weight so our luggage can withstand the demands of modern-day travel, yet are lightweight enough to be a convenient travel companion. <\/p><p>The body of all the luggage are made out of fiberboard. This durable but lightweight material is formed of paper and wood pulp, specially bonded and then compressed. There is “give” or flex in the fibreboard so especially on the larger items like the Spinner, it seems like it moves easily. This is to absorb the jostling it will receive in transit and be able to accommodate the items that go inside. <\/p><p>(You can read more about our selected materials <a href=\"https:\/\/steamlineluggage.com\/blogs\/news\/materials-and-leather-guide\" target=\"_blank\">here<\/a>.)  <\/p><p>These cases will get scratched and marked, and we choose to embrace these beauty marks of travel as signs of adventure. However, each larger wheeled item comes with a complimentary protective rain cover that will protect it when checking in is required. <\/p><p>The cases will get scratched and marked and we choose to embrace these beauty marks of travel as signs of adventure. However, each larger wheeled item comes with a complimentary protective cover that will protect it when checking in is required<\/p>"
+          }
+        },
+        "faq_block_3pmiqX": {
+          "type": "faq_block",
+          "settings": {
+            "faq_block_title": "",
+            "faq_block_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_JtGr4r",
+        "faq_block_4yj8Yp",
+        "faq_block_LTcmmy",
+        "faq_block_zmTCU8",
+        "faq_block_n3zAJC",
+        "faq_block_m3jKrA",
+        "faq_block_nzKbm6",
+        "faq_block_UUmfNF",
+        "faq_block_Bx3gLq",
+        "faq_block_wDrCTF",
+        "faq_block_EKTMyF",
+        "faq_block_9tB3q7",
+        "faq_block_gRn3cB",
+        "faq_block_KTRndm",
+        "faq_block_3QpTdN",
+        "faq_block_gyWRAX",
+        "faq_block_3RE8jG",
+        "faq_block_JYVQeU",
+        "faq_block_3pmiqX"
+      ],
+      "settings": {
+        "helpful_links": "help-centre"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
+}

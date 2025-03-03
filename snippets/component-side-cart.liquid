@@ -1,0 +1,27 @@
+<side-cart>
+  <div class="mini-cart px-5 py-6">
+    <div class="mb-5 flex items-center justify-between">
+      <h3 class="mini-cart__title font-semibold"></h3>
+      <button class="btn-icon">
+        {% render 'icon' with 'cart-close' %}
+      </button>
+    </div>
+
+    <div class="mb-5 flex w-full justify-center bg-cornflower py-1 text-center text-small text-white">Spend £45.99 more to get free standard delivery</div>
+
+    <div class="mini-cart__items">
+      {% comment %} Output cart items here {% endcomment %}
+    </div>
+
+    <div class="side-cart__subtotals flex flex-col gap-3">
+      <div class="flex justify-between font-semibold leading-4">Total: <span class="cart-total"></span></div>
+      <div class="flex justify-between font-semibold leading-4">Shipping: <span class="shipping">Calculated at checkout</span></div>
+      <div class="flex justify-between font-semibold leading-4">Duties & Taxes: <span class="duties-taxes">Free</span></div>
+      <div class="flex justify-between font-semibold leading-4">Discount: <span class="discount"></span></div>
+    </div>
+
+    <div class="side-cart__checkout pt-5">
+      <a class="btn button-primary w-full font-semibold" href="{{ routes.cart_url }}" class="button">Checkout</a>
+    </div>
+  </div>
+</side-cart>

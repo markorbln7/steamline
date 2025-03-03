@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "mainy": {
+      "type": "main-404",
+      "settings": {
+        "title": "404",
+        "subtitle": "Oops, something went wrong.",
+        "error_image": "shopify:\/\/shop_images\/error.png",
+        "mobile_error_image": "shopify:\/\/shop_images\/mob.png",
+        "top_button_text": "Browse bestsellers",
+        "top_button_url": "shopify:\/\/collections\/bestsellers",
+        "bottom_button_text": "Back to the homepage",
+        "bottom_button_url": "\/"
+      }
+    }
+  },
+  "order": [
+    "mainy"
+  ]
+}

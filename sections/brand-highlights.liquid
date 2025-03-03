@@ -1,0 +1,130 @@
+<div
+  id="ProductSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="brand-highlights"
+  aria-labelledby="BrandHighlights"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+>
+  {%- liquid
+    assign lazyload = false
+
+    if section.index > 2
+      assign lazyload = true
+    endif
+  -%}
+
+  <div
+    class="relative w-full bg-pale_grey"
+    x-show="shown"
+    x-transition.opacity>
+    <div class="flex flex-col gap-y-11 py-11 lg:py-24  lg:px-11">
+
+      <div class="flex flex-col gap-y-11 items-center text-center px-4 lg:px-0">
+        <h3 class="px-4 lg:px-0 font-heading text-md lg:text-lg">{{ section.settings.title }}</h3>
+        <p class="text-lbase leading-6 max-w-[960px] m-auto">{{ section.settings.copy }}</p>
+      </div>
+      
+      <div 
+        class="splide ml-4 lg:ml-0"
+        x-cloak
+        data-splide='
+        {
+          "type": "slide",
+          "perMove": 1,
+          "autoplay": false,
+          "pagination": false,
+          "arrows": false,
+          "speed": 800,
+          "gap": 15,
+          "mediaQuery": "min",
+          "drag": true,
+          "breakpoints": {
+            "300": {
+              "perPage": 1.2,
+              "perMove": 1.2,
+              "focus": "center",
+              "snap": false
+            },
+            "1000": {
+              "destroy": true
+            }
+          }
+        }
+      '
+      >
+        <div class="splide__track">
+          <div class="splide__list lg:!grid lg:!grid-cols-5 lg:!gap-x-1 lg:!gap-y-16">
+            {%- for block in section.blocks -%}
+              <div class="splide__slide flex flex-col gap-y-5">
+                <div class="h-auto">
+                  {%- render 'image' with block.settings.image, class: ' h-full aspect-[1/0.7] object-cover object-center', lazyload: lazyload, width: 600, image_tag: true -%}
+                </div>
+                <div class="flex flex-col gap-y-3 pr-11">
+                  <h4 class="font-heading text-lbase">{{ block.settings.title }}</h4>
+
+                  <div class="text-small">
+                    {{ block.settings.copy }}
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Highlights",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "slide_image_alt",
+          "label": "Slide Image Alt Text",
+          "default": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Highlights",
+      "category": "Brand"
+    }
+  ]
+}
+{% endschema %}

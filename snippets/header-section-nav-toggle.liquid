@@ -1,0 +1,11 @@
+<div 
+  class="nav-toggle inline-flex btn btn-icon lg:!hidden" aria-label="Toggle menu" type="button"
+  @click="isMobileMenuOpen = !isMobileMenuOpen; document.body.classList.toggle('scroll-lock')"
+>
+  <template x-if="!isMobileMenuOpen">
+    {% render 'icon', icon: 'menu' %}
+  </template>
+  <template x-if="isMobileMenuOpen">
+    {% render 'icon', icon: 'nav-close' %}
+  </template>
+</div>

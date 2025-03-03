@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "page_banner_pycxE4": {
+      "type": "page-banner",
+      "settings": {
+        "hide_overlay": false,
+        "landing_page_style": false,
+        "content_position": "left",
+        "desktop_image": "{{ collection.metafields.plp.page_banner.value }}",
+        "desktop_image_alt": "",
+        "title": "",
+        "description": "",
+        "ribbon_title": "Grow Your Travel Set",
+        "ribbon_text": "<b>Get 10% off<\/b> 2 luggage or bag items with code <b>BUY2*<\/b>\n<br>\n<b>Get 15% off<\/b> 3 luggage or bag items with code <b>BUY3*<\/b>\n<br>\n<br>\n*excludes items under $150",
+        "ribbon_subtext": "",
+        "ribbon_url": "https:\/\/steamlineluggage.com\/pages\/bundle-offer-page",
+        "ribbon_url_text": "Read More",
+        "hide_ribbon_title": false,
+        "hide_ribbon": false
+      }
+    },
+    "main_collection_Dp4HTM": {
+      "type": "main-collection",
+      "settings": {
+        "list": "",
+        "collection_paginate": 50,
+        "include_collection_sort": true,
+        "include_collection_filters": true,
+        "enable_infinite_scroll": true
+      }
+    }
+  },
+  "order": [
+    "page_banner_pycxE4",
+    "main_collection_Dp4HTM"
+  ]
+}

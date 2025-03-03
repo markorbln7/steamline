@@ -1,0 +1,24 @@
+{% if shop.customer_accounts_enabled %}
+  <ul class="nav-secondary {{ navClass }}">
+    {% if customer %}
+      <li>
+        {% if customer.first_name != blank %}
+          {% capture first_name %}<a href="{{ routes.account_url }}">{{ customer.first_name }}</a>{% endcapture %}
+          {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+        {% else %}
+          <a href="{{ routes.account_url }}">{{ 'layout.customer.account' | t }}</a>
+        {% endif %}
+      </li>
+      <li>
+        <a href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ routes.account_login_url }}">{{ 'layout.customer.log_in' | t }}</a>
+      </li>
+      <li>
+        <a href="{{ routes.account_register_url }}">{{ 'layout.customer.create_account' | t }}</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

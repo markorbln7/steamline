@@ -1,0 +1,57 @@
+{% liquid 
+  assign colors = product.metafields.pdp.associated_products.value
+  assign types = product.metafields.pdp.associated_products_by_type.value
+  assign display = false
+
+  if colors.count > 0 or types.count > 0
+    assign display = true
+  endif
+%}
+
+{% if display %}
+  <div class="product-stitches flex flex-col gap-y-5 py-7">
+    <div class="pdp-swatches flex flex-col gap-y-2" x-data="{ selectedUrl: '{{ product.url }}' }">
+      {% if colors.count > 0 %}
+        <div class="text-[11px] font-semibold text-light_ink">{% if colors.count >= 2 %}Select{% endif %} Colour</div>
+        <div class="flex gap-5 flex-wrap">
+
+          {% assign sorted_colors = colors | sort: 'metafields.pdp.colour_title' %}
+          {% for associated_product in sorted_colors %}
+            {%- assign colour_title = associated_product.metafields.pdp.colour_title  -%}
+            <a href="/products/{{ associated_product.handle }}" class="swatch__item flex h-5 cursor-pointer items-center gap-x-2">
+              <span class="sr-only">{{ associated_product.title }}</span>
+              <span
+                class="h-5 w-5 rounded-full border-2 border-white shadow"
+                :style="{ backgroundColor: '{{ associated_product.metafields.pdp.colour }}', borderColor: selectedUrl === '/products/{{ associated_product.handle }}' ? 'white' : 'transparent', boxShadow: selectedUrl === '/products/{{ associated_product.handle }}' ? '0px 0px 7px 0px rgba(0, 0, 0, 0.25)' : 'none' }"
+                data-colour="{{ associated_product.metafields.pdp.colour }}"></span>
+              <span class="flex-1 text-small text-darkest" :class="{'font-bold': selectedUrl === '/products/{{ associated_product.handle }}'}">
+                {{- colour_title | capitalize -}}
+              </span> 
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if types.count > 0 %}
+      <div class="pdp-types flex flex-col gap-y-2">
+        <div class="text-[11px] font-semibold text-light_ink">{% if types.count >= 2 %}Select{% endif %} Size</div>
+        <div class="flex flex-wrap gap-5">
+          {% assign sorted_types = product.metafields.pdp.associated_products_by_type.value | sort: 'type' %}
+          {% for associated_type in sorted_types %}
+            {% liquid
+              assign title_suffix = associated_type.type 
+            %} 
+
+            {% if product.type contains title_suffix and associated_type.available %}
+              <span class="border-b-2 border-darkest text-small font-bold text-darkest">{{ title_suffix | capitalize | replace: 'Carryon', 'Carry-On' }}</span>
+            {% elsif associated_type.available %}
+              <a href="/products/{{ associated_type.handle }}" class="text-small text-darkest hover:opacity-75 transition-opacity duration-250">{{ title_suffix | capitalize | replace: 'Carryon', 'Carry-On' }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+

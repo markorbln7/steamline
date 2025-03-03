@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product-accordion",
+      "settings": {
+        "enable_offer": true,
+        "offer_title": "*Take 40% off with code CYBER10",
+        "offer_description": "<b>*30% off sitewide + extra 10% off with code CYBER10 <\/b>\n<br>\n<br>\nShop 40% off",
+        "offer_button_text": "",
+        "offer_button_url": "",
+        "offer_image": "shopify:\/\/shop_images\/u500-mob-cb_7be11530-ab69-4b04-8a98-474278aa6946.png"
+      }
+    },
+    "foursixty_pdp_gHmEKL": {
+      "type": "foursixty-pdp",
+      "settings": {}
+    },
+    "product_details_9YW7Vw": {
+      "type": "product-details",
+      "blocks": {
+        "product_detail_block_JVYMB9": {
+          "type": "product_detail_block",
+          "settings": {
+            "detail_block_title": "Telescopic handle",
+            "detail_block_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut enim mauris<\/p>",
+            "detail_block_image_alt": "Telescopic handle"
+          }
+        },
+        "product_detail_block_jrcrGe": {
+          "type": "product_detail_block",
+          "settings": {
+            "detail_block_title": "Rip-stop cover",
+            "detail_block_description": "<p>uismod ante. Nulla dui enim, aliquet id magna a, sollicitudin molestie sapien. Quisque eu ligula elit. Donec posuere et dolor quis sollicitudin. In elementum<\/p>",
+            "detail_block_image_alt": "Rip-stop cover"
+          }
+        },
+        "product_detail_block_4ftDrU": {
+          "type": "product_detail_block",
+          "settings": {
+            "detail_block_title": "Silent-glide spinner wheels",
+            "detail_block_description": "<p>uismod ante. Nulla dui enim, aliquet id magna a, sollicitudin molestie sapien. Quisque eu ligula elit. Donec posuere et dolor quis sollicitudin. In elementum<\/p>",
+            "detail_block_image_alt": "Silent-glide spinner wheels"
+          }
+        },
+        "product_detail_block_ykDwDA": {
+          "type": "product_detail_block",
+          "settings": {
+            "detail_block_title": "TSA Approved locks",
+            "detail_block_description": "<p>uismod ante. Nulla dui enim, aliquet id magna a, sollicitudin molestie sapien. Quisque eu ligula elit. Donec posuere et dolor quis sollicitudin. In elementum<\/p>",
+            "detail_block_image": "shopify:\/\/shop_images\/Rectangle_11.png",
+            "detail_block_image_alt": "TSA Approved locks"
+          }
+        },
+        "product_detail_block_G7TfQR": {
+          "type": "product_detail_block",
+          "settings": {
+            "detail_block_title": "hanging travel kit",
+            "detail_block_description": "<p>uismod ante. Nulla dui enim, aliquet id magna a, sollicitudin molestie sapien. Quisque eu ligula elit. Donec posuere et dolor quis sollicitudin. In elementum<\/p>",
+            "detail_block_image_alt": "hanging travel kit"
+          }
+        }
+      },
+      "block_order": [
+        "product_detail_block_JVYMB9",
+        "product_detail_block_jrcrGe",
+        "product_detail_block_4ftDrU",
+        "product_detail_block_ykDwDA",
+        "product_detail_block_G7TfQR"
+      ],
+      "settings": {
+        "product_detail_title": "The details."
+      }
+    },
+    "product_finer_details_LJTVFq": {
+      "type": "product-finer-details",
+      "settings": {
+        "product_detail_title": "Unparalleled craftmanship & quality materials."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "foursixty_pdp_gHmEKL",
+    "product_details_9YW7Vw",
+    "product_finer_details_LJTVFq"
+  ]
+}

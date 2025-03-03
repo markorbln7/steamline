@@ -1,0 +1,159 @@
+
+
+{% liquid
+  assign collection_paginate_int = section.settings.collection_paginate | times: 1
+
+  assign lazyload = false
+
+  assign priority = 'auto'
+  assign decoding = 'auto'
+
+  if lazyload
+    assign loading = 'lazy'
+    assign decoding = 'async'
+  else
+    assign loading = 'eager'
+    assign priority = 'high'
+  endif
+%}
+ 
+{% paginate search.results by collection_paginate_int %}
+  <main-collection>
+    <div
+      id="SearchSection"
+      data-section-id="{{ section.id }}"
+      data-section-type="main-search">
+
+      <div class="search-form w-full bg-pale_grey py-14">
+        <div class="wrapper">
+          <predictive-search>
+            <input type="hidden" name="type" value="product">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="m-auto">
+              <div class="px-4 rounded-[40px] bg-white w-full max-w-[690px] flex items-center gap-x-3 relative m-auto">
+                <label class="sr-only" for="Search">Search</label>
+                {% render 'icon', icon: 'search' %}
+                <input
+                  id="Search"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results"
+                  aria-controls="predictive-search-results"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  class="w-full py-5 outline-none"
+                  placeholder="Search our store"
+                >
+                <input name="options[prefix]" type="hidden" value="last">
+              </div>
+              <div id="predictive-search" tabindex="-1"></div>
+            </form>
+          </predictive-search>  
+        </div>
+      </div>
+
+      {%- if search.performed -%}
+      <div class="wrapper">
+        <div class="collection__wrapper pb-16">
+          <div data-infinite-scroll-content>
+            <div class="grid grid-cols-12 gap-11">
+              <div class="col-span-9 sm:col-span-12">
+                <div
+                  class="collection-grid main-collection--listing col-span-12 grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-4 bg-pale_grey"
+                  aria-label="Product listings"
+                  data-collection-grid
+                >
+                  {% liquid
+                    assign lazyload = false
+                  
+                    for item in search.results
+                      if forloop.index > 3
+                        assign lazyload = true
+                      endif 
+                      render 'product-card', product: item, loading: loading, priority: priority, decoding: decoding, page_number: paginate.current_page, wishlist: false
+                    endfor
+                  %}
+                </div>                
+              </div>
+            </div>
+
+            {% if paginate.pages > 1 %}
+              <div class="flex justify-center mt-9">
+              <div data-collection-pagination>
+                {% render 'pagination', paginate: paginate, show_prev_next: true, center: true %}
+              </div>
+              </div>
+            {% endif %}
+ 
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+  </main-collection>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Search",
+  "class": "main-search",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collection Navigation Settings"
+    },
+    {
+      "type": "link_list",
+      "id": "list",
+      "label": "Collection List",
+      "info": "Specify the navigation list with the relevant collections"
+    },
+    {
+      "type": "header",
+      "content": "Collection Settings"
+    },
+    {
+      "type": "range",
+      "id": "collection_paginate",
+      "label": "Products per page",
+      "default": 12,
+      "min": 4,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Collection navbar settings"
+    },
+    {
+      "type": "header",
+      "content": "Sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_collection_sort",
+      "label": "Include collection sorting",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Filters"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_collection_filters",
+      "label": "Include collection filters",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Search",
+      "category": "Search"
+    }
+  ]
+}
+{% endschema %}
+

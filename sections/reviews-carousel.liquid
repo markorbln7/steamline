@@ -1,0 +1,111 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="reviews-carousel"
+  class="p-11"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="flex flex-col gap-11">
+      <h3 class="font-heading text-md lg:text-lg text-center">{{ section.settings.section_title }}</h3>
+
+      <div
+        class="splide w-full" 
+        aria-label="Press Slider"
+        data-splide-progress="true"
+        data-splide='
+          { 
+            "type": "loop",
+            "autoplay": true,
+            "perMove": 1,
+            "pagination": false,
+            "arrows": true,
+            "speed": 800,
+            "easing": "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+            "interval": 10000,
+            "breakpoints": {
+              "640": {
+                "perPage": 1,
+                "focus": "center"
+              },
+              "3000": {
+                "perPage": 3,
+                "gap": 50
+              }
+            }
+          }
+        '>
+          <div class="splide__track">
+            <ul class="splide__list">
+              {%- for block in section.blocks -%}
+                <li class="splide__slide flex flex-col gap-y-4 text-center items-center">
+                 {%- render 'icon', icon: 'stars' -%}
+                  <p class="font-heading_light text-darkest">
+                    {{ block.settings.review_text }}
+                  </p>
+                  <p class="text-small">{{ block.settings.review_author }}</p>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          <div class="relative mt-11 flex items-center justify-start gap-6">
+            <div class="slider-progress relative h-[2px] w-full bg-light_ink">
+              <div class="slider-progress-bar h-[2px] w-0 bg-mid_ink"></div>
+            </div>
+  
+            <div class="splide__arrows relative flex gap-x-1">
+              <button class="splide__arrow splide__arrow--prev !relative !left-0 !top-0 !w-5 !transform-none !bg-transparent">
+                {% render 'icon', icon: 'right-chevron-dark' %}
+              </button>
+              <button class="splide__arrow splide__arrow--next !relative !right-0 !top-0 !w-5 !transform-none !bg-transparent">
+                {% render 'icon', icon: 'right-chevron-dark' %}
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Reviews from our customers"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_slide",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "This is a great product"
+        },
+        {
+          "type": "text",
+          "id": "review_author",
+          "label": "Review Author",
+          "default": "John Doe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Carousel"
+    }
+  ]
+}
+{% endschema %}

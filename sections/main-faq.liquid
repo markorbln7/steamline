@@ -1,0 +1,102 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="help-center"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    <div class="grid grid-cols-12 pb-16 md:py-16">
+      <div class="col-span-12 md:col-span-3">
+        <ul class="flex overflow-x-auto gap-x-2 whitespace-nowrap md:flex-col gap-y-4 scrollbar-hide mb-10">
+          {% for link in section.settings.helpful_links.links %}
+            <li>
+              <a {% if link.active %}class="border-b border-darkest font-semibold"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-span-12 md:col-span-6">
+        <div class="flex flex-col gap-y-8">
+        <h2 class="font-heading text-md text-darkest">{{ page.title | remove: 'V2' }}</h2>
+        {{ page.content }}
+
+        
+        <div class="accordion-faq" x-data="{ active: active }">
+          {% for block in section.blocks %}
+            <div x-data="{
+                id: {{ forloop.index }},
+                get expanded() {
+                    return this.active === this.id
+                },
+                set expanded(value) {
+                    this.active = value ? this.id : null
+                },
+            }" role="region" class="">
+                <h4>
+                    <button
+                        x-on:click="expanded = !expanded"
+                        :aria-expanded="expanded"
+                        class="flex w-full items-center justify-between border-0 border-t border-pale_ink px-0 py-4 font-normal"
+                    >
+                        <span>{{ block.settings.faq_block_title }}</span>
+                        <span x-show="expanded" aria-hidden="true" class="ml-4">
+                          {%- render 'icon', icon: 'minus' -%}
+                        </span>
+                        <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                          {%- render 'icon', icon: 'plus' -%}
+                        </span>
+                    </button>
+                </h4>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="px-0 pb-4 text-dark_ink">
+                    {{ block.settings.faq_block_description }}
+                  </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+        
+        </div>
+      </div>
+      <div class="col-span-3">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Help Center",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "helpful_links",
+      "label": "Helpful Links menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_block",
+      "name": "FAQ Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_block_title",
+          "label": "FAQ Block Title"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_block_description",
+          "label": "FAQ Block Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

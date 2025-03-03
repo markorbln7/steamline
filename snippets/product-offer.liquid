@@ -1,0 +1,18 @@
+{%- if section.settings.enable_offer -%}
+  <div class="offer-box relative mt-8">
+    <div class="offer-box__content absolute left-1/2 top-1/2 flex h-4/5 w-11/12 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-y-4 bg-white">
+      <h4 class="font-heading text-lbase text-darkest">
+        {{ section.settings.offer_title }}
+      </h4>
+      <p class="text-center text-small font-semibold text-darkest">
+        {{ section.settings.offer_description }}
+      </p>
+
+      <a href="{{ section.settings.offer_button_url }}" class="text-small font-semibold text-darkest border-b-2 border-transparent hover:border-darkest">
+        {{ section.settings.offer_button_text }}
+      </a>
+    </div>
+
+    {%- render 'image' with section.settings.offer_image, class: ' h-full aspect-auto object-cover object-center', lazyload: true, width: 600, height: 300, image_tag: true -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <section class="foursixty-section">
+
+    <div class="grid grid-cols-12 py-11 lg:py-24">
+      <div class="col-span-12 flex justify-center flex-col gap-y-4 items-center">
+        <h1 class="text-lg lg:text-xl text-center flex flex-col gap-y-4 max-w-[830px] mx-auto">
+          Shop our Instagram
+        </h1> 
+      </div>
+    </div>
+
+    <script
+      src="//foursixty.com/media/scripts/fs.embed.v2.5.js"
+      data-feed-id="steamline-live_1"
+      data-open-links-in-same-page="false"
+      data-theme="lookbook_v2_5"
+      data-page-size="24"
+      {% if shop.permanent_domain contains 'steamline-live' %}
+        data-domain-override="steamline-live.myshopify.com"
+      {% endif -%}
+      {% if shop.permanent_domain contains 'steamline-eu' %}
+        data-domain-override="steamline-eu.myshopify.com"
+      {% endif -%}
+      {% if shop.permanent_domain contains 'steamline-us' %}
+        data-domain-override="steamline-us.myshopify.com"
+      {% endif -%}
+      {% if shop.permanent_domain contains 'steamline-row' %}
+        data-domain-override="steamline-row.myshopify-com"
+      {% endif %}></script>
+    <style>
+      .fs-wrapper div.fs-entry-container { height: 0; width: 25%; padding-top: 25%; }
+            .fs-has-links::after  {
+      	content: "Shop the look";
+      }
+              .fs-title { margin: 1.5em 0; text-transform: uppercase; letter-spacing: 0.25em; }
+            @media only screen and (max-width: 768px) {
+            .fs-wrapper div.fs-entry-container { height: 0; width: 50% !important; padding-top: 50% !important; } }
+    </style>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Foursixty",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Foursixty Full Page Gallery",
+      "category": "Foursixty"
+    }
+  ]
+}
+{% endschema %}

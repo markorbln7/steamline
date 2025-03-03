@@ -1,0 +1,247 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="lookbook"
+  x-data="{ shown: false }"
+  x-intersect="shown = true"
+  x-cloak>
+  <div
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="w-full">
+      <div
+        class="splide w-full hidden lg:block"
+        aria-label="Lookbook Slider"
+        data-splide='
+          {
+            "type": "slide",
+            "pagination": false,
+            "arrows": true,
+            "autoWidth": true,
+            "speed": 800,
+            "focus": "center",
+            "breakpoints": {
+              "640": {
+                "height": "500px"
+              },
+              "3000": {
+                "height": "800px"
+              }
+            }
+          }
+        '>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {%- for block in section.blocks -%}
+              {% if block.type == 'lookbook_block' %}
+                <li class="splide__slide relative">
+                  {% if block.settings.use_hotspot %}
+                    <div class="absolute w-full h-full top-0 left-0">
+                      <div
+                        x-data="{ open: false }"
+                        class="relative"
+                        style="top: {{ block.settings.hotspot_top_pos }}%; left: {{ block.settings.hotspot_left_pos }}%">
+                        <div
+                          @click="open = !open"
+                          class="hotspot absolute cursor-pointer">
+                          {%- render 'icon', icon: 'hotspot' -%}
+                        </div>
+
+                        <div
+                          x-show="open"
+                          x-transition:enter="transition ease-out duration-300"
+                          x-transition:enter-start="opacity-0 transform scale-90"
+                          x-transition:enter-end="opacity-100 transform scale-100"
+                          x-transition:leave="transition ease-in duration-300"
+                          x-transition:leave-start="opacity-100 transform scale-100"
+                          x-transition:leave-end="opacity-0 transform scale-90"
+                          class="absolute hotspot-card bg-white w-48 shadow-lg p-4 z-100"
+                          style="top: -50%; transform: translateY(-50%); left: 60px">
+                          {%- render 'product-card', product: block.settings.hotspot_product, type: 'hotspot' -%}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {%- render 'image', image: block.settings.image, class: '  w-full h-full object-cover', alt: block.settings.img_src_alt -%}
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="splide w-full block lg:hidden"
+        aria-label="Lookbook mobile Slider"
+        data-splide='
+          {
+            "type": "slide",
+            "pagination": false,
+            "arrows": true,
+            "autoWidth": false,
+            "speed": 800,
+            "height": "500px",
+            "focus": "center"
+          }
+        '>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {%- for block in section.blocks -%}
+              {% if block.type == 'mobile_block' %}
+                <li class="splide__slide relative">
+                  {% if block.settings.use_hotspot %}
+                    <div class="absolute w-full h-full top-0 left-0">
+                      <div
+                        x-data="{ open: false }"
+                        class="relative"
+                        style="top: {{ block.settings.hotspot_top_pos }}%; left: {{ block.settings.hotspot_left_pos }}%">
+                        <div
+                          @click="open = !open"
+                          class="hotspot absolute cursor-pointer">
+                          {%- render 'icon', icon: 'hotspot' -%}
+                        </div>
+
+                        <div
+                          x-show="open"
+                          x-transition:enter="transition ease-out duration-300"
+                          x-transition:enter-start="opacity-0 transform scale-90"
+                          x-transition:enter-end="opacity-100 transform scale-100"
+                          x-transition:leave="transition ease-in duration-300"
+                          x-transition:leave-start="opacity-100 transform scale-100"
+                          x-transition:leave-end="opacity-0 transform scale-90"
+                          class="absolute hotspot-card bg-white w-48 shadow-lg p-4 z-100"
+                          style="top: -50%; transform: translateY(-50%); left: 60px">
+                          {%- render 'product-card', product: block.settings.hotspot_product, type: 'hotspot' -%}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {%- render 'image', image: block.settings.image, class: '  w-full h-full object-cover', alt: block.settings.img_src_alt -%}
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lookbook",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "lookbook_block",
+      "name": "Lookbook desktop slide",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "use_hotspot",
+          "label": "Use Hotspot",
+          "info": "Use a hotspot on the image."
+        },
+        {
+          "type": "product",
+          "id": "hotspot_product",
+          "label": "Hotspot Product",
+          "info": "Select the product to display in the hotspot."
+        },
+        {
+          "type": "range",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 16,
+          "unit": "%",
+          "id": "hotspot_top_pos",
+          "label": "Hotspot Top Position",
+          "info": "Top position of the hotspot."
+        },
+        {
+          "type": "range",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 16,
+          "unit": "%",
+          "id": "hotspot_left_pos",
+          "label": "Hotspot Left Position",
+          "info": "Left position of the hotspot."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Upload an image to display as the slide."
+        },
+        {
+          "type": "text",
+          "id": "img_src_alt",
+          "label": "Image Alt Text",
+          "info": "Alt text for the image."
+        }
+      ]
+    },
+    {
+      "type": "mobile_block",
+      "name": "Lookbook mobile slide",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "use_hotspot",
+          "label": "Use Hotspot",
+          "info": "Use a hotspot on the image."
+        },
+        {
+          "type": "product",
+          "id": "hotspot_product",
+          "label": "Hotspot Product",
+          "info": "Select the product to display in the hotspot."
+        },
+        {
+          "type": "range",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 16,
+          "unit": "%",
+          "id": "hotspot_top_pos",
+          "label": "Hotspot Top Position",
+          "info": "Top position of the hotspot."
+        },
+        {
+          "type": "range",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 16,
+          "unit": "%",
+          "id": "hotspot_left_pos",
+          "label": "Hotspot Left Position",
+          "info": "Left position of the hotspot."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Upload an image to display as the slide."
+        },
+        {
+          "type": "text",
+          "id": "img_src_alt",
+          "label": "Image Alt Text",
+          "info": "Alt text for the image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lookbook",
+      "category": "Page"
+    }
+  ]
+}
+{% endschema %}

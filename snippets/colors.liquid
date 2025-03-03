@@ -1,0 +1,31 @@
+{% comment %}
+  Renders a set of color tokens.
+
+  Adastra also teaches you stuff ✦
+  - Use css variables and hsl colors to set different color schemes.
+
+  Usage:
+    {% render 'colors' %}
+{% endcomment %}
+
+{% style %}
+@layer base {
+  :root {
+    --color-darkest: #393949;
+    --color-darkest-op: rgba(57, 57, 73, 0.75);
+    --color-dark-ink: #4f4f66;
+    --color-mid-ink: #78788a;
+    --color-light-ink: #c3c3cc;
+    --color-pale-ink: #ececee;
+    --color-palest-grey: #fafafa;
+    --color-white: #fff;
+    --color-white-op-fifty: rgba(255, 255, 255, 0.65);
+    --color-white-op: rgba(255, 255, 255, 0.7);
+    --color-white-op-eighty: rgba(255, 255, 255, 0.85);
+    --color-white-op-ninety: rgba(255, 255, 255, 0.9);
+    --color-red: #ff2b39;
+    --color-cornflower: #878bff;
+    --color-light-cornflower: #dbdcff; 
+  }
+}
+{% endstyle %}

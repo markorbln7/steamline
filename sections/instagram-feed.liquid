@@ -1,0 +1,33 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="instagram-feed"
+  class="flex w-full"
+  x-data="{ shown: false }" 
+  x-intersect="shown = true"
+  aria-labelledby="instagram-feed-heading"
+  role="region">
+  <div class="pdp-social w-full">
+    <div class="flex justify-center gap-x-3 py-5 text-left lg:text-center px-8 lg:px-11">
+      {% render 'icon', icon: 'instagram-outline' %}
+      <span>
+      <span class="text-darkest">Get inspired from the chicest Steamline customers</span>
+      <a class="font-bold text-darkest underline" href="{{ settings.social_instagram_link }}" target="_blank">Follow us</a>
+      </span>
+    </div>
+
+    <script src="//foursixty.com/media/scripts/fs.slider.v2.5.js" data-feed-id="steamline-live_1" data-theme="slider_v2_5" data-open-links-in-same-page="true" data-connector-filter="27384" data-cell-size="20%"></script>
+<style>.fs-has-links::after { padding:5px 7.5px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:"SHOP IT"; } .fs-wrapper { height:auto; } .fs-slider_v2_5  .fs-entry-container { height:0 !important;width:25%!important;padding-top:25%!important; vertical-align: bottom; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-slider_v2_5 .fs-wrapper div.fs-timeline-entry { margin:1px; } </style>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram Feed",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Instagram Feed"
+    }
+  ]
+}
+{% endschema %}

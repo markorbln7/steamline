@@ -1,0 +1,134 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{%- if predictive_search.performed -%}
+  {% assign first_column_results_size = predictive_search.resources.queries.size
+    | plus: predictive_search.resources.collections.size
+    | plus: predictive_search.resources.pages.size
+    | plus: predictive_search.resources.articles.size
+  %}
+  <div id="predictive-search-results" role="listbox" class="pb-[100px]">
+    {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
+      <div
+        id="predictive-search-results-groups-wrapper"
+        class="lg:mt-5 flex w-full justify-center gap-x-11 !overflow-y-auto">
+    {%- endif -%}
+    {%- if first_column_results_size > 0 -%}
+      <div class="predictive-search__result-group ">
+    {%- endif -%}
+    {%- if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 -%}
+      <div>
+        <h3 id="predictive-search-queries" class="py-5 font-body text-[14px] font-semibold text-light_ink">
+          {{- 'templates.search.suggestions' | t -}}
+        </h3>
+        <ul
+          id="predictive-search-results-queries-list"
+          class="predictive-search__results-list list-unstyled "
+          role="group"
+          aria-labelledby="predictive-search-queries">
+          {%- for query in predictive_search.resources.queries -%}
+            <li
+              id="predictive-search-option-query-{{ forloop.index }}"
+              class="py-1"
+              role="option"
+              aria-selected="false">
+              <a href="{{ query.url }}" class="text-[14px] text-dark_ink" tabindex="-1">
+                <div class="predictive-search__item-content predictive-search__item-content--centered">
+                  <p
+                    class="predictive-search__item-heading predictive-search__item-query-result h5"
+                    aria-label="{{ query.text }}">
+                    {{ query.styled_text }}
+                  </p>
+                </div>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+
+    {%- if first_column_results_size > 0 -%}
+      </div>
+    {%- endif -%}
+    {%- if predictive_search.resources.products.size > 0 -%}
+      <div class="predictive-search__result-group overflow-y-auto">
+        {%- if predictive_search.resources.products.size > 0 -%}
+          <div>
+            <h3
+              id="predictive-search-products"
+              class="py-5 font-body text-[14px] font-semibold text-light_ink">
+              {{- 'templates.search.products' | t -}}
+            </h3>
+            <ul
+              id="predictive-search-results-products-list"
+              class="predictive-search__results-list list-unstyled grid w-full grid-cols-3 gap-4 pb-11 lg:flex"
+              role="group"
+              aria-labelledby="predictive-search-products">
+              {%- for product in predictive_search.resources.products -%}
+                <li
+                  id="predictive-search-option-product-{{ forloop.index }}"
+                  class="predictive-search__list-item"
+                  role="option"
+                  aria-selected="false">
+                  <a
+                    href="{{ product.url }}"
+                    class="flex flex-col gap-y-2"
+                    tabindex="-1">
+                    {%- if product.featured_media != blank -%}
+                      <img
+                        class="predictive-search__image"
+                        src="{{ product.featured_media | image_url: width: 300 }}"
+                        alt="{{ product.featured_media.alt }}"
+                        width="165"
+                        height="{{ 165 | divided_by: product.featured_media.preview_image.aspect_ratio }}">
+                    {%- endif -%}
+                    <div class="predictive-search__item-content{% unless settings.predictive_search_show_vendor or settings.predictive_search_show_price %} predictive-search__item-content--centered{% endunless %}">
+                      <p class="font-heading text-mid_ink">{{ product.title | split: '-' | first }}</p>
+                      <p class="text-[14px] text-darkest">{{ product.type }}</p>
+                      <p class="text-[14px] font-semibold text-dark_ink">{{ product.price | money_without_trailing_zeros }}</p>
+                    </div>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <div id="predictive-search-option-search-keywords">
+          <button
+            class="btn"
+            tabindex="-1"
+            role="option"
+            aria-selected="false">
+            <span data-predictive-search-search-for-text>
+              {{- 'templates.search.search_for' | t: terms: predictive_search.terms -}}
+            </span>
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <span class="hidden" data-predictive-search-live-region-count-value>
+    {% liquid
+      assign total_results = predictive_search.resources.products.size | plus: first_column_results_size
+      if total_results == 0
+        echo 'templates.search.no_results' | t: terms: predictive_search.terms
+      else
+        echo 'templates.search.results_with_count' | t: count: total_results | append: ': '
+        if predictive_search.resources.queries.size > 0
+          assign count = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size
+          echo 'templates.search.results_suggestions_with_count' | t: count: count | append: ', '
+        endif
+        if predictive_search.resources.pages.size > 0
+          assign count = predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size
+          echo 'templates.search.results_pages_with_count' | t: count: count | append: ', '
+        endif
+        if predictive_search.resources.products.size > 0
+          echo 'templates.search.results_products_with_count' | t: count: predictive_search.resources.products.size
+        endif
+      endif
+    %}
+  </span>
+{%- endif -%}

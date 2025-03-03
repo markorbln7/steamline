@@ -1,0 +1,46 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="page"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    <div class="grid grid-cols-12 py-11 lg:py-24">
+      <div class="col-span-12 lg:col-span-10 lg:col-start-2 flex justify-center items-center flex-col gap-y-4">
+        {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+        <p class="text-center text-sm text-mid-gray">{{ date }}</p>
+        <h1 class="text-md lg:text-xl text-center flex flex-col gap-y-4">
+          {{ article.title}}
+        </h1>
+      </div>
+    </div>
+    <div class="grid grid-cols-12 pb-16">
+      <div class="col-span-12 md:col-span-8 md:col-start-2 md:col-start-3 prose">
+
+        <div class="flex justify-center mb-10">
+          {{ article.image | image_url: width: 1200, height: 630, quality: 80 | image_tag }}
+        </div>
+
+        {{ article.content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Article",
+      "category": "Article"
+    }
+  ]
+}
+{% endschema %}

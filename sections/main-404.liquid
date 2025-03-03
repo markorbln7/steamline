@@ -1,0 +1,94 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="main-404"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  {%- liquid
+    assign loading = false
+    if section.index <= 3
+      assign loading = false
+    elsif section.index >= 4
+      assign loading = true
+    endif
+  -%}
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+  >
+    <div class="w-full h-full relative">
+      <div class="absolute w-4/5 lg:w-1/2 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center gap-y-4 flex-col">
+        <h1 class="text-white text-cinema font-heading">{{ section.settings.title }}</h1>
+        <h2 class="font-heading text-white text-md">{{ section.settings.subtitle }}</h2>
+        <div class="btns flex flex-col gap-y-2 mt-11">
+          <a href="{{ section.settings.top_button_url }}" class="btn button-white">{{ section.settings.top_button_text }}</a>
+          <a href="{{ section.settings.bottom_button_url }}" class="btn button-outline flex items-center gap-x-2">
+            {% render 'icon', icon: 'arrow-left-white' %}
+            {{ section.settings.bottom_button_text }}
+          </a>
+        </div>
+      </div>
+      {%- render 'image', image: section.settings.error_image, class: ' hidden lg:block object-fit w-full', alt: '404', lazyload: loading, width: 1800 -%}
+      {%- render 'image', image: section.settings.mobile_error_image, class: ' block lg:hidden object-fit w-full', alt: '404', lazyload: loading, width: 800 -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Text to display for a page title",
+      "default": "404"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Text to display for a page subtitle",
+      "default": "Oops, something went wrong."
+    },
+    {
+      "type": "image_picker",
+      "id": "error_image",
+      "label": "Error Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_error_image",
+      "label": "Mobile Error Image"
+    },
+    {
+      "type": "text",
+      "id": "top_button_text",
+      "label": "Top button text"
+    },
+    {
+      "type": "url",
+      "id": "top_button_url",
+      "label": "Top button URL"
+    },
+    {
+      "type": "text",
+      "id": "bottom_button_text",
+      "label": "Bottom button text"
+    },
+    {
+      "type": "url",
+      "id": "bottom_button_url",
+      "label": "Bottom button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About page",
+      "category": "About"
+    }
+  ]
+}
+{% endschema %}

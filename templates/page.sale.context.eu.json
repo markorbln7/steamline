@@ -1,0 +1,7 @@
+{
+  "parent": "page.sale.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {}
+}

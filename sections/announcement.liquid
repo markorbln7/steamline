@@ -1,0 +1,129 @@
+{% assign header_submenu = section.settings.header_submenu %}
+
+{%- if section.settings.announcement_bar_enabled -%}
+  {%- if section.settings.announcement_bar_home_page_only == false or request.page_type == 'index' -%}
+    <div 
+      class="announcement-section"
+      x-cloak
+    >
+      <div 
+        class="relative flex w-full bg-darkest text-center text-small text-white z-[60]"
+      >
+        <div
+          class="splide w-full"
+          aria-label="Announcments"
+          data-splide='
+            {
+              "type": "loop", 
+              "perPage": 1,
+              "autoplay": true,
+              "pagination": false,
+              "arrows": false,
+              "speed": 600,
+              "easing": "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+              "interval": 5000
+            }
+          '>
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for block in section.blocks %}
+                <li class="splide__slide flex items-center justify-center gap-2 py-2 text-[10px] md:text-small">
+                  {% if block.settings.slide_link != blank %}
+                  <a class="flex items-center justify-center gap-2" href="{{ block.settings.slide_link }}">
+                  {% endif %}
+                    {{ block.settings.slide_text }}
+                  
+
+                  {%- if block.settings.slide_image != null -%}
+                    {%- if block.settings.slide_image_alt != blank -%}
+                      {%- assign alt = block.settings.slide_image_alt -%}
+                    {%- else -%}
+                      {%- assign alt = block.settings.slide_text -%}
+                    {%- endif -%}
+                    {%- render 'image', image: block.settings.slide_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%}
+                  {% endif %}
+
+                  {% if block.settings.slide_link != blank %}
+                  </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="slider-progress">
+            <div class="slider-progress-bar"></div>
+          </div>
+        </div>
+        <div class="absolute right-0 top-0 hidden h-full bg-darkest px-11 md:block">
+          <ul class="flex h-full items-center gap-5">
+            {% for link in header_submenu.links %}
+              <li>
+                <a class="hover:underline" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_bar_enabled",
+      "label": "Enable announcement bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_bar_home_page_only",
+      "label": "Show on home page only",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "header_submenu",
+      "label": "Header Submenu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_text",
+          "label": "Slide Text",
+          "default": "Welcome to our store!"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Slide Image"
+        },
+        {
+          "type": "text",
+          "id": "slide_image_alt",
+          "label": "Slide Image Alt Text",
+          "default": "Slide Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

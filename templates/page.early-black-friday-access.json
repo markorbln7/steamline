@@ -1,0 +1,296 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "page_banner_enaEwm": {
+      "type": "page-banner",
+      "settings": {
+        "hide_overlay": true,
+        "landing_page_style": false,
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/2._Hangheld_Desktop_2d72075f-3b32-49fe-ba06-af72595c8875.jpg",
+        "desktop_image_alt": "",
+        "title": "",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers",
+        "hide_ribbon_title": false,
+        "hide_ribbon": false
+      }
+    },
+    "main_collection_list_hqUHUq": {
+      "type": "main-collection-list",
+      "blocks": {
+        "collection_QUeepg": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-starlet-1",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_yNYJf6": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-sweetheart",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_wVpEHR": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-alchemist",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_eP3zWb": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-industrialist",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_ekc3Yg": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-brown",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_akrpDV": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-navy",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_9EgiHk": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-pink",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_4mLfAd": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-navy",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_KxRczY": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-botanist-pink",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_cgDtGA": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-black",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_cWXkpr": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-cream",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_VHC3HJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-correspondent-pink",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_Ma8kc8": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-cream",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_rTCMRU": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-teal",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_nreRn8": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-hunter-green",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_HRCLkj": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-black",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_Lr9wyh": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-navy",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_UeeNJj": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-lip",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_zXtikq": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-red",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_cb3LQD": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-illustrator-blue",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_Rx9jX7": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-anthropologist-orange",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_Y4XPHT": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-correspondent-canary-yellow",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_iMfdnj": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-illustrator-pink",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_mkcrnJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-black",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_KgwhGd": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-nut",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_tEUDVc": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-stone",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_dd8rRE": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-desert-glitter",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_yjUjgt": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-explorer",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_jW7jrm": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-pioneer",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_PRRRyi": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-burgundy",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_wG8ypR": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-red",
+            "sale_roundel": "30% off"
+          }
+        },
+        "collection_YchJtm": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-mini",
+            "sale_roundel": "30% off"
+          }
+        }
+      },
+      "block_order": [
+        "collection_QUeepg",
+        "collection_yNYJf6",
+        "collection_wVpEHR",
+        "collection_eP3zWb",
+        "collection_ekc3Yg",
+        "collection_akrpDV",
+        "collection_9EgiHk",
+        "collection_4mLfAd",
+        "collection_KxRczY",
+        "collection_cgDtGA",
+        "collection_cWXkpr",
+        "collection_VHC3HJ",
+        "collection_Ma8kc8",
+        "collection_rTCMRU",
+        "collection_nreRn8",
+        "collection_HRCLkj",
+        "collection_Lr9wyh",
+        "collection_UeeNJj",
+        "collection_zXtikq",
+        "collection_cb3LQD",
+        "collection_Rx9jX7",
+        "collection_Y4XPHT",
+        "collection_iMfdnj",
+        "collection_mkcrnJ",
+        "collection_KgwhGd",
+        "collection_tEUDVc",
+        "collection_dd8rRE",
+        "collection_yjUjgt",
+        "collection_jW7jrm",
+        "collection_PRRRyi",
+        "collection_wG8ypR",
+        "collection_YchJtm"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "page_banner_enaEwm",
+    "main_collection_list_hqUHUq"
+  ]
+}

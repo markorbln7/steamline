@@ -1,0 +1,728 @@
+{
+  "sections": {
+    "hero_azLzX4": {
+      "type": "hero",
+      "blocks": {
+        "image_EJhak4": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/Hero_Navig_desk_1.jpg"
+          }
+        },
+        "image_dnTYx6": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/Hero_Navig_desk_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_EJhak4",
+        "image_dnTYx6"
+      ],
+      "settings": {
+        "text_color": "white",
+        "content_position": "bottom_centered",
+        "content_position_mobile": "bottom_centered",
+        "eyebrow_title": "",
+        "hero_title": "",
+        "hero_subtitle": "",
+        "make_fullscreen_url": true,
+        "hero_cta_link": "https:\/\/steamlineluggage.com\/collections",
+        "hero_cta_text": "",
+        "hero_image": "shopify:\/\/shop_images\/082A6541_v1L_ok_t.jpg",
+        "mobile_hero_image": "shopify:\/\/shop_images\/082A6541_v2b_Mobile_lum_b.jpg",
+        "enable_video": false,
+        "hero_video_desktop": "shopify:\/\/files\/videos\/@twentyfourvisuals credit- luciana and aida Website.mov",
+        "hero_video_mobile": "shopify:\/\/files\/videos\/@twentyfourvisuals credit- luciana and aida_Square_Mobile.mp4"
+      }
+    },
+    "featured_categories_9Q67xd": {
+      "type": "featured-categories",
+      "blocks": {
+        "cat_block_hBQHBJ": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/wheeled-cat-hp-desk_21418fd2-55f4-4be6-b3a7-87bc699cef68.jpg",
+            "block_link": "shopify:\/\/collections\/luggage",
+            "block_link_text": "Wheeled Luggage"
+          }
+        },
+        "cat_block_kgGtwb": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/hatbox-cat-hp-desk_72cd2980-8a1f-46fd-9469-1461e8a6633a.jpg",
+            "block_link": "shopify:\/\/collections\/handheld",
+            "block_link_text": "Handheld Cases"
+          }
+        },
+        "cat_block_GF4QXF": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/tote-cat-hp-desk.jpg",
+            "block_link": "shopify:\/\/collections\/the-navigator",
+            "block_link_text": "Bags"
+          }
+        },
+        "cat_block_gUfAd3": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/nav-cat-hp-desk.jpg",
+            "block_link": "shopify:\/\/collections\/travel-accessories",
+            "block_link_text": "Accessories"
+          }
+        }
+      },
+      "block_order": [
+        "cat_block_hBQHBJ",
+        "cat_block_kgGtwb",
+        "cat_block_GF4QXF",
+        "cat_block_gUfAd3"
+      ],
+      "settings": {}
+    },
+    "featured_ticker_DV4QrW": {
+      "type": "featured-ticker",
+      "blocks": {
+        "ticker_block_AVWVyN": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/conde-nast-traveler.svg"
+          }
+        },
+        "ticker_block_NtTmzC": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/Cosmopolitan.svg"
+          }
+        },
+        "ticker_block_hGLBbk": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/elle.svg"
+          }
+        },
+        "ticker_block_b6ynzL": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/esquire.svg"
+          }
+        },
+        "ticker_block_CEpqwB": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gloss-logo.svg"
+          }
+        },
+        "ticker_block_PUnTLU": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/GQ.svg"
+          }
+        },
+        "ticker_block_J6rBiA": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/harpers-bazaar.svg"
+          }
+        },
+        "ticker_block_dgbB8g": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/irish-independent.svg"
+          }
+        },
+        "ticker_block_WRcPGQ": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/logo-ad-us_1.svg"
+          }
+        },
+        "ticker_block_ppJjK8": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/oprah.svg"
+          }
+        },
+        "ticker_block_H6rzHG": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/The_Irish_Times.svg"
+          }
+        },
+        "ticker_block_U9CGfQ": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/town-and-country-magazine.svg"
+          }
+        },
+        "ticker_block_tPgpec": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/Vanity_Fair.svg"
+          }
+        },
+        "ticker_block_XtKNkj": {
+          "type": "ticker_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/vogue.svg"
+          }
+        }
+      },
+      "block_order": [
+        "ticker_block_AVWVyN",
+        "ticker_block_NtTmzC",
+        "ticker_block_hGLBbk",
+        "ticker_block_b6ynzL",
+        "ticker_block_CEpqwB",
+        "ticker_block_PUnTLU",
+        "ticker_block_J6rBiA",
+        "ticker_block_dgbB8g",
+        "ticker_block_WRcPGQ",
+        "ticker_block_ppJjK8",
+        "ticker_block_H6rzHG",
+        "ticker_block_U9CGfQ",
+        "ticker_block_tPgpec",
+        "ticker_block_XtKNkj"
+      ],
+      "settings": {
+        "heading": "Travel Beautifully.",
+        "subheading": "Enter the world of SteamLine Luggage inspired by the glamour of travel. Explore destinations near and far with luxury suitcases and elevated accessories celebrating the bygone era of travel. Steeped in the romance of global jet-setting and iconic in both form and function. Our luggage wardrobe consists of handcrafted leather, sustainable canvas, exquisite hatboxes, vintage vanity cases and decadent fabrics in exotic colorways, in a variety of sizes with impeccable attention to detail to make every journey feel like a destination. "
+      }
+    },
+    "featured_products_LQR3tr": {
+      "type": "featured-products",
+      "blocks": {
+        "product_block_4kjD6k": {
+          "type": "product_block",
+          "settings": {
+            "use_gradient": true,
+            "block_image": "shopify:\/\/shop_images\/sweet-hp-desk.jpg",
+            "block_hover_image": "shopify:\/\/shop_images\/sweet-hp-stud-desk.jpg",
+            "block_link_text": "The Sweetheart",
+            "block_link_description": "This crisp white romantic luggage features chic gold latches and opens to reveal a gorgeous botanical print. Get swept off your feet with our vintage collection that speaks to the golden age of travel.",
+            "block_link_link": "shopify:\/\/collections\/the-sweetheart",
+            "block_btn_text": "Shop the collection",
+            "block_roundel_text": "LEATHER STRAPS",
+            "sale_roundel_text": ""
+          }
+        },
+        "product_block_xaEkkd": {
+          "type": "product_block",
+          "settings": {
+            "use_gradient": true,
+            "block_image": "shopify:\/\/shop_images\/starlet-hp-desk.jpg",
+            "block_hover_image": "shopify:\/\/shop_images\/The_Starlet_2000_7905664d-0f07-4849-8298-646506d24afc.jpg",
+            "block_link_text": "The Starlet",
+            "block_link_description": "Our bestselling Starlet collection, accented with golden latches, opens to black polka dot lining that says you enjoy the finer things in life.",
+            "block_link_link": "shopify:\/\/collections\/the-starlet-1",
+            "block_btn_text": "Shop the collection",
+            "block_roundel_text": "BESTSELLER",
+            "sale_roundel_text": ""
+          }
+        },
+        "product_block_PpCb8Q": {
+          "type": "product_block",
+          "settings": {
+            "use_gradient": true,
+            "block_image": "shopify:\/\/shop_images\/illpink-hp-desk.jpg",
+            "block_hover_image": "shopify:\/\/shop_images\/The_Illustrator_Pink_2000_fc527f43-938b-484b-a8b7-e7f21f5dc4a6.jpg",
+            "block_link_text": "The Illustrator",
+            "block_link_description": "Our Illustrator set celebrates nature, style, and art juxtaposed with Lauren Taylor’s detailed hand illustrations. With this vintage collection, your luggage will be sure to remain looking timeless for years to come.",
+            "block_link_link": "shopify:\/\/collections\/the-illustrator",
+            "block_btn_text": "Shop the collection",
+            "block_roundel_text": "LEATHER STRAPS",
+            "sale_roundel_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_block_4kjD6k",
+        "product_block_xaEkkd",
+        "product_block_PpCb8Q"
+      ],
+      "settings": {}
+    },
+    "reviews_carousel_7rxAHD": {
+      "type": "reviews-carousel",
+      "blocks": {
+        "review_slide_RE83He": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"This luggage has become my new indulgence. I have comments every time I travel about how stunning my suitcase is! Thoroughly recommend - but with a health warning... you won't be able to stop at just one piece!!!\"",
+            "review_author": "Gemma, Germany (Verified User)"
+          }
+        },
+        "review_slide_Tg34mh": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"I am absolutely delighted with my SteamLine Hatbox. I actually used it as a carry-on because it fit my holiday hats as well as my makeup, small liquids, chargers, sunglasses, and even a book. My luggage arrived quite quickly as well. All around very very pleased.\"",
+            "review_author": "Ashleigh, Ireland (Verified User)"
+          }
+        },
+        "review_slide_cU3XKC": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"I'm so glad I purchased the Starlet set - I have all 8 pieces and use them constantly to travel near and far.  I get compliments on the luggage every time I travel, especially on the adorable and useful hatboxes.\"",
+            "review_author": "Melissa, Virginia (Verified User)"
+          }
+        },
+        "review_slide_YgtpP7": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"I’ve just used the black and cream Starlet on holiday and got so many compliments. I’m on a mission now to get a collection together so as soon as I got back I ordered the brown and cream one. The luggage is beautiful, I’m so pleased I found your website!\"",
+            "review_author": "Marie, UK (Verified User)"
+          }
+        },
+        "review_slide_9YQRkh": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"The beautiful suitcases of SteamLine invite us to explore the world in the voyaging style of the naturalists of the olden days. I just LOVE them!\"",
+            "review_author": "Esther, Netherlands (Verified User)"
+          }
+        },
+        "review_slide_YwjdG7": {
+          "type": "review_slide",
+          "settings": {
+            "review_text": "\"I am constantly getting comments from strangers about how beautiful my luggage is. What I really like about them is that they have an air of nostalgia about them but are updated and practical for the modern age.\"",
+            "review_author": "Glenn, UK\/New Zealand (Verified User)"
+          }
+        }
+      },
+      "block_order": [
+        "review_slide_RE83He",
+        "review_slide_Tg34mh",
+        "review_slide_cU3XKC",
+        "review_slide_YgtpP7",
+        "review_slide_9YQRkh",
+        "review_slide_YwjdG7"
+      ],
+      "settings": {
+        "section_title": "What our customers say"
+      }
+    },
+    "collection_carousel_VxKgFi": {
+      "type": "collection-carousel",
+      "blocks": {
+        "slider_product_BeaMXW": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-editor-navy-check-in-spinner"
+          }
+        },
+        "slider_product_MbqhPp": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-alchemist-spinner"
+          }
+        },
+        "slider_product_xRwMdb": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-architect-burgundy-carryon"
+          }
+        },
+        "slider_product_cB3JHm": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-architect-navy-mini"
+          }
+        },
+        "slider_product_FDKEga": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-architect-cream-stowaway"
+          }
+        },
+        "slider_product_b8F3TG": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-editor-black-mini"
+          }
+        },
+        "slider_product_DPrjpg": {
+          "type": "slider_product",
+          "disabled": true,
+          "settings": {
+            "product": "the-anthropologist-orange-carryon"
+          }
+        },
+        "slider_product_QqgaH9": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-industrialist-check-in-spinner"
+          }
+        },
+        "slider_product_zc4MT8": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-starlet-spinner"
+          }
+        },
+        "slider_product_Rz9W8C": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-sweetheart-white-carryon"
+          }
+        },
+        "slider_product_AGPd3C": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-illustrator-pink-carryon"
+          }
+        },
+        "slider_product_ixnQyw": {
+          "type": "slider_product",
+          "settings": {
+            "product": "architect-navy-spinner"
+          }
+        },
+        "slider_product_RqNCtd": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-correspondent-pink-check-in-spinner"
+          }
+        },
+        "slider_product_AH9dHK": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-diplomat-hunter-green-spinner"
+          }
+        },
+        "slider_product_m8DrNt": {
+          "type": "slider_product",
+          "settings": {
+            "product": "the-diplomat-cream-carryon"
+          }
+        }
+      },
+      "block_order": [
+        "slider_product_BeaMXW",
+        "slider_product_MbqhPp",
+        "slider_product_xRwMdb",
+        "slider_product_cB3JHm",
+        "slider_product_FDKEga",
+        "slider_product_b8F3TG",
+        "slider_product_DPrjpg",
+        "slider_product_QqgaH9",
+        "slider_product_zc4MT8",
+        "slider_product_Rz9W8C",
+        "slider_product_AGPd3C",
+        "slider_product_ixnQyw",
+        "slider_product_RqNCtd",
+        "slider_product_AH9dHK",
+        "slider_product_m8DrNt"
+      ],
+      "settings": {
+        "section_title": "Classic Bestsellers",
+        "cta_link": "https:\/\/steamlineluggage.com\/collections\/bestsellers",
+        "cta_text": "Shop Now"
+      }
+    },
+    "feature_banner_agWKQg": {
+      "type": "feature-banner",
+      "disabled": true,
+      "settings": {
+        "desktop_position": "center",
+        "mobile_position": "bottom",
+        "hero_title": "Present Sense",
+        "hero_subtitle": "Mini to major, we have something wanderful to give everyone in your world.",
+        "hero_cta_link": "https:\/\/steamlineluggage.com\/blogs\/news\/holiday-gift-guide",
+        "hero_cta_text": "SHOP HOLIDAY",
+        "hero_image": "shopify:\/\/shop_images\/FWPanel_Holiday_Desktop_v1.jpg",
+        "mobile_hero_image": "shopify:\/\/shop_images\/FWPanel_Holiday_Movile.jpg",
+        "photo_credit": ""
+      }
+    },
+    "bundles_banner_LpNwWN": {
+      "type": "bundles-banner",
+      "settings": {
+        "hero_title": "Grow your travel set with up to 15% off",
+        "hero_subtitle": "<p>Get 10% off with code <strong>BUY2<\/strong> when you buy 2 items.*<\/p><p>Get 15% off with code <strong>BUY3<\/strong> when you buy 3 items.*<\/p>",
+        "hero_cta_link_one": "shopify:\/\/collections\/bestsellers",
+        "hero_cta_text_one": "",
+        "hero_cta_link_two": "shopify:\/\/collections\/bestsellers",
+        "hero_cta_text_two": "SHOP BESTSELLERS",
+        "hero_cta_link_three": "",
+        "hero_cta_text_three": "",
+        "footnote_text": "Plus, free US, UK & Ireland shipping, duties & taxes included*",
+        "shipping_link_text": "",
+        "shipping_link": "https:\/\/steamlineluggage.com\/pages\/shipping-duties",
+        "hero_image": "shopify:\/\/shop_images\/bundlebg-desk.jpg",
+        "mobile_hero_image": "shopify:\/\/shop_images\/bundlefront-mob.jpg",
+        "overlay_image": "shopify:\/\/shop_images\/bundlefront-desk.jpg"
+      }
+    },
+    "featured_categories_FrXpYt": {
+      "type": "featured-categories",
+      "blocks": {
+        "cat_block_L6kJXE": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/arcnavy-cat-hp-desk.jpg",
+            "block_link": "shopify:\/\/collections\/leather",
+            "block_link_text": "Leather"
+          }
+        },
+        "cat_block_zDRnqY": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/veg-cat-desk.jpg",
+            "block_link": "shopify:\/\/collections\/vegan-leather",
+            "block_link_text": "Vegan"
+          }
+        },
+        "cat_block_gFYC4n": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/nav3-cat-hp-desk.jpg",
+            "block_link": "shopify:\/\/collections\/sustainable-collections",
+            "block_link_text": "Sustainable"
+          }
+        },
+        "cat_block_fhtKKA": {
+          "type": "cat_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/edi-cat-desk.jpg",
+            "block_link": "shopify:\/\/collections\/linen-rattan",
+            "block_link_text": "Linen & Rattan"
+          }
+        }
+      },
+      "block_order": [
+        "cat_block_L6kJXE",
+        "cat_block_zDRnqY",
+        "cat_block_gFYC4n",
+        "cat_block_fhtKKA"
+      ],
+      "settings": {}
+    },
+    "featured_collection_F6gX8Q": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/sweeth-panel-desk_b2f99bcb-6965-4fef-bee7-28e285c07997.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/sweeth-panel-mob.jpg",
+        "product_roundel": "Bridal",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/sweeth-stud-desk.jpg",
+        "title": "The Sweetheart",
+        "description": "Lined with a botanical print of birds and flowers, our bestselling white collection brings a timeless touch to adventures surf or ski.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-sweetheart"
+      }
+    },
+    "featured_collection_MPUXJk": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheIndustrialist_Black_Briefcase_hfpdesk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheIndustrialist_Black_Briefcase_hfpmob.jpg",
+        "product_roundel": "leather straps",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Industrialist_2000_55b72c04-8678-4667-b15a-1024365cb5f7.jpg",
+        "title": "The Industrialist",
+        "description": "Masculine and sleek, this set is everything you could possibly need for the perfect designer weekend; luggage that is ultra-functional and styled to the hilt.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-industrialist"
+      }
+    },
+    "featured_collection_EWzeaz": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/Homepage_IllusPink_Desk_a03f2f09-cabb-40fb-b6e3-225b2f7d8485.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Homepage_IllusPink_mob.jpg",
+        "product_roundel": "LEATHER STRAPS",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Illustrator_Pink_2000_fc527f43-938b-484b-a8b7-e7f21f5dc4a6.jpg",
+        "title": "The Illustrator Pink",
+        "description": "Vintage-inspired and a celebration of nature, style and art. The chic striped exterior opens to reveal a wild meadow flowers print hand painted by artist Lauren Taylor.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-illustrator-pink"
+      }
+    },
+    "featured_collection_XaX6BL": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheStarlet_Black_HFPdesk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheStarlet_Black_HFPmob.jpg",
+        "product_roundel": "Bestseller",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Starlet_2000_7905664d-0f07-4849-8298-646506d24afc.jpg",
+        "title": "The Starlet",
+        "description": "A classic. Its timelessly chic black-and-white colorway, sleek design and playful polka-dot interior lining epitomizes SteamLine style.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-starlet-1"
+      }
+    },
+    "featured_collection_MECxCd": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheEntrepreneur_Red_Carryon_HFP.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheEntrepreneur_Red_hfpmob11.jpg",
+        "product_roundel": "Vegan Leather",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/entred-hp-stud-desk.jpg",
+        "title": "The Entrepreneur Red",
+        "description": "This vegan-leather luggage collection is not only retro chic but also designed to pack your getaway essentials like a mover and shaker.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-entrepreneur-red"
+      }
+    },
+    "featured_collection_iMYykJ": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheBotanist_Pink_hfpdesk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/SteamLine_Luggage_TheBotanist_Pink_hfpmob.jpg",
+        "product_roundel": "LEATHER STRAPS",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Botanist_Pink_400_bb25e485-97c6-4f5f-86e1-4cb8f6412aa5.jpg",
+        "title": "The Botanist",
+        "description": "Inspired by the allure of botanical gardens with hand-painted palms, hibiscus, and bird-of-paradise florals. Travel in style with our beloved vintage collection for memorable excursions that will last forever.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-botanist"
+      }
+    },
+    "featured_collection_Xbgh7F": {
+      "type": "featured-collection",
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/nav2-pan-desk_270ccf79-1f87-4cf7-beaf-48a13e79c5e5.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/nav2-pan-mob.jpg",
+        "product_roundel": "ITALIAN CHROME-FREE LEATHER",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/nut-desk-panel_9ad5cdbc-d0ac-4679-b244-191371a6da20.jpg",
+        "title": "The Navigators",
+        "description": "Designed in Dublin and handcrafted in Pisa, the ultimate travel accessories come in five colorways and are sustainably crafted to pair with your signature SteamLine.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-navigator"
+      }
+    },
+    "featured_collection_fJxcPB": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/margot-orig-crfF.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/margot-orig-crfF-_mob.jpg",
+        "product_roundel": "As seen in Vogue",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/corr-yell-stud.jpg",
+        "title": "The Correspondent",
+        "description": "The beautiful Margot Robbie models our Correspondent Canary Yellow collection for the Barbie movie. Credit: Vogue, 2023",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-correspondent-canary-yellow"
+      }
+    },
+    "featured_collection_z4nxJU": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/alchemist-desk-4.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/alchemist-MOB-4.jpg",
+        "product_roundel": "Vegan",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Alchemist_2000_6bf851c0-172b-45e5-8b00-0f728303bfa4.jpg",
+        "title": "The Alchemist",
+        "description": "With our signature multi-metallic vegan leather for a luminous golden blush hue that radiates from the runway to the jetway.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-alchemist"
+      }
+    },
+    "featured_collection_CtHMmR": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "image_pos": "right",
+        "image": "shopify:\/\/shop_images\/editornavy-desk-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/editornavy-mob-1.jpg",
+        "product_roundel": "SUSTAINABLE",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Editor_Navy_2000_65b058e7-02aa-4439-9bd8-fe71904007aa.jpg",
+        "title": "The Editor Navy",
+        "description": "A beloved staple, our luxury linen luggage will have you planning and packing your next trip like a seasoned traveler with the meticulous eye of a fashion editor.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-editor-navy"
+      }
+    },
+    "featured_collection_ajYWkA": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/ILLBLUE-DESK-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/ILLBLUE-MOB-1.jpg",
+        "product_roundel": "leather straps",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_Illustrator_Blue_2000_2c061339-7dce-4755-8bf5-786d696ef6fc.jpg",
+        "title": "The Illustrator Blue",
+        "description": "A celebration of nature, style, and art. The chic striped exterior opens to reveal an original SteamLine Print of wild meadow flowers handpainted in exquisite detail by artist Lauren Taylor.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-illustrator-blue"
+      }
+    },
+    "featured_collection_Ppmk9g": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "image_pos": "left",
+        "image": "shopify:\/\/shop_images\/entnavy-desk_a8caa3ef-e7a8-48e4-b5bb-91b4f4dca2e4.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/entnavy-mob.jpg",
+        "product_roundel": "VEGAN",
+        "sale_roundel": "",
+        "product_image": "shopify:\/\/shop_images\/The_entrepreneur_Navy_2000_e6e772f3-450c-422f-a5bf-acf0ebe2e389.jpg",
+        "title": "The Entrepreneur Navy",
+        "description": "The vintage-style vegan luggage set in navy will keep you looking and feeling like the boss you are.",
+        "link_text": "Shop the collection",
+        "link": "shopify:\/\/collections\/the-entrepreneur-navy"
+      }
+    },
+    "featured_products_JkPHGz": {
+      "type": "featured-products",
+      "disabled": true,
+      "settings": {}
+    },
+    "instagram_feed_NiMiyz": {
+      "type": "instagram-feed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_azLzX4",
+    "featured_categories_9Q67xd",
+    "featured_ticker_DV4QrW",
+    "featured_products_LQR3tr",
+    "reviews_carousel_7rxAHD",
+    "collection_carousel_VxKgFi",
+    "feature_banner_agWKQg",
+    "bundles_banner_LpNwWN",
+    "featured_categories_FrXpYt",
+    "featured_collection_F6gX8Q",
+    "featured_collection_MPUXJk",
+    "featured_collection_EWzeaz",
+    "featured_collection_XaX6BL",
+    "featured_collection_MECxCd",
+    "featured_collection_iMYykJ",
+    "featured_collection_Xbgh7F",
+    "featured_collection_fJxcPB",
+    "featured_collection_z4nxJU",
+    "featured_collection_CtHMmR",
+    "featured_collection_ajYWkA",
+    "featured_collection_Ppmk9g",
+    "featured_products_JkPHGz",
+    "instagram_feed_NiMiyz"
+  ]
+}

@@ -1,0 +1,127 @@
+{% liquid
+  for accordion in product.metafields.pdp.product_details_section.value
+    if forloop.first
+      assign img_src_first = accordion.image | image_url: width: 1800 | image_tag: true, alt: accordion.title | escape
+    endif
+
+    assign alt = accordion.title
+    assign width = 1800
+    assign height = accordion.image.height | default: width | times: 0.75
+  endfor
+
+  assign display = false
+  if product.metafields.pdp.product_details_section.value.count > 0
+    assign display = true
+  endif
+%}
+
+{% if display %}
+  <div
+    id="ProductSection"
+    data-section-id="{{ section.id }}"
+    data-section-type="product-details"
+    aria-labelledby="ProductSectionDetails"
+    x-data="{ shown: true, imgSrc: '{{ img_src_first }}', imgLoaded: false }">
+  
+    <div
+      class="relative h-full lg:min-h-[600px] w-full"
+      x-data="{ imgSrc: '{{ img_src_first }}', imgLoaded: false }"
+      x-show="shown"
+      x-transition.opacity>
+
+      <h2 class="text-md pt-4 lg:pt-0 pb-6 block lg:hidden px-4">{{ section.settings.product_detail_title }}</h2>
+
+      <div
+        class="lg:absolute lg:h-full lg:w-full lg:object-cover transition-opacity duration-500 ease-in-out"
+        :class="imgLoaded ? 'opacity-100' : 'opacity-0'"
+        x-transition.opacity>
+        
+        <img
+          :src="imgSrc"
+          alt="{{ alt }}"
+          width="{{ width }}"
+          height="{{ height }}"
+          loading="lazy"
+          fetchpriority="auto"
+          decoding="async"
+          @load="imgLoaded = true" 
+          class="h-full w-full object-cover aspect-video lg:aspect-video">
+      </div>
+
+      <div class="relative lg:absolute lg:left-20 lg:top-1/2 flex lg:w-[40%] lg:-translate-y-1/2 transform flex-col gap-y-4 bg-white bg-opacity-50 px-4 lg:px-11 py-7 lg:py-14">
+        <div class="flex flex-col gap-y-5">
+          <h2 class="text-lg hidden lg:block">{{ section.settings.product_detail_title }}</h2>
+          <div x-data="{ active: 1 }" class="mx-auto lg:min-h-[16rem] w-full max-w-3xl space-y-4">
+            {%- for accordion in product.metafields.pdp.product_details_section.value -%}
+              <div
+                x-data="{id: {{ forloop.index }}, get expanded() { return this.active === this.id}, set expanded(value) {this.active = value ? this.id : null},}"
+                role="region"
+                data-img-src="{{ accordion.image }}">
+                <div
+                  x-transition
+                  x-on:mouseenter="expanded = !expanded; imgSrc = '{{ accordion.image | image_url: width: 1800 | image_tag: true }}'; imgLoaded = false"
+                  :aria-expanded="expanded"
+                  class="accordion-trigger border-0 border-l-2 border-cornflower p-0 pl-3 cursor-pointer">
+                  {{ accordion.title }}
+                </div>
+
+                <div x-show="expanded" x-collapse>
+                  <div class="accordion-content border-0 border-l-2 border-cornflower pl-3 pt-3">
+                    <p class="text-small">{{ accordion.content | strip_html }}</p>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_detail_title",
+      "label": "Product Detail Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_detail_block",
+      "name": "Product Detail Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "detail_block_title",
+          "label": "Detail Block Title"
+        },
+        {
+          "type": "richtext",
+          "id": "detail_block_description",
+          "label": "Detail Block Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "detail_block_image",
+          "label": "Detail Block Image"
+        },
+        {
+          "type": "text",
+          "id": "detail_block_image_alt",
+          "label": "Detail Block Image Alt Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Details",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

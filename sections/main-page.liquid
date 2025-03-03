@@ -1,0 +1,43 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="page"
+  x-data="{ shown: false }"
+  x-intersect="shown = true">
+
+  <div 
+    x-show="shown"
+    x-transition.opacity
+    class="wrapper"
+  >
+    {% unless page.metafields.page.hide_page_title %}
+    <div class="grid grid-cols-12 py-11 lg:py-24">
+      <div class="col-span-12 flex justify-center">
+        <h1 class="text-xl lg:text-display text-center flex flex-col gap-y-4">
+          {{ page.title | remove: 'V2'}}
+        </h1>
+      </div>
+    </div>
+    {% endunless %}
+
+
+    <div class="grid grid-cols-12 {% if page.metafields.page.hide_page_title %}py-11 lg:py-24{% else %}pb-16{% endif %}">
+      <div class="col-span-10 md:col-span-8 col-start-2 md:col-start-3 prose">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Page",
+      "category": "Page"
+    }
+  ]
+}
+{% endschema %}

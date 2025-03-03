@@ -1,0 +1,385 @@
+{
+  "sections": {
+    "page_banner_Pmiaz4": {
+      "type": "page-banner",
+      "settings": {
+        "hide_overlay": false,
+        "landing_page_style": false,
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/allcoll-desk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/allprod-cb-mob.jpg",
+        "desktop_image_alt": "All Collections",
+        "title": "All Collections",
+        "description": "Enter the world of SteamLine, a luggage design house specializing in vintage suitcases inspired by elevated, glamorous travel. Our designer luggage sets come in a variety of styles. Half of the fun of travel is the planning, so set course on building your luggage collection complete with vintage hat boxes, vanity cases, small vintage suitcases, romantic honeymoon luggage, in-flight accessories, overnight bags, and luxury cabin luggage that will have you dreaming of your next getaway.",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_subtext": "*excludes items under $150",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers",
+        "hide_ribbon_title": false,
+        "hide_ribbon": false
+      }
+    },
+    "main": {
+      "type": "main-collection-list",
+      "blocks": {
+        "collection_Bm6PBE": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-starlet-1",
+            "sale_roundel": ""
+          }
+        },
+        "collection_8ncfMY": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-industrialist",
+            "sale_roundel": ""
+          }
+        },
+        "collection_9yxEiY": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-sweetheart",
+            "sale_roundel": ""
+          }
+        },
+        "collection_hXPHRT": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-cream",
+            "sale_roundel": ""
+          }
+        },
+        "collection_WnHNnL": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-navy",
+            "sale_roundel": ""
+          }
+        },
+        "collection_UxXhee": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-hunter-green",
+            "sale_roundel": ""
+          }
+        },
+        "collection_yXpw8Y": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-navy",
+            "sale_roundel": ""
+          }
+        },
+        "collection_R4399Y": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-illustrator-pink",
+            "sale_roundel": ""
+          }
+        },
+        "disruptor_block_mUHPWc": {
+          "type": "disruptor-block",
+          "settings": {
+            "disruptor_block_copy": "An impossibly chic suitcase. Five star luxury.",
+            "disruptor_block_logo": "shopify:\/\/shop_images\/logo-vogue.svg"
+          }
+        },
+        "collection_DcLLKJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-brown",
+            "sale_roundel": ""
+          }
+        },
+        "collection_DzcrMG": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-pink",
+            "sale_roundel": ""
+          }
+        },
+        "collection_ExnGQN": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-botanist-pink",
+            "sale_roundel": ""
+          }
+        },
+        "collection_zayTA4": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-correspondent-pink",
+            "sale_roundel": ""
+          }
+        },
+        "collection_X7TgyH": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-black",
+            "sale_roundel": ""
+          }
+        },
+        "collection_Hgm9X6": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-alchemist",
+            "sale_roundel": ""
+          }
+        },
+        "collection_ALnpzM": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-red",
+            "sale_roundel": ""
+          }
+        },
+        "collection_974fBK": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-illustrator-blue",
+            "sale_roundel": ""
+          }
+        },
+        "collection_eWnpUU": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-entrepreneur-lip",
+            "sale_roundel": ""
+          }
+        },
+        "collection_6kafwT": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-explorer",
+            "sale_roundel": ""
+          }
+        },
+        "block_video_addK8E": {
+          "type": "block-video",
+          "settings": {
+            "disruptor_block_video": "shopify:\/\/files\/videos\/Mar-20-202423-06-29-ezgif.com-gif-to-mp4-converter.mp4",
+            "disruptor_block_video_poster": "shopify:\/\/shop_images\/The_Correspondent_Yellow_Carryon_2.jpg",
+            "disruptor_block_video_title": "Sun Bound",
+            "disruptor_block_video_link": "https:\/\/steamlineluggage.com\/collections\/the-correspondent-canary-yellow",
+            "disruptor_block_video_link_text": "Shop The Correspondent",
+            "disruptor_block_customer_name": ""
+          }
+        },
+        "collection_4y4pWk": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-black",
+            "sale_roundel": ""
+          }
+        },
+        "collection_nLHVFR": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-anthropologist-orange",
+            "sale_roundel": ""
+          }
+        },
+        "collection_3RcLDP": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-pioneer",
+            "sale_roundel": ""
+          }
+        },
+        "collection_FEN4i8": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-teal",
+            "sale_roundel": ""
+          }
+        },
+        "disruptor_block_8pGF8e": {
+          "type": "disruptor-block",
+          "settings": {
+            "disruptor_block_copy": "A purveyor of devastatingly chic suitcases that will make you feel like your vacation has already begun.",
+            "disruptor_block_logo": "shopify:\/\/shop_images\/logo-esquire.svg"
+          }
+        },
+        "collection_Pf8WfT": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-cream",
+            "sale_roundel": ""
+          }
+        },
+        "collection_eVtGeP": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-correspondent-canary-yellow",
+            "sale_roundel": ""
+          }
+        },
+        "collection_GmKwdP": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-architect-burgundy",
+            "sale_roundel": ""
+          }
+        },
+        "collection_8VYC89": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-editor-navy",
+            "sale_roundel": ""
+          }
+        },
+        "collection_mNzAhF": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-diplomat-red",
+            "sale_roundel": ""
+          }
+        },
+        "collection_AFKwg9": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-kids-entrepreneur-kids-carryon",
+            "sale_roundel": ""
+          }
+        },
+        "collection_CgGgVH": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-mini",
+            "sale_roundel": ""
+          }
+        },
+        "collection_zNzrBH": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-black",
+            "sale_roundel": ""
+          }
+        },
+        "collection_CCytQg": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-nut",
+            "sale_roundel": ""
+          }
+        },
+        "collection_9Lyxp8": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-stone",
+            "sale_roundel": ""
+          }
+        },
+        "collection_XWb9yP": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-desert-glitter",
+            "sale_roundel": ""
+          }
+        },
+        "collection_RckqPd": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-navigator-gold",
+            "sale_roundel": ""
+          }
+        },
+        "disruptor_block_6Ffbd6": {
+          "type": "disruptor-block",
+          "disabled": true,
+          "settings": {
+            "disruptor_block_copy": "This vintage-inspired trunk by SteamLine Luggage is top on our holiday wish list.",
+            "disruptor_block_logo": "shopify:\/\/shop_images\/logo-conde-nast-traveller-UK.svg"
+          }
+        },
+        "disruptor_block_gy76aD": {
+          "type": "disruptor-block",
+          "disabled": true,
+          "settings": {
+            "disruptor_block_copy": "Every woman dreams of luxury luggage - now is your moment to indulge with SteamLine Luggage.",
+            "disruptor_block_logo": "shopify:\/\/shop_images\/logo-harpers-bazaar.svg"
+          }
+        },
+        "disruptor_block_JDigeB": {
+          "type": "disruptor-block",
+          "disabled": true,
+          "settings": {
+            "disruptor_block_copy": "If you want a luxury leather suitcase, SteamLine Luggage is your brand.",
+            "disruptor_block_logo": "shopify:\/\/shop_images\/logo-GQ.svg"
+          }
+        },
+        "block_video_a9Dqhh": {
+          "type": "block-video",
+          "disabled": true,
+          "settings": {
+            "disruptor_block_video_title": "",
+            "disruptor_block_video_link": "",
+            "disruptor_block_video_link_text": "",
+            "disruptor_block_customer_name": ""
+          }
+        },
+        "block_video_wPnpUH": {
+          "type": "block-video",
+          "disabled": true,
+          "settings": {
+            "disruptor_block_video_title": "",
+            "disruptor_block_video_link": "",
+            "disruptor_block_video_link_text": "",
+            "disruptor_block_customer_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_Bm6PBE",
+        "collection_8ncfMY",
+        "collection_9yxEiY",
+        "collection_hXPHRT",
+        "collection_WnHNnL",
+        "collection_UxXhee",
+        "collection_yXpw8Y",
+        "collection_R4399Y",
+        "disruptor_block_mUHPWc",
+        "collection_DcLLKJ",
+        "collection_DzcrMG",
+        "collection_ExnGQN",
+        "collection_zayTA4",
+        "collection_X7TgyH",
+        "collection_Hgm9X6",
+        "collection_ALnpzM",
+        "collection_974fBK",
+        "collection_eWnpUU",
+        "collection_6kafwT",
+        "block_video_addK8E",
+        "collection_4y4pWk",
+        "collection_nLHVFR",
+        "collection_3RcLDP",
+        "collection_FEN4i8",
+        "disruptor_block_8pGF8e",
+        "collection_Pf8WfT",
+        "collection_eVtGeP",
+        "collection_GmKwdP",
+        "collection_8VYC89",
+        "collection_mNzAhF",
+        "collection_AFKwg9",
+        "collection_CgGgVH",
+        "collection_zNzrBH",
+        "collection_CCytQg",
+        "collection_9Lyxp8",
+        "collection_XWb9yP",
+        "collection_RckqPd",
+        "disruptor_block_6Ffbd6",
+        "disruptor_block_gy76aD",
+        "disruptor_block_JDigeB",
+        "block_video_a9Dqhh",
+        "block_video_wPnpUH"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "page_banner_Pmiaz4",
+    "main"
+  ]
+}

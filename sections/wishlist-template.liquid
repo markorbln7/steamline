@@ -1,0 +1,35 @@
+<div data-section-id="{{ section.id }}" data-section-type="wishlist">
+  <div class="grid grid-cols-12 py-11 lg:py-24">
+    <div class="col-span-12 flex justify-center">
+      <h1 class="text-xl lg:text-display text-center flex flex-col gap-y-4">My Wishlist</h1>
+    </div>
+  </div>
+  <div class="wrapper min-h-[700px]">
+    <div class="pb-11">
+      <div class="flex flex-col justify-center py-9 max-w-[300px] m-auto" data-wishlist-empty-container>
+        <h3 class="text-center !text-[20px] font-semibold font-body">No items added! Not sure where to start? try...</h3>
+        <div class="mt-5 flex flex-col gap-4">
+          <a href="/collections" class="btn">All Collections</a>
+          <a href="/collections/all-products" class="btn">All Products</a>
+        </div>
+      </div>
+      <div
+        class="collection-grid main-collection--listing grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3"
+        aria-label="Wishlist listings"
+        grid-wishlist>
+        <p class="wishlist__loader full-width text-center">Loading...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Wishlist",
+  "presets": [
+    {
+      "name": "Wishlist"
+    }
+  ]
+}
+{% endschema %}

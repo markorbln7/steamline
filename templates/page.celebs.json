@@ -1,0 +1,340 @@
+{
+  "sections": {
+    "page_banner_MTn8Rk": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/Starlet_banner_desktop_1900x494px_2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/aboutus1-mob.jpg",
+        "desktop_image_alt": "",
+        "title": "As Seen on Celebrities & Friends",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "main": {
+      "type": "main-celebrities",
+      "blocks": {
+        "celeb_block_wYg3VF": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Margot_Robbie_1024x1024_1b266083-27a8-4cd4-8b0c-4dd641712c28.webp",
+            "hover_image": "shopify:\/\/shop_images\/The_entrepreneur_Pink_Carryon_2_1024x1024_3dbc2d16-1b7e-439f-a759-10e38718860e.webp",
+            "title": "Margot Robbie is pretty in The Entrepreneur Pink",
+            "url": "shopify:\/\/products\/the-entrepreneur-pink-check-in-spinner",
+            "button_text": "View The Entrepreneur Pink"
+          }
+        },
+        "celeb_block_Hkzd8J": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/julia-celeb.jpg",
+            "hover_image": "shopify:\/\/shop_images\/EDITOR-NAVY-STUD.jpg",
+            "title": "Julia Roberts gets into vacation-mode with The Editor Navy",
+            "url": "shopify:\/\/products\/the-editor-navy-hatbox-deluxe",
+            "button_text": "Shop The Editor Navy"
+          }
+        },
+        "celeb_block_7eqxdn": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Reese_Witherspoon_1024x1024_3be670f9-60da-4914-8bff-085879738803.webp",
+            "hover_image": "shopify:\/\/shop_images\/The_Pink_Correspondent_Carryon_Front_copia_1024x1024_9e644cdb-5862-4be5-bb2a-5f560511c1c8.webp",
+            "title": "Reese Witherspoon packs beautifully with The Correspondent Pink",
+            "url": "shopify:\/\/products\/the-correspondent-pink-carryon",
+            "button_text": "Buy The Correspondent Pink"
+          }
+        },
+        "celeb_block_jjYbdL": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jenn_Lake.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Illustrator_Blue_Carryon_2_Front.jpg",
+            "title": "Jenn Lake discovers with The Illustrator Blue",
+            "url": "shopify:\/\/products\/the-illustrator-blue-carryon",
+            "button_text": "Discover The Illustrator Blue"
+          }
+        },
+        "celeb_block_VKwwKw": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Natalie_Off_Duty.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Editor_Navy_Carryon_2_Front_5339c27b-bf51-47a8-b226-de6458caae58.jpg",
+            "title": "Natalie Of Duty gallivants with The Editor Navy",
+            "url": "shopify:\/\/products\/the-editor-navy-carryon",
+            "button_text": "View The Editor Navy"
+          }
+        },
+        "celeb_block_XjRzdT": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Kerrie_Burke.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Entrepreneur_Navy_Deluxe_Hat_Box_Openb_copy.jpg",
+            "title": "Kerrie Burke roams with The Diplomat Cream & The Entrepreneur Navy",
+            "url": "shopify:\/\/products\/the-entrepreneur-navy-hatbox-small",
+            "button_text": "Buy The Entrepreneur Navy"
+          }
+        },
+        "celeb_block_dFWKDe": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Allie_Provost.png",
+            "hover_image": "shopify:\/\/shop_images\/The_SweetHeart_Carryon_2front.png",
+            "title": "Allie Provost explore with The Sweetheart",
+            "url": "shopify:\/\/products\/the-sweetheart-white-carryon",
+            "button_text": "Shop The Sweetheart Carryon"
+          }
+        },
+        "celeb_block_Tgkg9y": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hello_Miss_Jordan.png",
+            "hover_image": "shopify:\/\/shop_images\/TheEntrepeneurRedMini2Front2_e6743472-40d0-4822-bc3f-ba8a7d3433ca.jpg",
+            "title": "Hello Miss Jordan glams with The Entrepreneur Lip Print",
+            "url": "shopify:\/\/products\/the-entrepreneur-lip-print-mini",
+            "button_text": "View The Entrepreneur Lip Print"
+          }
+        },
+        "celeb_block_ab7q6g": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jetset_Christina.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Correspondent_Yellow_Carryon_2.jpg",
+            "title": "Jetset Christina globetrots with The Correspondent Canary Yellow",
+            "url": "shopify:\/\/products\/the-correspondent-canary-yellow",
+            "button_text": "Discover The Correspondent Canary Yellow"
+          }
+        },
+        "celeb_block_UpGTCz": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jacey_Duprie.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Editor_Black_HBX_2_front.jpg",
+            "title": "Jacey Duprie travels with The Editor Black",
+            "url": "shopify:\/\/products\/the-editor-black-deluxe-hatbox",
+            "button_text": "Shop The Editor Black"
+          }
+        },
+        "celeb_block_6GQAKB": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Krystal_Bick.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Diplomat_Cream_Carryon_Front_copia.jpg",
+            "title": "Krystal Bick takes off with The Diplomat Cream",
+            "url": "shopify:\/\/products\/the-diplomat-cream-carryon",
+            "button_text": "View The Diplomat Cream"
+          }
+        },
+        "celeb_block_FJpkbW": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Kat_Tania.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Starlet_Hat_box_Deluxe_2_Front.jpg",
+            "title": "Kat Jamieson roams with The Starlet",
+            "url": "shopify:\/\/products\/the-starlet-hatbox-deluxe",
+            "button_text": "Buy The Starlet Hatbox"
+          }
+        },
+        "celeb_block_ciLVzN": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Larissa_D_Sa.png",
+            "hover_image": "shopify:\/\/shop_images\/TheHunterGreenCarryon3Front.jpg",
+            "title": "Larissa D'Sa globetrots with The Diplomat Hunter Green",
+            "url": "shopify:\/\/products\/the-diplomat-hunter-green-carryon",
+            "button_text": "Shop The Diplomat Hunter Green"
+          }
+        },
+        "celeb_block_DWgNWc": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Julia_Comil.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Starlet_Carryon_2_front.jpg",
+            "title": "Julia Comil explores with The Starlet",
+            "url": "shopify:\/\/products\/starlet-carryon-gold",
+            "button_text": "Discover The Starlet"
+          }
+        },
+        "celeb_block_qfUh3L": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Naomi_Jane_Adams.png",
+            "hover_image": "shopify:\/\/shop_images\/The_entrepreneur_Pink_Carryon_2.jpg",
+            "title": "Naomi Jane Adams roams with The Entrepreneur Pink",
+            "url": "shopify:\/\/products\/the-entrepreneur-pink-carryon",
+            "button_text": "View The Entrepreneur PInk"
+          }
+        },
+        "celeb_block_EgA4Et": {
+          "type": "celeb_block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jenny_Cipoletti.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Starlet_Carryon_2_front.jpg",
+            "title": "Jenny Cipoletti discovers with The Starlet",
+            "url": "shopify:\/\/products\/starlet-carryon-gold",
+            "button_text": "Shop now"
+          }
+        },
+        "celeb_block_btNaVd": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Chelsea_as_of_Late.png",
+            "hover_image": "shopify:\/\/shop_images\/The_SweetHeart_Carryon_2front.png",
+            "title": "Chelsea as of Late adventures with The Sweetheart",
+            "url": "shopify:\/\/products\/the-sweetheart-white-carryon",
+            "button_text": "Buy The Sweetheart"
+          }
+        },
+        "celeb_block_9Ud4Wk": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Julia_ber.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Starlet_Carryon_2_front.jpg",
+            "title": "Julia Berolzheimer escapes with The Starlet",
+            "url": "shopify:\/\/products\/starlet-carryon-gold",
+            "button_text": "Shop The Starlet"
+          }
+        },
+        "celeb_block_m4wWd9": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jessica_Kellgren_Fozard.png",
+            "hover_image": "shopify:\/\/shop_images\/The_SweetHeart_Carryon_2front.png",
+            "title": "Jessica Kellgren roams with The Sweetheart",
+            "url": "shopify:\/\/products\/the-sweetheart-white-carryon",
+            "button_text": "View The Sweetheart"
+          }
+        },
+        "celeb_block_6zHpJf": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Blair_Eadie.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Anthropologist_Orange_Stowaway_front_2.jpg",
+            "title": "Blair Eadie explores with The Anthropologist Orange",
+            "url": "shopify:\/\/products\/the-anthropologist-orange-carryon",
+            "button_text": "Discover The Anthropologist Orange"
+          }
+        },
+        "celeb_block_YFYJFk": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Correspondent_Power_Walk.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Pink_Correspondent_Carryon_Front_copia_a20722ef-30a1-4beb-8d27-dba6cf706e59.jpg",
+            "title": "Sai De Silva power walks with our Correspondent Carryon",
+            "url": "shopify:\/\/products\/the-correspondent-pink-carryon",
+            "button_text": "Shop The Correspondent Pink"
+          }
+        },
+        "celeb_block_kaeJV7": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Aida.jpeg",
+            "hover_image": "shopify:\/\/shop_images\/The_SweetHeart_Carryon_2front.png",
+            "title": "Aida Dapo adventures with The Sweetheart",
+            "url": "shopify:\/\/products\/the-sweetheart-white-carryon",
+            "button_text": "Buy The Sweetheart"
+          }
+        },
+        "celeb_block_MRaiRB": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Elise_Cook.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Editor_Black_Stowaway_front_copy_copia.jpg",
+            "title": "Elise Cook wanders with The Editor Black",
+            "url": "shopify:\/\/products\/the-editor-black-check-in-spinner",
+            "button_text": "View The Editor Black"
+          }
+        },
+        "celeb_block_irE4Qy": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Courtney_-Pretty_little_fawn.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Diplomat_Cream_Vanity_Front_copia.jpg",
+            "title": "Courtney Halverson jetsets with The Diplomat Cream",
+            "url": "shopify:\/\/products\/the-diplomat-cream-vanity",
+            "button_text": "Shop The Diplomat Cream"
+          }
+        },
+        "celeb_block_f8xnCa": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Anita.png",
+            "hover_image": "shopify:\/\/shop_images\/The_Diplomat_Cream_Stowaway_front_2.jpg",
+            "title": "Anita Pattrickson explores with The Diplomat Cream",
+            "url": "shopify:\/\/products\/the-diplomat-cream-stowaway",
+            "button_text": "Discover The Diplomat Cream"
+          }
+        },
+        "celeb_block_qct3tV": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Onyi_Moss_02.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Sweetheart_Spinner_Front_copia_d82ec354-55ce-4f1a-bb5d-8bc814c467a9.jpg",
+            "title": "Onyi Moss voyages with The Sweetheart",
+            "url": "shopify:\/\/products\/the-sweetheart-check-in-spinner",
+            "button_text": "Buy The Sweetheart"
+          }
+        },
+        "celeb_block_k383kJ": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucy_Laucht_2000_0219ea2c-b85d-4bd4-8077-4864e11cac18.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Diplomat_Cream_Carryon_Front_copia.jpg",
+            "title": "Lucy Laucht escapes with The Diplomat Cream",
+            "url": "shopify:\/\/products\/the-diplomat-cream-carryon",
+            "button_text": "Explore The Diplomat Cream"
+          }
+        },
+        "celeb_block_tTHraF": {
+          "type": "celeb_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sea_of_shoes.jpg",
+            "hover_image": "shopify:\/\/shop_images\/The_Antropologist_Navy_Carryon_front.png",
+            "title": "Sea of Shoes globetrots with The Anthropologist Navy",
+            "url": "shopify:\/\/products\/the-anthropologist-navy-vanity",
+            "button_text": "Buy The Anthropologist Navy"
+          }
+        }
+      },
+      "block_order": [
+        "celeb_block_wYg3VF",
+        "celeb_block_Hkzd8J",
+        "celeb_block_7eqxdn",
+        "celeb_block_jjYbdL",
+        "celeb_block_VKwwKw",
+        "celeb_block_XjRzdT",
+        "celeb_block_dFWKDe",
+        "celeb_block_Tgkg9y",
+        "celeb_block_ab7q6g",
+        "celeb_block_UpGTCz",
+        "celeb_block_6GQAKB",
+        "celeb_block_FJpkbW",
+        "celeb_block_ciLVzN",
+        "celeb_block_DWgNWc",
+        "celeb_block_qfUh3L",
+        "celeb_block_EgA4Et",
+        "celeb_block_btNaVd",
+        "celeb_block_9Ud4Wk",
+        "celeb_block_m4wWd9",
+        "celeb_block_6zHpJf",
+        "celeb_block_YFYJFk",
+        "celeb_block_kaeJV7",
+        "celeb_block_MRaiRB",
+        "celeb_block_irE4Qy",
+        "celeb_block_f8xnCa",
+        "celeb_block_qct3tV",
+        "celeb_block_k383kJ",
+        "celeb_block_tTHraF"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "page_banner_MTn8Rk",
+    "main"
+  ]
+}

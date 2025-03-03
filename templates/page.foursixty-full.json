@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "foursixty_page": {
+      "type": "foursixty-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "foursixty_page"
+  ]
+}

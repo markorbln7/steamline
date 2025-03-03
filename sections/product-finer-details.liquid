@@ -1,0 +1,98 @@
+<div
+  id="ProductSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="product-finer-details"
+  aria-labelledby="ProductSectionFinerDetails"
+  x-data="{ shown: false }"
+  {% if product.metafields.pdp.product_quality_section.value.count > 0 %}
+    x-intersect="shown = true"
+  {% endif %}>
+  {%- liquid
+    assign lazyload = false
+
+    if section.index > 2
+      assign lazyload = true
+    endif
+
+    if product.metafields.pdp.product_quality_section.value.count == 4
+      assign grid_class = 'lg:!grid-cols-4'
+    elsif product.metafields.pdp.product_quality_section.value.count == 5
+      assign grid_class = 'lg:!grid-cols-4'
+    elsif product.metafields.pdp.product_quality_section.value.count == 3
+      assign grid_class = 'lg:!grid-cols-3'
+    elsif product.metafields.pdp.product_quality_section.value.count == 2
+      assign grid_class = 'lg:!grid-cols-2'
+    endif
+  -%}
+
+  <div
+    class="relative w-full py-11 lg:p-20"
+    x-show="shown"
+    x-transition.opacity>
+    <div class="flex flex-col gap-y-11">
+      <h3 class="px-4 lg:px-0 lg:text-center font-heading text-md lg:text-lg">{{ section.settings.product_detail_title }}</h3>
+      <div 
+        class="splide ml-4 lg:ml-0"
+        x-cloak
+        data-splide='
+        {
+          "type": "slide",
+          "perMove": 1,
+          "autoplay": false,
+          "pagination": false, 
+          "arrows": false,
+          "gap": 15,
+          "mediaQuery": "min",
+          "breakpoints": {
+            "300": {
+              "perPage": 1.2,
+              "focus": "center"
+            },
+            "1000": {
+              "destroy": true
+            }
+          }
+        }
+      '
+      >
+        <div class="splide__track">
+          <div class="splide__list lg:!grid {{ grid_class }} lg:!gap-1">
+            {%- for block in product.metafields.pdp.product_quality_section.value limit: 4 -%}
+              <div class="splide__slide flex flex-col gap-y-5">
+                <div class="h-48">
+                  {%- render 'image' with block.image, class: ' h-full aspect-auto object-cover object-center', lazyload: lazyload, width: 600, height: 400, image_tag: true -%}
+                </div>
+                <div class="flex flex-col gap-y-3 pr-11">
+                  <h4 class="font-heading text-lbase">{{ block.title }}</h4>
+
+                  <div class="text-small">
+                    {{ block.body }}
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_detail_title",
+      "label": "Product Detail Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Quality",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

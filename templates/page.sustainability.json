@@ -1,0 +1,150 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "content_position": "left",
+        "desktop_image": "shopify:\/\/shop_images\/sustainability-cb-desk.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/sustainability-cb-mob.jpg",
+        "desktop_image_alt": "Travel consciously",
+        "title": "Travel consciously",
+        "description": "",
+        "ribbon_title": "Grow your travel set with up to 15% off*",
+        "ribbon_text": "Get 10% off 2 luggage or bag items with code BUY2<br>Get 15% off 3 luggage or bag items with code BUY3",
+        "ribbon_url": "https:\/\/www.google.com",
+        "ribbon_url_text": "Shop bestsellers"
+      }
+    },
+    "brand_values_TBiWAy": {
+      "type": "brand-values",
+      "blocks": {
+        "block_exQ8zt": {
+          "type": "block",
+          "settings": {
+            "value_icon": "badge",
+            "title": "Care & Repair",
+            "copy": "We use long-lasting, repairable materials to give you Luggage for Life.",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "block_bbwARC": {
+          "type": "block",
+          "settings": {
+            "value_icon": "box",
+            "title": "Recycled materials",
+            "copy": "We are re-creating our accessories and shipping materials to be made of recycled and recyclable materials.",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "block_ci4V6T": {
+          "type": "block",
+          "settings": {
+            "value_icon": "leaf",
+            "title": "Vegan",
+            "copy": "We are proud to offer leather-free luggage and are working toward best vegan practices.",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "block_RCA7qA": {
+          "type": "block",
+          "settings": {
+            "value_icon": "plant",
+            "title": "Cleaner materials",
+            "copy": "We are using, wherever possible, chrome-free leathers and plant-based materials to reduce chemical use.",
+            "link": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_exQ8zt",
+        "block_bbwARC",
+        "block_ci4V6T",
+        "block_RCA7qA"
+      ],
+      "settings": {
+        "title": "Our moves toward becoming fully sustainable",
+        "copy": "Since the pandemic we have concentrated our efforts on making ongoing, incremental improvements toward increased sustainability. We are dedicated to reducing our carbon footprint through each of our products and practices.",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "image_text_row_9pFiHD": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/protective-ripstop-covers-steamline-luggage.jpg",
+        "image_footnote": "Shop Protective Covers",
+        "image_footnote_link": "shopify:\/\/collections\/protective-covers",
+        "title": "Care & Repair",
+        "copy": "<p>We support the ultimate sustainability, Luggage for Life, with dedication to long-lasting, repairable materials and to guiding you through the process of maintaining and refurbishing your luggage with our unparalleled customer service and expert repair center. With proper care using our protective ripstop covers, appropriate storage, and maintenance, your SteamLine will serve decades of travel.<\/p>",
+        "link": "https:\/\/steamlineluggage.com\/pages\/product-care-help-centre",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_AtKd3j": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": true,
+        "image": "shopify:\/\/shop_images\/non-toxic-lugagage-by-steamline.jpg",
+        "image_footnote": "Shop Navigators",
+        "image_footnote_link": "shopify:\/\/collections\/the-navigator",
+        "title": "Cleaner Materials",
+        "copy": "<p>With each new product we create, we are working exclusively with chrome-free leathers and plant-based materials. We are re-creating existing products for greater sustainability as we are educated and advised on the pros and cons of each of our choices. This means a dedication to research and long-term decision making versus the mere following of trend. For more details on each of our decisions and the status of future improvements, please do not hesitate <a href=\"\/pages\/contact-us-v2\" target=\"_blank\" title=\"Contact us V2\"><span style=\"text-decoration:underline\"><strong>to write us<\/strong><\/span><\/a>.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_wtKETq": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/recycled-packing-cubes-steamline-luggage.jpg",
+        "image_footnote": "Shop Packing Cube Sets",
+        "image_footnote_link": "shopify:\/\/collections\/packing-cube-sets",
+        "title": "Recycled materials",
+        "copy": "<p>2023 welcomed a new line of beautifully printed package cubes and cosmetic bags made of recycled plastic water bottles. All of our shipping materials are now also composed of 100% recycled and recyclable materials.<\/p><p>Today our all-leather luggage collections, such as The Diplomat, are made from bonded leather, which means they are composed with recycled leather made from leather cutoffs to reduce leather waste.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_BVKpLH": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": true,
+        "image": "shopify:\/\/shop_images\/vegan-luggage-the-entrepreneur-range-steamline.jpg",
+        "image_footnote": "Shop Vegan Luggage",
+        "image_footnote_link": "shopify:\/\/collections\/vegan-leather",
+        "title": "Vegan",
+        "copy": "<p>We are proud to also offer leather-free luggage and are dedicated to investigating real information and best practices around the materials that compose our vegan leathers. <\/p><p>Currently in our line The Entrepreneur in four colorways, including a children’s range, and The Alchemist represent our vegan-leather collections.<\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    },
+    "image_text_row_JcLXLU": {
+      "type": "image-text-row",
+      "settings": {
+        "image_right": false,
+        "image": "shopify:\/\/shop_images\/carbon-neutral-shipping-steamline-luggage.jpg",
+        "image_footnote": "Shop All Luggage",
+        "image_footnote_link": "https:\/\/steamlineluggage.com\/collections\/all-products",
+        "title": "Shipping",
+        "copy": "<p>We are proud to officially ship carbon neutral with any of our couriers. Additionally we operate out of two warehouses (Ireland and U.S.A.) to reduce shipping distance and footprint around the world. And again, all of our shipping materials are made from 100% recycled and\/or recyclable materials, making us a truly sustainable shipper! <\/p>",
+        "link": "",
+        "link_text": "Read More"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "brand_values_TBiWAy",
+    "image_text_row_9pFiHD",
+    "image_text_row_AtKd3j",
+    "image_text_row_wtKETq",
+    "image_text_row_BVKpLH",
+    "image_text_row_JcLXLU"
+  ]
+}
