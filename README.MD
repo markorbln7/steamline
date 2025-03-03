@@ -1,1 +1,1 @@
-shopify theme dev --store=stamline-global
+shopify theme dev --store=steamline-global

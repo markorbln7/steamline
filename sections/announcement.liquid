@@ -2,11 +2,11 @@
 
 {%- if section.settings.announcement_bar_enabled -%}
   {%- if section.settings.announcement_bar_home_page_only == false or request.page_type == 'index' -%}
-    <div 
+    <div
       class="announcement-section"
       x-cloak
     >
-      <div 
+      <div
         class="relative flex w-full bg-darkest text-center text-small text-white z-[60]"
       >
         <div
@@ -14,7 +14,7 @@
           aria-label="Announcments"
           data-splide='
             {
-              "type": "loop", 
+              "type": "loop",
               "perPage": 1,
               "autoplay": true,
               "pagination": false,
@@ -27,12 +27,10 @@
           <div class="splide__track">
             <ul class="splide__list">
               {% for block in section.blocks %}
-                <li class="splide__slide flex items-center justify-center gap-2 py-2 text-[10px] md:text-small">
-                  {% if block.settings.slide_link != blank %}
-                  <a class="flex items-center justify-center gap-2" href="{{ block.settings.slide_link }}">
-                  {% endif %}
+                <li class="splide__slide flex items-center justify-center gap-2 py-2 text-[10px] md:text-small js-afterpay-{{ forloop.index }}">
+
                     {{ block.settings.slide_text }}
-                  
+
 
                   {%- if block.settings.slide_image != null -%}
                     {%- if block.settings.slide_image_alt != blank -%}
@@ -43,9 +41,7 @@
                     {%- render 'image', image: block.settings.slide_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%}
                   {% endif %}
 
-                  {% if block.settings.slide_link != blank %}
-                  </a>
-                  {% endif %}
+
                 </li>
               {% endfor %}
             </ul>
@@ -82,6 +78,12 @@
       "id": "announcement_bar_enabled",
       "label": "Enable announcement bar",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_popup",
+      "label": "Enable show popup",
+      "default": false
     },
     {
       "type": "checkbox",

@@ -1,7 +1,7 @@
 <!doctype html>
   <html class="no-js" lang="{{ request.locale.iso_code }}">
     <head>
-      
+
       {% include 'booster-seo' %}
 
 
@@ -14,13 +14,13 @@
       <meta name="name" content="{{ shop.name }}">
       <meta name="google-site-verification" content="n9_9EYP933pldNl81R7hoK-nKgIYJx0xj7dFnFvXSpo" />
       <meta name="google-site-verification" content="UE-N4sL1Wil196a97g9q-QkyUMLYkzmebxKK0owkIs8" />
-  
+
       <link rel="canonical" href="{{ canonical_url }}">
-  
+
       {% if settings.favicon != blank %}
         <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 512, height: 512 }}" sizes="512x512">
       {% endif %}
-  
+
       {% if canonical_url == 'https://steamlineluggage.com/collections' %}
         {% comment %}<title>View Our Vintage Luggage Collections - Steamline Luggage</title>{% endcomment %}
         {% comment %}<meta name="description" content="Wherever you go next, it iss going to feel extraordinary. ">{% endcomment %}
@@ -28,26 +28,26 @@
         {% comment %}<title>{{ page_title }}</title>{% endcomment %}
         {% comment %}<meta name="description" content="Wherever you go next, it iss going to feel extraordinary. ">{% endcomment %}
       {% endif %}
-  
+
       {%- render 'hreflang'-%}
-  
+
       {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
       <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  
+
       {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
       {% unless settings.type_heading.system? and settings.type_body.system? %}
         <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
       {% endunless %}
-  
+
       {% liquid
         render 'colors'
         render 'typography'
       %}
-  
+
       <script>
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
         window.addEventListener('load', () => document.documentElement.classList.add('ready'));
-  
+
         window.theme = {
           strings: {
             addToCart: {{ 'products.product.add_to_cart' | t | json }},
@@ -94,45 +94,47 @@
           }
         };
       </script>
-  
+
       <!-- shopify/apps -->
       {{ content_for_header }}
-  
+
       {% render 'vendor-google' placement:'head' %}
-  
+
       {% liquid
         # Always add entrypoint below content_for_header
         render 'adastra' with 'base.css'
         render 'adastra' with 'index.js'
       %}
+      <script src="https://js.squarecdn.com/square-marketplace.js" async></script>
     </head>
     <body x-data="mobileMenu">
       {% render 'vendor-google' placement:'body' %}
-  
+
       <a class="visuallyhidden focusable skip-link" href="#MainContent">Skip to content</a>
       {% sections 'header-group' %}
-  
+
       <main
         id="MainContent"
         tabindex="-1">
+        {% render 'afterpaymodal' %}
         {{ content_for_layout }}
       </main>
-  
+
       {%- section 'swatches' -%}
       {%- section 'slideout-cart' -%}
-  
+
       {% sections 'footer-group' %}
-  
+
       {% liquid
         render 'json-ld'
         render 'vendor-klaviyo-bis'
         render 'vendor-hotjar'
       %}
-  
+
       {% if product %}
         {% render 'vendor-klaviyo-product' %}
       {% endif %}
-  
+
       <script>
         window.shopUrl = '{{ request.origin }}'
         window.routes = {
@@ -144,7 +146,7 @@
           product_recommendations_url: '{{ routes.product_recommendations_url }}'
         }
       </script>
-  
+
       <script type="application/json" data-ajax-cart-initial-state>
         {{ cart | json }}
       </script>
@@ -152,4 +154,3 @@
       <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
     </body>
   </html>
-  

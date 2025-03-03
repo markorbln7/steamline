@@ -22,9 +22,9 @@
       <div class="mb-5 flex items-center justify-between">
         <h3 class="mini-cart__title font-semibold">Cart ({{ cart.item_count }})</h3>
         <button class="btn-icon mini-cart__close" aria-label="Close cart" data-cart-close>
-          {% render 'icon' with 'cart-close' %} 
+          {% render 'icon' with 'cart-close' %}
         </button>
-      </div> 
+      </div>
 
       {% if section.settings.announcement_label != blank %}
         <div class="mb-5 w-full bg-cornflower px-1 py-1 text-center text-small text-white">{{ section.settings.announcement_label }}</div>
@@ -36,7 +36,7 @@
           <div class="cart-empty flex h-full min-h-80 w-full flex-col items-center justify-center">
             <span class="text-center font-semibold"
               >Your bag is currently empty.<br>
-              Not sure where to start?</span 
+              Not sure where to start?</span
             >
 
             <div class="mt-5 flex flex-col gap-4">
@@ -123,7 +123,7 @@
 
                   <a
                     href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
-                    class="ajax-cart__remove-button lg:mt-[12px] self-end text-right text-[13px] font-semibold group" 
+                    class="ajax-cart__remove-button lg:mt-[12px] self-end text-right text-[13px] font-semibold group"
                     data-ajax-cart-request-button>
                     <span class="hidden lg:block group-hover:border-b-2 group-hover:border-darkest">Remove</span>
                     <div class="lg:hidden w-7 h-7 flex justify-end">
@@ -166,7 +166,20 @@
           </button>
 
           <div class="vendor-messaging flex items-center justify-center gap-3 py-2">
-            <span class="text-[13px]">{{ section.settings.vendor_message }}</span>
+            <square-placement
+              class=""
+              data-mpid="3a6fe9ac-56a0-47b5-a5ae-7e74b086caf0"
+              data-placement-id="a2a57c91-277a-4a96-9e85-01d64a81169e"
+              data-page-type="product"
+              data-amount="{{cart.total_price}}"
+              data-currency="{{ cart.currency.iso_code }}"
+              data-consumer-locale=""
+              data-item-skus=""
+              data-item-categories="{{ product.type }}"
+              data-is-eligible="true"
+        >
+        </square-placement>
+            {% comment %} <span class="text-[13px]">{{ section.settings.vendor_message }}</span>
 
             {%- if section.settings.vendor_image_alt != blank -%}
               {%- assign alt = section.settings.vendor_image_alt -%}
@@ -174,7 +187,7 @@
               {%- assign alt = section.settings.vendor_message -%}
             {%- endif -%}
 
-            {%- render 'image', image: section.settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%}
+            {%- render 'image', image: section.settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%} {% endcomment %}
           </div>
         {% endform %}
 
@@ -198,7 +211,7 @@
       </div>
     </div>
 
-    {%- render 'cart-upsells', version: 'side-cart' -%} 
+    {%- render 'cart-upsells', version: 'side-cart' -%}
   </div>
 </side-cart>
 

@@ -58,12 +58,38 @@
             </div>
           {% endif %}
         </div>
+        <square-placement
+          class="block lg:hidden"
+          data-mpid="3a6fe9ac-56a0-47b5-a5ae-7e74b086caf0"
+          data-placement-id="a2a57c91-277a-4a96-9e85-01d64a81169e"
+          data-page-type="product"
+          data-amount="{{product.price}}"
+          data-currency="{{ cart.currency.iso_code }}"
+          data-consumer-locale="{{ consumer_locale }}"
+          data-item-skus="{{product.sku}}"
+          data-item-categories="{{ product.type }}"
+          data-is-eligible="true"
+    >
+    </square-placement>
 
         {%- render 'product-stitching' -%}
 
         <div x-data>
           <div class="flex flex-col gap-y-4 border-t border-pale_ink pt-8" x-ref="detailsDiv">
             {%- render 'product-price', product: product, type: 'desktop' -%}
+            <square-placement
+              class="hidden lg:block"
+              data-mpid="3a6fe9ac-56a0-47b5-a5ae-7e74b086caf0"
+              data-placement-id="a2a57c91-277a-4a96-9e85-01d64a81169e"
+              data-page-type="product"
+              data-amount="{{product.price}}"
+              data-currency="{{ cart.currency.iso_code }}"
+              data-consumer-locale="{{ consumer_locale }}"
+              data-item-skus="{{product.sku}}"
+              data-item-categories="{{ product.type }}"
+              data-is-eligible="true"
+        >
+        </square-placement>
 
             {% if product.metafields.pdp.product_highlights.value != blank %}
               <div class="grid grid-cols-2 gap-x-5 gap-y-2">
@@ -87,9 +113,9 @@
               {% liquid
                 assign truncated_desc = product.description | strip_html | truncatewords: 20
               %}
-              {{ truncated_desc }} 
-              <span 
-                @click="$root.querySelector('[x-ref=productDetailsBtn]').click()" 
+              {{ truncated_desc }}
+              <span
+                @click="$root.querySelector('[x-ref=productDetailsBtn]').click()"
                 class="text-small font-bold text-darkest cursor-pointer">
                 Read more
               </span>
@@ -182,7 +208,7 @@
               {% endform %}
             </ajax-cart-product-form>
 
-            <div class="vendor-messaging flex items-center justify-start gap-3 py-2">
+            {% comment %} <div class="vendor-messaging flex items-center justify-start gap-3 py-2">
               <span class="text-[13px]">{{ settings.vendor_message }}</span>
               {%- if settings.vendor_image_alt != blank -%}
                 {%- assign alt = settings.vendor_image_alt -%}
@@ -193,7 +219,7 @@
               {%- if settings.vendor_link_text != blank -%}
                 <a href="{{ settings.vendor_link_url }}" class="hidden text-[13px] text-mid_ink underline md:block">{{ settings.vendor_link_text }}</a>
               {%- endif -%}
-            </div>
+            </div> {% endcomment %}
 
             {% liquid
               assign warranty_content = product.metafields.pdp.product_tray.value.product_warranty.value
@@ -317,7 +343,7 @@
                 x-data="
                   {
                       id: 4,
-                      get expanded() { 
+                      get expanded() {
                           return this.active === this.id
                       },
                       set expanded(value) {

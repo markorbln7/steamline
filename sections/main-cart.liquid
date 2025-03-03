@@ -133,15 +133,28 @@
               </button>
 
               <div class="vendor-messaging flex items-center justify-center gap-3 py-2">
-                <span class="text-[13px]">{{ section.settings.vendor_message }}</span>
+                {% comment %} <span class="text-[13px]">{{ section.settings.vendor_message }}</span> {% endcomment %}
+                <square-placement
+                  class=""
+                  data-mpid="3a6fe9ac-56a0-47b5-a5ae-7e74b086caf0"
+                  data-placement-id="a2a57c91-277a-4a96-9e85-01d64a81169e"
+                  data-page-type="product"
+                  data-amount="{{cart.total_price}}"
+                  data-currency="{{ cart.currency.iso_code }}"
+                  data-consumer-locale=""
+                  data-item-skus=""
+                  data-item-categories="{{ product.type }}"
+                  data-is-eligible="true"
+            >
+            </square-placement>
 
-                {%- if section.settings.vendor_image_alt != blank -%}
+                {% comment %} {%- if section.settings.vendor_image_alt != blank -%}
                   {%- assign alt = section.settings.vendor_image_alt -%}
                 {%- else -%}
                   {%- assign alt = section.settings.vendor_message -%}
                 {%- endif -%}
 
-                {%- render 'image', image: section.settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%}
+                {%- render 'image', image: section.settings.vendor_image, class: ' max-h-[24px] max-w-[70px]', alt: alt -%} {% endcomment %}
               </div>
             {% endform %}
 
